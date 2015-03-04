@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
-
-@interface PanoramaFinalViewController : BaseViewController
+@interface PanoramaFinalViewController : BaseViewController{
+    NSMutableArray *_imageViews;
+}
 
 @end

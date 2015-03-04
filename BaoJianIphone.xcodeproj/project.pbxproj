@@ -12,7 +12,6 @@
 		920B783B1AA463950096EA1D /* PanoramaListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B783A1AA463950096EA1D /* PanoramaListCell.m */; };
 		920B783D1AA463B70096EA1D /* PanoramaListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920B783C1AA463B70096EA1D /* PanoramaListCell.xib */; };
 		920B783F1AA4710F0096EA1D /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 920B783E1AA4710F0096EA1D /* banner.png */; };
-		920B78421AA4747D0096EA1D /* GlobalCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 920B78411AA4747D0096EA1D /* GlobalCounter.m */; };
 		925A6FE71A9EBCE6000E9D28 /* EnterpriseIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 925A6FE51A9EBCE6000E9D28 /* EnterpriseIntroViewController.m */; };
 		925A6FE81A9EBCE6000E9D28 /* EnterpriseIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 925A6FE61A9EBCE6000E9D28 /* EnterpriseIntroViewController.xib */; };
 		925A6FEC1A9EBD27000E9D28 /* EnterBaoJianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 925A6FEA1A9EBD27000E9D28 /* EnterBaoJianViewController.m */; };
@@ -98,6 +97,8 @@
 		925A70DB1A9EFF01000E9D28 /* ELButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 925A70D71A9EFF01000E9D28 /* ELButton.m */; };
 		925A70E01A9EFF9D000E9D28 /* ELBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 925A70DF1A9EFF9D000E9D28 /* ELBottomBar.m */; };
 		925A70E21A9F049A000E9D28 /* s2.png in Resources */ = {isa = PBXBuildFile; fileRef = 925A70E11A9F049A000E9D28 /* s2.png */; };
+		92CB72E01AA6FF8400DF2587 /* TestListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CB72DE1AA6FF8400DF2587 /* TestListTableViewCell.m */; };
+		92CB72E11AA6FF8400DF2587 /* TestListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92CB72DF1AA6FF8400DF2587 /* TestListTableViewCell.xib */; };
 		92D4B5F91A8B370600177CD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D4B5F81A8B370600177CD3 /* main.m */; };
 		92D4B5FC1A8B370600177CD3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D4B5FB1A8B370600177CD3 /* AppDelegate.m */; };
 		92D4B6041A8B370600177CD3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D4B6031A8B370600177CD3 /* Images.xcassets */; };
@@ -129,8 +130,6 @@
 		920B783A1AA463950096EA1D /* PanoramaListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanoramaListCell.m; sourceTree = "<group>"; };
 		920B783C1AA463B70096EA1D /* PanoramaListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PanoramaListCell.xib; sourceTree = "<group>"; };
 		920B783E1AA4710F0096EA1D /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
-		920B78401AA4747D0096EA1D /* GlobalCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalCounter.h; sourceTree = "<group>"; };
-		920B78411AA4747D0096EA1D /* GlobalCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalCounter.m; sourceTree = "<group>"; };
 		925A6FE41A9EBCE6000E9D28 /* EnterpriseIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterpriseIntroViewController.h; sourceTree = "<group>"; };
 		925A6FE51A9EBCE6000E9D28 /* EnterpriseIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterpriseIntroViewController.m; sourceTree = "<group>"; };
 		925A6FE61A9EBCE6000E9D28 /* EnterpriseIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterpriseIntroViewController.xib; sourceTree = "<group>"; };
@@ -277,6 +276,11 @@
 		925A70DE1A9EFF9D000E9D28 /* ELBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELBottomBar.h; sourceTree = "<group>"; };
 		925A70DF1A9EFF9D000E9D28 /* ELBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELBottomBar.m; sourceTree = "<group>"; };
 		925A70E11A9F049A000E9D28 /* s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s2.png; sourceTree = "<group>"; };
+		92CB72DD1AA6FF8400DF2587 /* TestListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListTableViewCell.h; sourceTree = "<group>"; };
+		92CB72DE1AA6FF8400DF2587 /* TestListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestListTableViewCell.m; sourceTree = "<group>"; };
+		92CB72DF1AA6FF8400DF2587 /* TestListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestListTableViewCell.xib; sourceTree = "<group>"; };
+		92CB72E21AA7051C00DF2587 /* Hiragino Sans GB W3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hiragino Sans GB W3.otf"; sourceTree = "<group>"; };
+		92CB72E31AA7159B00DF2587 /* Hiragino Sans GB W6.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hiragino Sans GB W6.otf"; sourceTree = "<group>"; };
 		92D4B5F31A8B370600177CD3 /* BaoJianIphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaoJianIphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D4B5F71A8B370600177CD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92D4B5F81A8B370600177CD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -337,8 +341,6 @@
 		925A6FE31A9EBC44000E9D28 /* 园区全景 */ = {
 			isa = PBXGroup;
 			children = (
-				920B78401AA4747D0096EA1D /* GlobalCounter.h */,
-				920B78411AA4747D0096EA1D /* GlobalCounter.m */,
 				925A6FF31A9EBDFA000E9D28 /* PanoramaListViewController.h */,
 				925A6FF41A9EBDFA000E9D28 /* PanoramaListViewController.m */,
 				925A6FF51A9EBDFA000E9D28 /* PanoramaListViewController.xib */,
@@ -377,6 +379,9 @@
 				925A700F1A9EBF68000E9D28 /* TestListViewController.h */,
 				925A70101A9EBF68000E9D28 /* TestListViewController.m */,
 				925A70111A9EBF68000E9D28 /* TestListViewController.xib */,
+				92CB72DD1AA6FF8400DF2587 /* TestListTableViewCell.h */,
+				92CB72DE1AA6FF8400DF2587 /* TestListTableViewCell.m */,
+				92CB72DF1AA6FF8400DF2587 /* TestListTableViewCell.xib */,
 				925A70141A9EBF83000E9D28 /* TestFinalViewController.h */,
 				925A70151A9EBF83000E9D28 /* TestFinalViewController.m */,
 				925A70161A9EBF83000E9D28 /* TestFinalViewController.xib */,
@@ -615,6 +620,8 @@
 		92D4B5F61A8B370600177CD3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				92CB72E31AA7159B00DF2587 /* Hiragino Sans GB W6.otf */,
+				92CB72E21AA7051C00DF2587 /* Hiragino Sans GB W3.otf */,
 				92D4B5F71A8B370600177CD3 /* Info.plist */,
 				92D4B5F81A8B370600177CD3 /* main.m */,
 			);
@@ -822,6 +829,7 @@
 				925A70011A9EBED2000E9D28 /* HealthManagementViewController.xib in Resources */,
 				925A700E1A9EBF26000E9D28 /* ProductFinalViewController.xib in Resources */,
 				925A70451A9EC1F1000E9D28 /* CareerChanceViewController.xib in Resources */,
+				92CB72E11AA6FF8400DF2587 /* TestListTableViewCell.xib in Resources */,
 				925A703B1A9EC177000E9D28 /* InfomationCenterViewController.xib in Resources */,
 				920B783F1AA4710F0096EA1D /* banner.png in Resources */,
 				92D4B6291A8B3A2B00177CD3 /* BaseViewController.xib in Resources */,
@@ -868,7 +876,6 @@
 				925A70CB1A9EE76D000E9D28 /* ELHttpRequestOperation.m in Sources */,
 				925A70351A9EC0E0000E9D28 /* ProductHomeViewController.m in Sources */,
 				925A703A1A9EC177000E9D28 /* InfomationCenterViewController.m in Sources */,
-				920B78421AA4747D0096EA1D /* GlobalCounter.m in Sources */,
 				925A707A1A9EE653000E9D28 /* NSTimer+Addition.m in Sources */,
 				925A70C51A9EE76D000E9D28 /* UIAlertView+AFNetworking.m in Sources */,
 				925A70C21A9EE76D000E9D28 /* AFURLSessionManager.m in Sources */,
@@ -909,6 +916,7 @@
 				925A70551A9EC5E3000E9D28 /* KefuFindBackViewController.m in Sources */,
 				925A70861A9EE6B3000E9D28 /* MessageInterceptor.m in Sources */,
 				925A70BC1A9EE76D000E9D28 /* AFHTTPSessionManager.m in Sources */,
+				92CB72E01AA6FF8400DF2587 /* TestListTableViewCell.m in Sources */,
 				925A70D11A9EE799000E9D28 /* KxMenu.m in Sources */,
 				925A6FE71A9EBCE6000E9D28 /* EnterpriseIntroViewController.m in Sources */,
 				925A70081A9EBF12000E9D28 /* ProductListViewController.m in Sources */,

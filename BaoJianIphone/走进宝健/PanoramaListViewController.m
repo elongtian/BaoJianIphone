@@ -7,7 +7,7 @@
 //
 
 #import "PanoramaListViewController.h"
-#import "GlobalCounter.h"
+#import "PanoramaFinalViewController.h"
 @interface PanoramaListViewController ()
 
 @end
@@ -20,10 +20,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.offscreenCells = [[NSMutableDictionary alloc]init];
     photosArray = [[NSMutableArray alloc]init];
     
 //    panoramaListCell = [[[NSBundle mainBundle] loadNibNamed:@"PanoramaListCell" owner:self options:nil] lastObject];
     self.view.backgroundColor = [UIColor grayColor];
+    mainTableView.rowHeight = UITableViewAutomaticDimension;
+    mainTableView.estimatedRowHeight = 10.0;
     mainTableView.backgroundColor = [UIColor clearColor];
     mainTableView.opaque = NO;
 }
@@ -31,12 +34,26 @@
 #pragma mark - UItableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return 100;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row%2 != 0)
+    if(indexPath.row%2 == 0)
     {
+        PanoramaListCell * cell = [tableView dequeueReusableCellWithIdentifier:@"PanoramaListCell"];
+        if(cell == nil)
+        {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"PanoramaListCell" owner:self options:nil] lastObject];
+        }
+        
+        [cell setNeedsUpdateConstraints];
+        [cell updateConstraintsIfNeeded];
+
+        return cell;
+    }
+    else
+    {
+        
         UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
         if(cell == nil)
         {
@@ -46,40 +63,24 @@
         }
         return cell;
     }
-    else
-    {
-        [[GlobalCounter getInstance] add:@"get cell"];
-        PanoramaListCell * cell = [tableView dequeueReusableCellWithIdentifier:@"PanoramaListCell"];
-        if(cell == nil)
-        {
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"PanoramaListCell" owner:self options:nil] lastObject];
-        }
-        return cell;
-    }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row%2 == 0)
+    if(indexPath.row %2 == 0)
     {
-        [[GlobalCounter getInstance] add:@"get height"];
-        
-        PanoramaListCell * cell = [mainTableView dequeueReusableCellWithIdentifier:@"PanoramaListCell"];
-        
-        return [self getCellHeight:cell];
+      return 149.f;
     }
     else
     {
-        return 10.f;
+        return 10;
     }
 }
 
-- (CGFloat)getCellHeight:(UITableViewCell*)cell
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [cell layoutIfNeeded];
-    [cell updateConstraintsIfNeeded];
-    
-    CGFloat height = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
-    return height;
+    //跳转到图集最终
+    PanoramaFinalViewController * final = [[PanoramaFinalViewController alloc]init];
+    [self.navigationController pushViewController:final animated:YES];
 }
 
 - (void)back:(id)sender

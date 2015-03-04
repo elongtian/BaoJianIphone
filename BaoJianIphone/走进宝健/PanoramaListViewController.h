@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 @property (retain, nonatomic) NSMutableArray * photosArray;
 @property (retain, nonatomic) PanoramaListCell * panoramaListCell;
+@property (retain, nonatomic) NSMutableDictionary * offscreenCells;
 
 @end

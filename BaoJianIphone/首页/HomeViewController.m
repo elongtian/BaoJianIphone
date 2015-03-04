@@ -10,6 +10,7 @@
 #import "HomeChannelView.h"
 #import "ELBottomBar.h"
 #import "EnterBaoJianViewController.h"
+#import "HealthManagementViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -60,7 +61,8 @@
                     break;
                 case 1:
                 {
-                    
+                    HealthManagementViewController * health = [[HealthManagementViewController alloc]initWithNibName:@"HealthManagementViewController" bundle:nil];
+                    [self.navigationController pushViewController:health animated:YES];
                 }
                     break;
                 case 2:

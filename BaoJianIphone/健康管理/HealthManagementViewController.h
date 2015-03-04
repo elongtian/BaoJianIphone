@@ -9,5 +9,8 @@
 #import "BaseViewController.h"
 
 @interface HealthManagementViewController : BaseViewController
+@property (strong, nonatomic) IBOutlet UIView *pro_view;
+@property (strong, nonatomic) IBOutlet UIView *test_view;
+@property (strong, nonatomic) IBOutlet UIView *topic_view;
 
 @end

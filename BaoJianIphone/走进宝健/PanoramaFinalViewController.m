@@ -17,6 +17,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    _imageViews = [[NSMutableArray alloc]init];
+    for(int i = 0;i<4;i++)
+    {
+        UIImageView * imageView = [[UIImageView alloc]init];
+        
+        [_imageViews addObject:imageView];
+    }
+    [self createImageviewer];
+}
+
+- (void)createImageviewer
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {

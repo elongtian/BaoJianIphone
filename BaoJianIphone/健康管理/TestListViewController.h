@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface TestListViewController : BaseViewController
+@interface TestListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 
 @end

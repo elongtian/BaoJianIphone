@@ -7,11 +7,6 @@
 //
 
 #import "PanoramaListCell.h"
-#import "GlobalCounter.h"
 @implementation PanoramaListCell
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    [[GlobalCounter getInstance] add:@"create cell"];
-    return [super initWithCoder:coder];
-}
+
 @end

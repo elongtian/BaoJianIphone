@@ -7,7 +7,7 @@
 //
 
 #import "TestListViewController.h"
-
+#import "TestListTableViewCell.h"
 @interface TestListViewController ()
 
 @end
@@ -17,6 +17,54 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    
+    _mainTableView.backgroundColor = [UIColor clearColor];
+    _mainTableView.opaque = NO;
+}
+
+#pragma mark - 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 15;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    //Hiragino Sans GB W3
+    if(indexPath.row %2 == 0)
+    {
+        TestListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"TestListTableViewCell"];
+        if(cell == nil)
+        {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"TestListTableViewCell" owner:self options:nil] lastObject];
+        }
+        return cell;
+    }
+    else
+    {
+        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+        if(cell == nil)
+        {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+            cell.backgroundColor = [UIColor clearColor];
+            cell.contentView.backgroundColor = [UIColor clearColor];
+        }
+        return cell;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row %2 == 0)
+    {
+        return 153.0;
+    }
+    else
+    {
+        return 10;
+    }
+}
+
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

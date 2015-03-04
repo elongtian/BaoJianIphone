@@ -7,7 +7,7 @@
 //
 
 #import "HealthManagementViewController.h"
-
+#import "TestListViewController.h"
 @interface HealthManagementViewController ()
 
 @end
@@ -17,6 +17,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    UITapGestureRecognizer * protap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(proAction:)];
+    [_pro_view addGestureRecognizer:protap];
+    
+    UITapGestureRecognizer * testtap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(testAction:)];
+    [_test_view addGestureRecognizer:testtap];
+    
+    UITapGestureRecognizer * topictap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(topicAction:)];
+    [_topic_view addGestureRecognizer:topictap];
+    
+}
+
+- (void)proAction:(UITapGestureRecognizer *)tap{
+    
+}
+
+- (void)testAction:(UITapGestureRecognizer *)tap{
+    TestListViewController * test = [[TestListViewController alloc]initWithNibName:@"TestListViewController" bundle:nil];
+    [self.navigationController pushViewController:test animated:YES];
+}
+
+- (void)topicAction:(UITapGestureRecognizer *)tap{
+    
+}
+
+
+- (void)back:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
