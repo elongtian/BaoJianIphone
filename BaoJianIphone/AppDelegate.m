@@ -26,8 +26,6 @@
     nav.navigationBar.hidden = YES;
     [self.window setRootViewController:nav];
     
-    
-    nnn = 0;
     return YES;
 }
 

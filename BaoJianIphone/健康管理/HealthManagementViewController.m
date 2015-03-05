@@ -8,6 +8,7 @@
 
 #import "HealthManagementViewController.h"
 #import "TestListViewController.h"
+#import "ProductHomeViewController.h"
 @interface HealthManagementViewController ()
 
 @end
@@ -30,7 +31,8 @@
 }
 
 - (void)proAction:(UITapGestureRecognizer *)tap{
-    
+    ProductHomeViewController * pro = [[ProductHomeViewController alloc]initWithNibName:@"ProductHomeViewController" bundle:nil];
+    [self.navigationController pushViewController:pro animated:YES];
 }
 
 - (void)testAction:(UITapGestureRecognizer *)tap{

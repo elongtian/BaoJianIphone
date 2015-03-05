@@ -96,7 +96,11 @@
 		925A70D11A9EE799000E9D28 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 925A70CF1A9EE799000E9D28 /* KxMenu.m */; };
 		925A70DB1A9EFF01000E9D28 /* ELButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 925A70D71A9EFF01000E9D28 /* ELButton.m */; };
 		925A70E01A9EFF9D000E9D28 /* ELBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 925A70DF1A9EFF9D000E9D28 /* ELBottomBar.m */; };
-		925A70E21A9F049A000E9D28 /* s2.png in Resources */ = {isa = PBXBuildFile; fileRef = 925A70E11A9F049A000E9D28 /* s2.png */; };
+		925A70E21A9F049A000E9D28 /* s2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925A70E11A9F049A000E9D28 /* s2@2x.png */; };
+		92A9F3101AA83959003B7507 /* Hiragino Sans GB W3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 92A9F30E1AA83959003B7507 /* Hiragino Sans GB W3.otf */; };
+		92A9F3111AA83959003B7507 /* Hiragino Sans GB W6.otf in Resources */ = {isa = PBXBuildFile; fileRef = 92A9F30F1AA83959003B7507 /* Hiragino Sans GB W6.otf */; };
+		92A9F3151AA853CE003B7507 /* ProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A9F3131AA853CE003B7507 /* ProductListTableViewCell.m */; };
+		92A9F3161AA853CE003B7507 /* ProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A9F3141AA853CE003B7507 /* ProductListTableViewCell.xib */; };
 		92CB72E01AA6FF8400DF2587 /* TestListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CB72DE1AA6FF8400DF2587 /* TestListTableViewCell.m */; };
 		92CB72E11AA6FF8400DF2587 /* TestListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92CB72DF1AA6FF8400DF2587 /* TestListTableViewCell.xib */; };
 		92D4B5F91A8B370600177CD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D4B5F81A8B370600177CD3 /* main.m */; };
@@ -275,12 +279,15 @@
 		925A70D71A9EFF01000E9D28 /* ELButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELButton.m; sourceTree = "<group>"; };
 		925A70DE1A9EFF9D000E9D28 /* ELBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELBottomBar.h; sourceTree = "<group>"; };
 		925A70DF1A9EFF9D000E9D28 /* ELBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELBottomBar.m; sourceTree = "<group>"; };
-		925A70E11A9F049A000E9D28 /* s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s2.png; sourceTree = "<group>"; };
+		925A70E11A9F049A000E9D28 /* s2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "s2@2x.png"; sourceTree = "<group>"; };
+		92A9F30E1AA83959003B7507 /* Hiragino Sans GB W3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hiragino Sans GB W3.otf"; sourceTree = "<group>"; };
+		92A9F30F1AA83959003B7507 /* Hiragino Sans GB W6.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hiragino Sans GB W6.otf"; sourceTree = "<group>"; };
+		92A9F3121AA853CE003B7507 /* ProductListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListTableViewCell.h; sourceTree = "<group>"; };
+		92A9F3131AA853CE003B7507 /* ProductListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListTableViewCell.m; sourceTree = "<group>"; };
+		92A9F3141AA853CE003B7507 /* ProductListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListTableViewCell.xib; sourceTree = "<group>"; };
 		92CB72DD1AA6FF8400DF2587 /* TestListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestListTableViewCell.h; sourceTree = "<group>"; };
 		92CB72DE1AA6FF8400DF2587 /* TestListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestListTableViewCell.m; sourceTree = "<group>"; };
 		92CB72DF1AA6FF8400DF2587 /* TestListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestListTableViewCell.xib; sourceTree = "<group>"; };
-		92CB72E21AA7051C00DF2587 /* Hiragino Sans GB W3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hiragino Sans GB W3.otf"; sourceTree = "<group>"; };
-		92CB72E31AA7159B00DF2587 /* Hiragino Sans GB W6.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hiragino Sans GB W6.otf"; sourceTree = "<group>"; };
 		92D4B5F31A8B370600177CD3 /* BaoJianIphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaoJianIphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D4B5F71A8B370600177CD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92D4B5F81A8B370600177CD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -404,6 +411,9 @@
 				925A700A1A9EBF26000E9D28 /* ProductFinalViewController.h */,
 				925A700B1A9EBF26000E9D28 /* ProductFinalViewController.m */,
 				925A700C1A9EBF26000E9D28 /* ProductFinalViewController.xib */,
+				92A9F3121AA853CE003B7507 /* ProductListTableViewCell.h */,
+				92A9F3131AA853CE003B7507 /* ProductListTableViewCell.m */,
+				92A9F3141AA853CE003B7507 /* ProductListTableViewCell.xib */,
 			);
 			name = "产品";
 			sourceTree = "<group>";
@@ -448,7 +458,7 @@
 				925A70721A9EC77C000E9D28 /* HomeChannelView.m */,
 				92F6A2891AA15BC4005DF530 /* a.png */,
 				92F6A28A1AA15BC4005DF530 /* b.png */,
-				925A70E11A9F049A000E9D28 /* s2.png */,
+				925A70E11A9F049A000E9D28 /* s2@2x.png */,
 				920B783E1AA4710F0096EA1D /* banner.png */,
 			);
 			path = "首页";
@@ -620,9 +630,9 @@
 		92D4B5F61A8B370600177CD3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				92CB72E31AA7159B00DF2587 /* Hiragino Sans GB W6.otf */,
-				92CB72E21AA7051C00DF2587 /* Hiragino Sans GB W3.otf */,
 				92D4B5F71A8B370600177CD3 /* Info.plist */,
+				92A9F30E1AA83959003B7507 /* Hiragino Sans GB W3.otf */,
+				92A9F30F1AA83959003B7507 /* Hiragino Sans GB W6.otf */,
 				92D4B5F81A8B370600177CD3 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -835,15 +845,18 @@
 				92D4B6291A8B3A2B00177CD3 /* BaseViewController.xib in Resources */,
 				925A705B1A9EC5F9000E9D28 /* MobileFindBackViewController.xib in Resources */,
 				925A6FE81A9EBCE6000E9D28 /* EnterpriseIntroViewController.xib in Resources */,
+				92A9F3111AA83959003B7507 /* Hiragino Sans GB W6.otf in Resources */,
 				925A70401A9EC194000E9D28 /* InfomationFinalViewController.xib in Resources */,
 				925A70701A9EC735000E9D28 /* HomeViewController.xib in Resources */,
-				925A70E21A9F049A000E9D28 /* s2.png in Resources */,
+				92A9F3161AA853CE003B7507 /* ProductListTableViewCell.xib in Resources */,
+				925A70E21A9F049A000E9D28 /* s2@2x.png in Resources */,
 				925A706A1A9EC690000E9D28 /* MobileFindResultViewController.xib in Resources */,
 				925A6FFC1A9EBE2A000E9D28 /* PanoramaFinalViewController.xib in Resources */,
 				925A70511A9EC5B2000E9D28 /* FindBackWordTypeViewController.xib in Resources */,
 				92D4B6071A8B370600177CD3 /* LaunchScreen.xib in Resources */,
 				92F6A28D1AA15BC4005DF530 /* b.png in Resources */,
 				925A70561A9EC5E3000E9D28 /* KefuFindBackViewController.xib in Resources */,
+				92A9F3101AA83959003B7507 /* Hiragino Sans GB W3.otf in Resources */,
 				925A70181A9EBF83000E9D28 /* TestFinalViewController.xib in Resources */,
 				92F6A28C1AA15BC4005DF530 /* a.png in Resources */,
 				92D4B6041A8B370600177CD3 /* Images.xcassets in Resources */,
@@ -870,6 +883,7 @@
 				925A70901A9EE6FF000E9D28 /* ELTextField.m in Sources */,
 				925A701C1A9EBF94000E9D28 /* TestResultViewController.m in Sources */,
 				925A70BF1A9EE76D000E9D28 /* AFURLConnectionOperation.m in Sources */,
+				92A9F3151AA853CE003B7507 /* ProductListTableViewCell.m in Sources */,
 				925A70C71A9EE76D000E9D28 /* UIImageView+AFNetworking.m in Sources */,
 				925A70791A9EE653000E9D28 /* JCTopic.m in Sources */,
 				925A70C91A9EE76D000E9D28 /* UIRefreshControl+AFNetworking.m in Sources */,

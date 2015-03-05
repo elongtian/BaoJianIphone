@@ -7,6 +7,7 @@
 //
 
 #import "HomeChannelView.h"
+#import "Const.h"
 #define TOPDistance 20.0f
 
 #define imgV_Width 30.f
@@ -44,7 +45,8 @@
     _titleL = [[UILabel alloc]initWithFrame:CGRectMake(0, _imgV.frame.origin.y+_imgV.frame.size.height, self.frame.size.width, titleL_Height)];
     _titleL.textAlignment = NSTextAlignmentCenter;
     _titleL.textColor = [UIColor whiteColor];
-    _titleL.font = [UIFont boldSystemFontOfSize:14.f];
+    _titleL.font = UIFontHiraginoSansGBW6(14);
+    
     _titleL.text = @"走进宝健";
     
     [self addSubview:_imgV];

@@ -32,6 +32,8 @@
 # define DLog(...);
 #endif
 
+#define UIFontHiraginoSansGBW3(s) ([UIFont fontWithName:@"HiraginoSansGB-W3"size:s])
+#define UIFontHiraginoSansGBW6(s) ([UIFont fontWithName:@"HiraginoSansGB-W6"size:s])
 
 
 #define APPID @"921848523"

@@ -22,6 +22,8 @@
         {
             ELButton * btn = [ELButton buttonWithType:UIButtonTypeCustom];
             btn.backgroundColor = [UIColor orangeColor];
+            btn.tag = 100+i;
+            btn.titleLabel.font = [UIFont systemFontOfSize:12];
             btn.frame = CGRectMake(0, 0, 49, 49);
             btn.center = CGPointMake(20+((width+20)*(i%3)+width/2.0), btn.center.y);
             [btn setImage:[UIImage imageNamed:@"s2"] forState:UIControlStateNormal];
@@ -31,5 +33,19 @@
         }
     }
     return self;
+}
+
+- (void)setTitles:(NSMutableArray *)titles
+{
+    if(_titles == nil)
+    {
+        _titles = [[NSMutableArray alloc]init];
+    }
+    _titles = titles;
+    
+    for(int i = 0;i<Counts; i++){
+        ELButton * btn = (ELButton *)[self viewWithTag:100+i];
+        [btn setTitle:[_titles objectAtIndex:i] forState:UIControlStateNormal];
+    }
 }
 @end

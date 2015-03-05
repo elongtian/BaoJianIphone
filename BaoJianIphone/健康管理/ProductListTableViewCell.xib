@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductListTableViewCell" rowHeight="122" id="KGk-i7-Jjw" customClass="ProductListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="121"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="qq4-Dr-9pN">
+                        <rect key="frame" x="10" y="10" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="IO0-e1-Qaq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宝萃健即溶茶固体饮料" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udm-QJ-Rha">
+                        <rect key="frame" x="118" y="10" width="174" height="15"/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="草本独特配方" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rZ-74-EdQ">
+                        <rect key="frame" x="118" y="33" width="174" height="14"/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="清除体内污染" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCZ-uh-eUN">
+                        <rect key="frame" x="118" y="52" width="174" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="WCB-vl-cNo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WCB-vl-cNo"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="建议零售价：¥220.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GT5-8t-QgP">
+                        <rect key="frame" x="118" y="74" width="174" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="HuM-XS-7EQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                        <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HuM-XS-7EQ"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠价：¥175.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iam-cQ-0D1">
+                        <rect key="frame" x="118" y="96" width="116" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="jor-DF-Og5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                        <color key="textColor" red="0.99607843139999996" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="jor-DF-Og5"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3oV-9V-PJR">
+                        <rect key="frame" x="272" y="93" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Ux9-1X-3b8"/>
+                            <constraint firstAttribute="width" constant="20" id="XbT-kP-ciz"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="GT5-8t-QgP" firstAttribute="top" secondItem="SCZ-uh-eUN" secondAttribute="bottom" constant="8" id="6ED-fc-bal"/>
+                    <constraint firstItem="SCZ-uh-eUN" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="7zm-JU-BTz"/>
+                    <constraint firstItem="SCZ-uh-eUN" firstAttribute="leading" secondItem="qq4-Dr-9pN" secondAttribute="trailing" constant="8" id="DIZ-fu-aGo"/>
+                    <constraint firstItem="GT5-8t-QgP" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="FUy-vu-p95"/>
+                    <constraint firstItem="qq4-Dr-9pN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="Fi5-nZ-jGh"/>
+                    <constraint firstItem="6rZ-74-EdQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="NsR-Yp-JX1"/>
+                    <constraint firstItem="Iam-cQ-0D1" firstAttribute="top" secondItem="GT5-8t-QgP" secondAttribute="bottom" constant="10" id="Oso-3a-6Hp"/>
+                    <constraint firstItem="qq4-Dr-9pN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="QhD-Rm-tcp"/>
+                    <constraint firstItem="3oV-9V-PJR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Iam-cQ-0D1" secondAttribute="trailing" constant="14" id="VYy-yG-amf"/>
+                    <constraint firstItem="Udm-QJ-Rha" firstAttribute="leading" secondItem="qq4-Dr-9pN" secondAttribute="trailing" constant="8" id="ZC5-Q0-FwJ"/>
+                    <constraint firstItem="3oV-9V-PJR" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="brd-4e-56J"/>
+                    <constraint firstItem="Iam-cQ-0D1" firstAttribute="centerY" secondItem="3oV-9V-PJR" secondAttribute="centerY" id="fTF-aK-l01"/>
+                    <constraint firstItem="GT5-8t-QgP" firstAttribute="leading" secondItem="qq4-Dr-9pN" secondAttribute="trailing" constant="8" id="iWW-GM-7S2"/>
+                    <constraint firstItem="6rZ-74-EdQ" firstAttribute="leading" secondItem="qq4-Dr-9pN" secondAttribute="trailing" constant="8" id="lel-jt-ByL"/>
+                    <constraint firstItem="SCZ-uh-eUN" firstAttribute="top" secondItem="6rZ-74-EdQ" secondAttribute="bottom" constant="5" id="oJ1-VN-89V"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="qq4-Dr-9pN" secondAttribute="bottom" constant="2" id="p62-Yc-LKc"/>
+                    <constraint firstItem="6rZ-74-EdQ" firstAttribute="top" secondItem="Udm-QJ-Rha" secondAttribute="bottom" constant="8" id="pm4-ii-ps7"/>
+                    <constraint firstItem="Iam-cQ-0D1" firstAttribute="leading" secondItem="qq4-Dr-9pN" secondAttribute="trailing" constant="8" id="pzN-cQ-xVj"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3oV-9V-PJR" secondAttribute="bottom" constant="-3" id="sFK-zJ-F9F"/>
+                    <constraint firstItem="Udm-QJ-Rha" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="wxd-7s-PCn"/>
+                    <constraint firstItem="Udm-QJ-Rha" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="xi5-Zt-9WE"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="sFK-zJ-F9F"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="215" y="188.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="banner.png" width="1080" height="479"/>
+    </resources>
+</document>

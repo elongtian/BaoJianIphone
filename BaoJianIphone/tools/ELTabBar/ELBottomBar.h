@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ELBottomBar : UIView
-
+@property (retain, nonatomic) NSMutableArray * titles;
 @end

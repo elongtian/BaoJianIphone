@@ -198,6 +198,8 @@
 - (void)createBottomBar
 {
     ELBottomBar * bar = [[ELBottomBar alloc]initWithFrame:CGRectMake(0, SCREENHEIGHT-49, SCREENWIDTH, 49)];
+    NSArray * titlesArray = @[@"个人中心",@"搜索",@"帮助"];
+    bar.titles = (NSMutableArray *)titlesArray;
     [self.view addSubview:bar];
 }
 

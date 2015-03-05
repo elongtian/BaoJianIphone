@@ -21,6 +21,7 @@
     
     _mainTableView.backgroundColor = [UIColor clearColor];
     _mainTableView.opaque = NO;
+    
 }
 
 #pragma mark - 
@@ -28,7 +29,7 @@
     return 15;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    //Hiragino Sans GB W3
+    
     if(indexPath.row %2 == 0)
     {
         TestListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"TestListTableViewCell"];
