@@ -8,7 +8,11 @@
 
 #import "BaseViewController.h"
 #import "ELTextField.h"
-@interface ProductListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
+#import "IconTextView.h"
+#import "Const.h"
+@interface ProductListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>{
+    
+}
 @property (strong, nonatomic) IBOutlet UIButton *scannerBtn;
 @property (strong, nonatomic) IBOutlet ELTextField *searchField;
 @property (strong, nonatomic) IBOutlet UIButton *cancelBtn;
@@ -19,5 +23,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *priceL;
 @property (strong, nonatomic) IBOutlet UIImageView *priceV;
 @property (strong, nonatomic) IBOutlet UITableView *maintableView;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *searchtextfildRightConstraint;
+@property (retain, nonatomic) IconTextView * icontextView;
+
+@property (retain, nonatomic) UIControl * coverControl;//点击搜索框显示的半透明浮层
 
 @end

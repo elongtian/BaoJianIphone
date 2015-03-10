@@ -11,6 +11,8 @@
 #import "ELBottomBar.h"
 #import "EnterBaoJianViewController.h"
 #import "HealthManagementViewController.h"
+#import "CareerChanceViewController.h"
+#import "InfomationCenterViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -67,12 +69,14 @@
                     break;
                 case 2:
                 {
-                    
+                    CareerChanceViewController * career = [[CareerChanceViewController alloc]initWithNibName:@"CareerChanceViewController" bundle:nil];
+                    [self.navigationController pushViewController:career animated:YES];
                 }
                     break;
                 case 3:
                 {
-                    
+                    InfomationCenterViewController * infocenter = [[InfomationCenterViewController alloc]initWithNibName:@"InfomationCenterViewController" bundle:nil];
+                    [self.navigationController pushViewController:infocenter animated:YES];
                 }
                     break;
                 case 4:

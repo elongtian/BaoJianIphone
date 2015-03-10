@@ -7,7 +7,16 @@
 //
 
 #import "BaseViewController.h"
-
-@interface InfomationCenterViewController : BaseViewController
-
+#import "QCSlideSwitchView.h"
+#import "InfoListViewController.h"
+@interface InfomationCenterViewController : BaseViewController<QCSlideSwitchViewDelegate>{
+    QCSlideSwitchView *_slideSwitchView;
+    float length;
+}
+@property (strong, nonatomic) IBOutlet QCSlideSwitchView *slideSwitchView;
+@property (retain, nonatomic) NSMutableArray * titleLengthArray;
+@property (retain, nonatomic) InfoListViewController * newsController;
+@property (retain, nonatomic) InfoListViewController * bookController;
+@property (retain, nonatomic) InfoListViewController * videoController;
+@property (retain, nonatomic) InfoListViewController * pptController;
 @end

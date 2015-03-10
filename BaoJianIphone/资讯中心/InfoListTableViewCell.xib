@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+        <mutableArray key="Hiragino Sans GB W6.otf">
+            <string>HiraginoSansGB-W6</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoListTableViewCell" rowHeight="118" id="KGk-i7-Jjw" customClass="InfoListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="118"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你是否患有颈椎病？你是否患有颈椎病？" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78u-bp-ZNs">
+                        <rect key="frame" x="116" y="9" width="168" height="28"/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W6" family="Hiragino Sans GB" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="坐姿不对＋久坐不动坐姿不对＋久坐不动坐姿不对＋久坐不动坐姿不对＋久坐不动坐姿不对＋久坐不动坐姿不对＋久坐不动" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxv-ae-K6G">
+                        <rect key="frame" x="116" y="45" width="156" height="34"/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="aH9-Gi-85S">
+                        <rect key="frame" x="8" y="8" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="DeF-sX-hXI"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lyu-Hq-JDb">
+                        <rect key="frame" x="8" y="115" width="284" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="g7T-Rg-Z0c"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s2.png" translatesAutoresizingMaskIntoConstraints="NO" id="B1B-br-juz">
+                        <rect key="frame" x="116" y="90" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="IwB-ze-baD"/>
+                            <constraint firstAttribute="width" constant="15" id="yTO-An-cUw"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-05-09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saV-im-0nK">
+                        <rect key="frame" x="132" y="87" width="72" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="jGU-W7-UHX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="B1B-br-juz" firstAttribute="centerY" secondItem="saV-im-0nK" secondAttribute="centerY" id="2eW-cf-9OB"/>
+                    <constraint firstItem="saV-im-0nK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Gxv-ae-K6G" secondAttribute="bottom" constant="8" id="2hW-Id-oiK"/>
+                    <constraint firstItem="Lyu-Hq-JDb" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="3IU-lA-Nsr"/>
+                    <constraint firstItem="aH9-Gi-85S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="3aI-9A-ijU"/>
+                    <constraint firstItem="Gxv-ae-K6G" firstAttribute="leading" secondItem="aH9-Gi-85S" secondAttribute="trailing" constant="8" id="3rH-4s-L8d"/>
+                    <constraint firstItem="Lyu-Hq-JDb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="4Ur-Ou-SaT"/>
+                    <constraint firstItem="Lyu-Hq-JDb" firstAttribute="top" secondItem="B1B-br-juz" secondAttribute="bottom" constant="10" id="8QA-Ta-DJF"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Gxv-ae-K6G" secondAttribute="trailing" constant="8" id="DLn-g2-n6h"/>
+                    <constraint firstItem="B1B-br-juz" firstAttribute="leading" secondItem="aH9-Gi-85S" secondAttribute="trailing" constant="8" id="OgY-Kg-4jV"/>
+                    <constraint firstItem="78u-bp-ZNs" firstAttribute="leading" secondItem="aH9-Gi-85S" secondAttribute="trailing" constant="8" id="XTh-CJ-jZk"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="78u-bp-ZNs" secondAttribute="trailing" constant="8" id="Zab-ui-FWB"/>
+                    <constraint firstItem="aH9-Gi-85S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="bOj-pp-lWI"/>
+                    <constraint firstItem="saV-im-0nK" firstAttribute="leading" secondItem="B1B-br-juz" secondAttribute="trailing" constant="1" id="cCs-Qp-x66"/>
+                    <constraint firstItem="Gxv-ae-K6G" firstAttribute="top" secondItem="78u-bp-ZNs" secondAttribute="bottom" constant="8" id="dad-n5-IZc"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Lyu-Hq-JDb" secondAttribute="bottom" constant="-7" id="hHm-1h-sDe"/>
+                    <constraint firstItem="Lyu-Hq-JDb" firstAttribute="top" secondItem="aH9-Gi-85S" secondAttribute="bottom" constant="7" id="uN3-oo-MJJ"/>
+                    <constraint firstItem="78u-bp-ZNs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="ulr-aB-qVy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="303" y="128"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="banner.png" width="1080" height="479"/>
+        <image name="s2.png" width="26" height="27"/>
+    </resources>
+</document>

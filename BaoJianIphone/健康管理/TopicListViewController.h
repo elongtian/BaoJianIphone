@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface TopicListViewController : BaseViewController
+@interface TopicListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 
 @end

@@ -1,19 +1,76 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+        <mutableArray key="Hiragino Sans GB W6.otf">
+            <string>HiraginoSansGB-W6</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoreEvaluatesViewController">
             <connections>
+                <outlet property="evaluateBtn" destination="V0l-Jd-gVZ" id="DhP-fG-A5L"/>
+                <outlet property="mainTableView" destination="qyI-L6-kjZ" id="vxQ-Cv-4Si"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qyI-L6-kjZ">
+                    <rect key="frame" x="0.0" y="98" width="320" height="421"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="w4o-Ee-4uC"/>
+                        <outlet property="delegate" destination="-1" id="pKF-vA-RBb"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0l-Jd-gVZ">
+                    <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                    <color key="backgroundColor" red="0.20392156859999999" green="0.72156862749999995" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="76Y-Pj-xs0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W6" family="Hiragino Sans GB" pointSize="16"/>
+                    <state key="normal" title=" 我要评论" image="s2.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 32评论 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KM6-7b-HmA">
+                    <rect key="frame" x="256" y="69" width="56" height="21"/>
+                    <color key="backgroundColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="J5d-EY-ANR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="KM6-7b-HmA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="69" id="5pO-Nf-HRc"/>
+                <constraint firstItem="qyI-L6-kjZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7hv-uJ-1dN"/>
+                <constraint firstItem="V0l-Jd-gVZ" firstAttribute="top" secondItem="qyI-L6-kjZ" secondAttribute="bottom" id="8dA-6g-sa1"/>
+                <constraint firstItem="V0l-Jd-gVZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RTE-SR-GPY"/>
+                <constraint firstAttribute="bottom" secondItem="V0l-Jd-gVZ" secondAttribute="bottom" id="jeO-MK-mwJ"/>
+                <constraint firstAttribute="trailing" secondItem="KM6-7b-HmA" secondAttribute="trailing" constant="8" id="mzu-wM-POh"/>
+                <constraint firstItem="qyI-L6-kjZ" firstAttribute="top" secondItem="KM6-7b-HmA" secondAttribute="bottom" constant="8" id="ngv-wN-jYX"/>
+                <constraint firstAttribute="trailing" secondItem="V0l-Jd-gVZ" secondAttribute="trailing" id="pF1-ch-Gew"/>
+                <constraint firstAttribute="trailing" secondItem="qyI-L6-kjZ" secondAttribute="trailing" id="r8A-SY-oIR"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="s2.png" width="26" height="27"/>
+    </resources>
 </document>

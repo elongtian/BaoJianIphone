@@ -7,8 +7,8 @@
 //
 
 #import "ProductListViewController.h"
-
 #import "ProductListTableViewCell.h"
+#import "ProductFinalViewController.h"
 @interface ProductListViewController ()
 
 @end
@@ -22,25 +22,48 @@
     [self initPlat];
 }
 - (void)initPlat{
-    _searchField.placeholder = @"请输入商品名称";
-    _searchField.inputView.backgroundColor = [UIColor redColor];
-    _searchField.background=[UIImage imageNamed:@"searchbar_textfield_background"];
-//    searchBar.textAlignment=NSTextAlignmentCenter;//说明：这是设置文字水平居中
-    //设置文字内容垂直居中
-     _searchField.contentVerticalAlignment=UIControlContentVerticalAlignmentCenter;
-     //设置左边的放大镜
-     UIImageView *leftView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-     leftView.image=[UIImage imageNamed:@"s2"];
-     _searchField.leftView=leftView;
-     //设置leftView的frame
-//     leftView.frame.width=40;
-//     leftView.frame.height=35;
-     //设置leftViewMode
-     _searchField.leftViewMode=UITextFieldViewModeAlways;
-     //设置放大镜距离左边的间距，设置leftView的内容居中
-     leftView.contentMode=UIViewContentModeCenter;
     
-    _searchField.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    _coverControl = [[UIControl alloc]initWithFrame:CGRectMake(0, _searchField.frame.origin.y+_searchField.frame.size.height+5,SCREENWIDTH, SCREENHEIGHT-(_searchField.frame.origin.y+_searchField.frame.size.height+5))];
+    _coverControl.backgroundColor = [UIColor blackColor];
+    _coverControl.alpha = 0.4;
+    _coverControl.hidden = YES;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+    [_coverControl addGestureRecognizer:tap];
+    [self.view addSubview:_coverControl];
+     _icontextView = [[IconTextView alloc]initWithFrame:CGRectMake(0, 0, _searchField.frame.size.width, _searchField.frame.size.height)];
+    __block ProductListViewController * Self = self;
+    _icontextView.call_back = ^(IconTextView *view){
+        
+        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            Self.searchtextfildRightConstraint.constant = 57;
+        } completion:^(BOOL finished) {
+            
+            Self.coverControl.hidden = NO;
+            
+            Self.icontextView.hidden = YES;
+            
+            Self.searchField.placeholder = @"请输入商品名称";
+            UIImageView *leftView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
+            leftView.image=[UIImage imageNamed:@"s2"];
+            Self.searchField.leftView=leftView;
+            //设置leftView的frame
+            //     leftView.frame.width=40;
+            //     leftView.frame.height=35;
+            //设置leftViewMode
+            Self.searchField.leftViewMode=UITextFieldViewModeAlways;
+            //设置放大镜距离左边的间距，设置leftView的内容居中
+            leftView.contentMode=UIViewContentModeCenter;
+            
+            [Self.searchField becomeFirstResponder];
+        }];
+        [Self.view setNeedsLayout]; //更新视图
+        [Self.view layoutIfNeeded];
+        
+    };
+    
+    [_searchField addSubview:_icontextView];
+    
+    [_cancelBtn addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchDown];
     
 }
 
@@ -60,6 +83,42 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 122.f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ProductFinalViewController * final = [[ProductFinalViewController alloc]initWithNibName:@"ProductFinalViewController" bundle:nil];
+    [self.navigationController pushViewController:final animated:YES];
+}
+
+#pragma mark - 隐藏浮层
+- (void)tapAction:(UITapGestureRecognizer*)tap{
+   
+    [self cancelAction:nil];
+}
+
+
+#pragma mark - 取消
+- (void)cancelAction:(UIButton *)sender{
+    
+     __block ProductListViewController * Self = self;
+    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        Self.searchtextfildRightConstraint.constant = 10;
+    } completion:^(BOOL finished) {
+        
+        Self.coverControl.hidden = YES;
+        
+        Self.icontextView.hidden = NO;
+        
+        Self.searchField.placeholder = nil;
+        
+        Self.searchField.leftView = nil;
+        Self.searchField.leftViewMode=UITextFieldViewModeAlways;
+        
+        [Self.searchField resignFirstResponder];
+    }];
+    [Self.view setNeedsLayout]; //更新视图
+    [Self.view layoutIfNeeded];
+    
 }
 
 - (void)back:(id)sender{

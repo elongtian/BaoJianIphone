@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+        <mutableArray key="Hiragino Sans GB W6.otf">
+            <string>HiraginoSansGB-W6</string>
+            <string>HiraginoSansGB-W6</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EvaluateTableViewCell" rowHeight="177" id="KGk-i7-Jjw" customClass="EvaluateTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="177"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="QrG-wI-1Qt">
+                        <rect key="frame" x="20" y="23" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="MYw-ah-bHi"/>
+                            <constraint firstAttribute="width" constant="60" id="dlj-MI-ouq"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ePb-uE-Qf2">
+                        <rect key="frame" x="198" y="25" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="1yd-dd-4p9"/>
+                            <constraint firstAttribute="width" constant="16" id="cHj-io-8DJ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-05-09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQa-FZ-Crb">
+                        <rect key="frame" x="215" y="23" width="72" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="AGl-FK-OOp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="字里行间充满了爱！慢慢的爱感动了你我他！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYt-ZS-77Z">
+                        <rect key="frame" x="88" y="131" width="208" height="33"/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="216" placeholderIntrinsicHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="4dO-og-OvM">
+                        <rect key="frame" x="88" y="56" width="216" height="67"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="免费去巴黎  " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ny-9R-W2w">
+                                <rect key="frame" x="8" y="8" width="80" height="14"/>
+                                <fontDescription key="fontDescription" name="HiraginoSansGB-W6" family="Hiragino Sans GB" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保证的产品加上年轻的心态，活出自我风采" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wuc-zb-EwJ">
+                                <rect key="frame" x="8" y="33" width="200" height="26"/>
+                                <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s2.png" translatesAutoresizingMaskIntoConstraints="NO" id="gMK-bg-rdb">
+                                <rect key="frame" x="90" y="7" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="fky-Tr-tcX"/>
+                                    <constraint firstAttribute="height" constant="16" id="snM-qK-ahU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-05-09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5U-KS-Jzw">
+                                <rect key="frame" x="107" y="5" width="72" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="rbi-rM-1vJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392156859999999" green="0.72156862749999995" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="J5U-KS-Jzw" firstAttribute="leading" secondItem="gMK-bg-rdb" secondAttribute="trailing" constant="1" id="04E-fG-x6r"/>
+                            <constraint firstItem="2Ny-9R-W2w" firstAttribute="top" secondItem="4dO-og-OvM" secondAttribute="top" constant="8" id="EiD-Z4-XMH"/>
+                            <constraint firstItem="gMK-bg-rdb" firstAttribute="leading" secondItem="2Ny-9R-W2w" secondAttribute="trailing" constant="2" id="OQM-di-B6K"/>
+                            <constraint firstItem="J5U-KS-Jzw" firstAttribute="centerY" secondItem="gMK-bg-rdb" secondAttribute="centerY" id="QPP-ne-20f"/>
+                            <constraint firstAttribute="trailing" secondItem="Wuc-zb-EwJ" secondAttribute="trailing" constant="8" id="jz1-Uf-aNU"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2Ny-9R-W2w" secondAttribute="trailing" constant="92" id="nyP-o6-w10"/>
+                            <constraint firstAttribute="bottom" secondItem="Wuc-zb-EwJ" secondAttribute="bottom" constant="8" id="tFk-Yp-DwD"/>
+                            <constraint firstItem="2Ny-9R-W2w" firstAttribute="leading" secondItem="4dO-og-OvM" secondAttribute="leading" constant="8" id="uom-RR-jDW"/>
+                            <constraint firstItem="Wuc-zb-EwJ" firstAttribute="leading" secondItem="4dO-og-OvM" secondAttribute="leading" constant="8" id="vzG-pt-3hT"/>
+                            <constraint firstItem="J5U-KS-Jzw" firstAttribute="centerY" secondItem="2Ny-9R-W2w" secondAttribute="centerY" id="yWa-Az-VT7"/>
+                            <constraint firstItem="Wuc-zb-EwJ" firstAttribute="top" secondItem="J5U-KS-Jzw" secondAttribute="bottom" constant="8" id="zCR-vy-sPm"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="免费去巴黎 摘星 " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruy-mA-KN4">
+                        <rect key="frame" x="88" y="26" width="108" height="14"/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W6" family="Hiragino Sans GB" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VWO-Qc-s7I">
+                        <rect key="frame" x="0.0" y="179" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="b5R-oY-7h0"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="VWO-Qc-s7I" secondAttribute="trailing" constant="-8" id="0lY-eI-FSI"/>
+                    <constraint firstItem="Ruy-mA-KN4" firstAttribute="leading" secondItem="QrG-wI-1Qt" secondAttribute="trailing" constant="8" id="1UF-Ni-o9f"/>
+                    <constraint firstItem="SQa-FZ-Crb" firstAttribute="centerY" secondItem="Ruy-mA-KN4" secondAttribute="centerY" id="32X-UL-ni1"/>
+                    <constraint firstItem="ePb-uE-Qf2" firstAttribute="leading" secondItem="Ruy-mA-KN4" secondAttribute="trailing" constant="2" id="5MN-Su-f2N"/>
+                    <constraint firstItem="HYt-ZS-77Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="80" id="8nZ-1z-zYu"/>
+                    <constraint firstItem="SQa-FZ-Crb" firstAttribute="leading" secondItem="ePb-uE-Qf2" secondAttribute="trailing" constant="1" id="9li-Ig-9pH"/>
+                    <constraint firstItem="SQa-FZ-Crb" firstAttribute="centerY" secondItem="ePb-uE-Qf2" secondAttribute="centerY" id="Onc-pj-kMW"/>
+                    <constraint firstItem="VWO-Qc-s7I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="S6l-3a-Ffa"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="VWO-Qc-s7I" secondAttribute="bottom" constant="-12" id="UYa-bL-aS2"/>
+                    <constraint firstItem="QrG-wI-1Qt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="WYM-DP-Haa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4dO-og-OvM" secondAttribute="trailing" constant="8" id="X45-dx-E4b"/>
+                    <constraint firstItem="4dO-og-OvM" firstAttribute="leading" secondItem="QrG-wI-1Qt" secondAttribute="trailing" constant="8" id="XWC-c8-3ri"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Ruy-mA-KN4" secondAttribute="trailing" constant="92" id="ceN-jh-GtQ"/>
+                    <constraint firstItem="4dO-og-OvM" firstAttribute="top" secondItem="SQa-FZ-Crb" secondAttribute="bottom" constant="13" id="jii-Cn-vkc"/>
+                    <constraint firstItem="VWO-Qc-s7I" firstAttribute="top" secondItem="HYt-ZS-77Z" secondAttribute="bottom" constant="15" id="kLP-cA-oUk"/>
+                    <constraint firstItem="HYt-ZS-77Z" firstAttribute="top" secondItem="4dO-og-OvM" secondAttribute="bottom" constant="8" id="oOS-jt-qNA"/>
+                    <constraint firstItem="Ruy-mA-KN4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="18" id="q9w-d8-TcC"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="HYt-ZS-77Z" secondAttribute="trailing" constant="8" id="qTP-X4-zQE"/>
+                    <constraint firstItem="QrG-wI-1Qt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="wRs-Jv-QSh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.99607843139999996" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="content_desc" destination="HYt-ZS-77Z" id="JcW-jv-nyY"/>
+                <outlet property="content_desc2" destination="Wuc-zb-EwJ" id="BMP-Hm-WDN"/>
+                <outlet property="content_img" destination="QrG-wI-1Qt" id="iIh-cG-aX0"/>
+                <outlet property="content_name" destination="Ruy-mA-KN4" id="Qep-Pd-iaN"/>
+                <outlet property="content_name2" destination="2Ny-9R-W2w" id="TUo-Ij-q8F"/>
+                <outlet property="content_time" destination="SQa-FZ-Crb" id="HQr-xb-Se2"/>
+                <outlet property="content_time2" destination="J5U-KS-Jzw" id="cKa-o1-Lek"/>
+                <outlet property="evaluateView" destination="4dO-og-OvM" id="4h0-4e-jV1"/>
+            </connections>
+            <point key="canvasLocation" x="336" y="150.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="banner.png" width="1080" height="479"/>
+        <image name="s2.png" width="26" height="27"/>
+    </resources>
+</document>

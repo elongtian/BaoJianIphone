@@ -9,6 +9,7 @@
 #import "HealthManagementViewController.h"
 #import "TestListViewController.h"
 #import "ProductHomeViewController.h"
+#import "TopicListViewController.h"
 @interface HealthManagementViewController ()
 
 @end
@@ -41,7 +42,8 @@
 }
 
 - (void)topicAction:(UITapGestureRecognizer *)tap{
-    
+    TopicListViewController * topic = [[TopicListViewController alloc]initWithNibName:@"TopicListViewController" bundle:nil];
+    [self.navigationController pushViewController:topic animated:YES];
 }
 
 

@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
-
-@interface GoEvaluateViewController : BaseViewController
+#import "ELTextView.h"
+@interface GoEvaluateViewController : BaseViewController<UITextViewDelegate>
+@property (strong, nonatomic) IBOutlet ELTextView *evaluateTextView;
+@property (strong, nonatomic) IBOutlet UIButton *commitBtn;
+@property (strong, nonatomic) IBOutlet UILabel *wordnumbersLabel;
 
 @end
