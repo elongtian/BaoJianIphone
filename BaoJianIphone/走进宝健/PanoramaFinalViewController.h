@@ -7,8 +7,9 @@
 //
 
 #import "BaseViewController.h"
-@interface PanoramaFinalViewController : BaseViewController{
+#import "ReuseScrollView.h"
+@interface PanoramaFinalViewController : BaseViewController<ReuseScrollViewDelegate, UIScrollViewDelegate>{
     NSMutableArray *_imageViews;
 }
-
+@property (nonatomic, strong) ReuseScrollView *myScrollView;
 @end
