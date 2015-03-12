@@ -39,8 +39,7 @@
 - (void)layoutViews
 {
     _imgV = [[UIImageView alloc]initWithFrame:CGRectMake(0, TOPDistance, imgV_Width,  imgV_height)];
-    _imgV.backgroundColor = [UIColor redColor];
-    _imgV.center = CGPointMake(self.frame.size.width/2, _imgV.center.y);
+    _imgV.center = CGPointMake(self.frame.size.width/2,self.frame.size.height/2-titleL_Height/2);
     
     _titleL = [[UILabel alloc]initWithFrame:CGRectMake(0, _imgV.frame.origin.y+_imgV.frame.size.height, self.frame.size.width, titleL_Height)];
     _titleL.textAlignment = NSTextAlignmentCenter;

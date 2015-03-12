@@ -8,6 +8,7 @@
 
 #import "TestListViewController.h"
 #import "TestListTableViewCell.h"
+#import "TestFinalViewController.h"
 @interface TestListViewController ()
 
 @end
@@ -62,6 +63,11 @@
     {
         return 10;
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    TestFinalViewController * final = [[TestFinalViewController alloc]initWithNibName:@"TestFinalViewController" bundle:nil];
+    [self.navigationController pushViewController:final animated:YES];
 }
 
 - (void)back:(id)sender{

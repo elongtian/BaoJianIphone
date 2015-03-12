@@ -45,7 +45,7 @@
     [mainScrollView addSubview:descripView];
     
     UIImageView * icon = [[UIImageView alloc]initWithFrame:CGRectMake(15, 10, 25, 25)];
-    icon.backgroundColor = [UIColor redColor];
+    icon.backgroundColor = [UIColor whiteColor];
     [descripView addSubview:icon];
     
     UILabel * titleL = [[UILabel alloc]initWithFrame:CGRectMake(icon.frame.origin.x+icon.frame.size.width+10, icon.frame.origin.y, mainScrollView.frame.size.width-(icon.frame.origin.x+icon.frame.size.width+10), icon.frame.size.height)];

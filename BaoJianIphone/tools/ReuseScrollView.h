@@ -28,7 +28,7 @@
 
 @property (nonatomic, weak) id<ReuseScrollViewDelegate>reuseDelegate;
 @property (assign) float pageWidth; //页面的宽度
-
+@property (assign) BOOL isobserver;//是否监听偏移量
 
 //重写cycleSlip的set和get方法
 - (BOOL)cycleSlip;

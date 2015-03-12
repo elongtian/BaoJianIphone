@@ -10,4 +10,5 @@
 
 @interface ELBottomBar : UIView
 @property (retain, nonatomic) NSMutableArray * titles;
+@property (retain, nonatomic) NSMutableArray * icons;
 @end

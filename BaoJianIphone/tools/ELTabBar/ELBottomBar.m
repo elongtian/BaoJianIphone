@@ -16,19 +16,19 @@
 {
     if(self = [super initWithFrame:frame])
     {
-        self.backgroundColor = [UIColor yellowColor];
+        self.backgroundColor = UIColorFromRGB(0xe3e3e3);
         int width = (SCREENWIDTH-20*4)/3.0;
         for(int i=0; i<Counts; i++)
         {
             ELButton * btn = [ELButton buttonWithType:UIButtonTypeCustom];
-            btn.backgroundColor = [UIColor orangeColor];
             btn.tag = 100+i;
-            btn.titleLabel.font = [UIFont systemFontOfSize:12];
-            btn.frame = CGRectMake(0, 0, 49, 49);
+            btn.frame = CGRectMake(0, 0, width, 49);
             btn.center = CGPointMake(20+((width+20)*(i%3)+width/2.0), btn.center.y);
             [btn setImage:[UIImage imageNamed:@"s2"] forState:UIControlStateNormal];
             [btn setTitle:@"标题" forState:UIControlStateNormal];
             btn.titleLabel.textAlignment = NSTextAlignmentCenter;
+            btn.titleLabel.font = UIFontHiraginoSansGBW3(13);
+            [btn setTitleColor:UIColorFromRGB(0x5b5757) forState:UIControlStateNormal];
             [self addSubview:btn];
         }
     }
@@ -46,6 +46,19 @@
     for(int i = 0;i<Counts; i++){
         ELButton * btn = (ELButton *)[self viewWithTag:100+i];
         [btn setTitle:[_titles objectAtIndex:i] forState:UIControlStateNormal];
+    }
+}
+
+- (void)setIcons:(NSMutableArray *)icons{
+    if(_icons == nil)
+    {
+        _icons = [[NSMutableArray alloc]init];
+    }
+    _icons = icons;
+    
+    for(int i = 0;i<Counts; i++){
+        ELButton * btn = (ELButton *)[self viewWithTag:100+i];
+        [btn setImage:[UIImage imageNamed:[_icons objectAtIndex:i]] forState:UIControlStateNormal];
     }
 }
 @end

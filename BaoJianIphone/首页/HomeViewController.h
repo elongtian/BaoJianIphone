@@ -12,6 +12,8 @@
 @interface HomeViewController : BaseViewController<JCTopicDelegate,UIScrollViewDelegate>
 {
     NSMutableArray * titles;
+    NSMutableArray * icons;
+    NSMutableArray * colors;
 }
 @property (retain, nonatomic) UIScrollView * mainScrollView;
 @property (retain, nonatomic) JCTopic * Topic;

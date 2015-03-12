@@ -31,7 +31,6 @@
         bg_imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, NAVHEIGHT)];
         DLog(@"%d",NAVHEIGHT);
         bg_imageView.image = [UIImage imageNamed:@"nav_bg"];
-        bg_imageView.backgroundColor = [UIColor greenColor];
         bg_imageView.userInteractionEnabled = YES;
 
         [self addSubview:bg_imageView];

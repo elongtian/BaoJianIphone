@@ -35,7 +35,10 @@
 
 - (void)initParameters
 {
+    
     titles = [[NSMutableArray alloc]initWithObjects:@"走进宝健",@"健康管理",@"事业机会",@"资讯中心",@"宝健商场",@"热门活动", nil];
+    icons = [[NSMutableArray alloc]initWithObjects:@"comebj",@"health",@"career",@"infocenter",@"shop",@"activity", nil];
+    colors = [[NSMutableArray alloc]initWithObjects:UIColorFromRGB(0x39b735),UIColorFromRGB(0x2893d6),UIColorFromRGB(0xc300de),UIColorFromRGB(0xbb9b09),UIColorFromRGB(0xff5f7e),UIColorFromRGB(0xe89d3d), nil];
     self.navbar.titleLabel.text = @"首页";
     mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, NAVHEIGHT, SCREENWIDTH, SCREENHEIGHT-NAVHEIGHT-49)];
 //    mainScrollView.delegate = self;
@@ -51,6 +54,8 @@
     {
         HomeChannelView * channel = [[HomeChannelView alloc]initWithFrame:CGRectMake(10+(width+10)*(i%3), 10+(SCREENWIDTH-10*2)*(790.0/1035.0)+(width+10)*(i/3)+10, width, width)];
         channel.titleL.text = [titles objectAtIndex:i];
+        [channel.imgV setImage:[UIImage imageNamed:[icons objectAtIndex:i]]];
+        channel.backgroundColor = [colors objectAtIndex:i];
         channel.tag = 100+i;
         channel.call_back = ^(HomeChannelView *view){
         
@@ -203,7 +208,9 @@
 {
     ELBottomBar * bar = [[ELBottomBar alloc]initWithFrame:CGRectMake(0, SCREENHEIGHT-49, SCREENWIDTH, 49)];
     NSArray * titlesArray = @[@"个人中心",@"搜索",@"帮助"];
+    NSArray * bottom_icons = @[@"member",@"search_icon",@"help"];
     bar.titles = (NSMutableArray *)titlesArray;
+    bar.icons = (NSMutableArray *)bottom_icons;
     [self.view addSubview:bar];
 }
 

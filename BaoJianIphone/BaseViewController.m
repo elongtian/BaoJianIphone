@@ -21,6 +21,8 @@
     navbar = [[JRNavgationBar alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, NAVHEIGHT) Option:JRNAVGATIONDEFAULTBAR];
     navbar.delegate = self;
     [self.view addSubview:navbar];
+    
+    self.view.backgroundColor = BackGround_Color;
 }
 
 - (void)didReceiveMemoryWarning {

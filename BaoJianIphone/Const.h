@@ -19,7 +19,7 @@
 
 #define NSLogFrame(v) NSLog(@"%f,%f,%f,%f",v.frame.origin.x,v.frame.origin.y,v.frame.size.width,v.frame.size.height);
 
-#define BackGround_Color UIColorFromRGB(0xf0f0f0)
+#define BackGround_Color UIColorFromRGB(0xeaeaea)
 
 #define NSStringFromJson(v) (([v isEqual:[NSNull null]])?@"":v)
 #define OBJC(v) (([v isEqual:[NSNull null]])?nil:v)

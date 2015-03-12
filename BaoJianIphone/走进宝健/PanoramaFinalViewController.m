@@ -12,6 +12,8 @@
 
 @end
 
+
+
 @implementation PanoramaFinalViewController
 
 - (void)viewDidLoad {
@@ -21,12 +23,23 @@
     _imageViews = [[NSMutableArray alloc]init];
     
     
-    self.myScrollView = [[ReuseScrollView alloc] initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT-64)];
-    self.myScrollView.delegate = self;
-    self.myScrollView.reuseDelegate = self;
-    self.myScrollView.pagingEnabled = YES;
-    self.myScrollView.showsHorizontalScrollIndicator = NO;
-    [self.view addSubview:self.myScrollView];
+//    self.myScrollView = [[ReuseScrollView alloc] initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT-64)];
+//    self.myScrollView.delegate = self;
+//    self.myScrollView.reuseDelegate = self;
+//    self.myScrollView.pagingEnabled = YES;
+//    self.myScrollView.showsHorizontalScrollIndicator = NO;
+//    [self.view addSubview:self.myScrollView];
+    
+    
+    [ELHttpRequestOperation sessionDownloadWithUrl:@"http://www.ipaosos.com/tpl/templates/M011/img/logo.gif" success:^(NSURL *fileURL) {
+        NSLog(@"%@",fileURL);
+        UIImageView * imageV = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+        [imageV setImage:[UIImage imageWithContentsOfFile:@"file:///var/mobile/Containers/Data/Application/0CB9DEEC-C4D8-4EA8-B2E3-5BCF41BA617D/Library/Caches/logo.gif"]];
+//        imageV.backgroundColor = [UIColor redColor];
+        [self.view addSubview:imageV];
+    } fail:^{
+        NSLog(@"下载失败！");
+    }];
 }
 
 #pragma mark-
@@ -54,11 +67,11 @@
         
         view = [[UIView alloc] init];
         
-        UIScrollView *mscr  = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, reusrScroll.frame.size.width, reusrScroll.frame.size.height)];
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        imageView.tag = 1;
-        [view addSubview:imageView];
-        imageView = nil;
+//        UIScrollView *mscr  = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, reusrScroll.frame.size.width, reusrScroll.frame.size.height)];
+//        imageView.contentMode = UIViewContentModeScaleAspectFit;
+//        imageView.tag = 1;
+//        [view addSubview:imageView];
+//        imageView = nil;
     }
     
     ((UIImageView *)[view viewWithTag:1]).image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",_imageViews[page]]];

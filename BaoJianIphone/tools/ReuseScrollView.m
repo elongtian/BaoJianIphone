@@ -67,10 +67,17 @@
         
         self.showViews = [[NSMutableDictionary alloc] init];
         self.reuseViews = [[NSMutableDictionary alloc] init];
-        
+        [self addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if([keyPath isEqualToString:@"contentOffset"]&&_isobserver){
+        [self loadView];
+    }
+}
+
 #pragma mark-
 #pragma mark-开始绘制视图
 - (void)drawRect:(CGRect)rect
