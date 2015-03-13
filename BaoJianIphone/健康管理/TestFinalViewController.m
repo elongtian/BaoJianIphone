@@ -14,6 +14,7 @@
 
 @implementation TestFinalViewController
 @synthesize mainScrollView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -118,7 +119,7 @@
     
     if (view == nil) {
         //复用scrollview上加的view
-        view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _mainContentView.frame.size.width-20, _mainContentView.frame.size.height)];
+        view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, mainScrollView.frame.size.width, mainScrollView.frame.size.height)];
         view.backgroundColor = [UIColor greenColor];
         UIImageView * imge = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 40, 40)];
         imge.tag = 1000;
@@ -134,8 +135,7 @@
 //--------------------------------------------------------------------------
         
         
-        CGFloat y = imge.frame.origin.y+imge.frame.size.height>questionL.frame.origin.y+questionL.frame.size.height?imge.frame.origin.y+imge.frame.size.height:questionL.frame.origin.y+questionL.frame.size.height;
-        UIScrollView * childScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, y, view.frame.size.width, view.frame.size.height-y)];
+        UIScrollView * childScrollView = [[UIScrollView alloc] init];
         childScrollView.tag = 1002;
         childScrollView.backgroundColor = [UIColor yellowColor];
         [view addSubview:childScrollView];
@@ -157,8 +157,6 @@
             [childScrollView addSubview:label];
 
         }
-
-        childScrollView.contentSize = CGSizeMake(childScrollView.frame.size.width, 400);
     }
     
     
@@ -172,7 +170,9 @@
     
     
     CGFloat y = imgeV.frame.origin.y+imgeV.frame.size.height>question.frame.origin.y+question.frame.size.height?imgeV.frame.origin.y+imgeV.frame.size.height:question.frame.origin.y+question.frame.size.height;
-    ScrollView.frame = CGRectMake(0, y, view.frame.size.width, view.frame.size.height-y);
+    
+    ScrollView.frame = CGRectMake(10, y, view.frame.size.width - 20, view.frame.size.height - y);
+    
     
     CGFloat lx = 0;
     CGFloat ly = 0;
@@ -186,10 +186,10 @@
         CGSize lsize = [label.text getcontentsizeWithfont:label.font constrainedtosize:CGSizeMake(ScrollView.frame.size.width-20-10*2, 100) linemode:NSLineBreakByCharWrapping];
         label.frame = CGRectMake(btn.frame.size.width+btn.frame.origin.x+5, btn.frame.origin.y, lsize.width, lsize.height);
         
-        ly+=(label.frame.size.height>20?label.frame.size.height:20);
-        ly+=5;
+        ly += (label.frame.size.height > 20 ? label.frame.size.height : 20);
+        ly += 5;
     }
-    ScrollView.contentSize = CGSizeMake(ScrollView.frame.size.width, ly);
+    ScrollView.contentSize = CGSizeMake(ScrollView.frame.size.width, ly+10);
     
     return view;
 }

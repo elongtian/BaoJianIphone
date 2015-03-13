@@ -8,6 +8,7 @@
 
 #import "PanoramaImageView.h"
 #import "AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 @implementation PanoramaImageView
 @synthesize _scrollView;
 @synthesize _imageView;
@@ -49,21 +50,11 @@
     if([obj isKindOfClass:[UIImage class]]){
     
     }else{
-        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-        
-        NSURL *URL = [NSURL URLWithString:@"http://example.com/upload"];
-        NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-        
-        NSURL *filePath = [NSURL fileURLWithPath:@"file://path/to/image.png"];
-        NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithRequest:request fromFile:filePath progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-            if (error) {
-                NSLog(@"Error: %@", error);
-            } else {
-                NSLog(@"Success: %@ %@", response, responseObject);
-            }
+        [_imageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:obj]] placeholderImage:[UIImage imageNamed:@"no_photo"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+            
         }];
-        [uploadTask resume];
     }
 }
 

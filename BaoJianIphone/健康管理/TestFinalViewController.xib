@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Hiragino Sans GB W3.otf">
@@ -31,52 +31,41 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_top_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="E1H-kY-yVu">
+                <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_top_line.png" id="E1H-kY-yVu">
                     <rect key="frame" x="20" y="108" width="280" height="10"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="10" id="y9m-8f-zxm"/>
-                    </constraints>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHf-Ne-Zsp">
+                <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="CHf-Ne-Zsp">
                     <rect key="frame" x="10" y="133" width="300" height="386"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="aH2-8T-A7c">
+                        <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_bg.png" id="aH2-8T-A7c">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="386"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qjq-sz-mnW">
+                        <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_icon.png" id="Qjq-sz-mnW">
                             <rect key="frame" x="15" y="20" width="80" height="80"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="80" id="O4Y-TF-nPg"/>
-                                <constraint firstAttribute="width" constant="80" id="gvo-bG-MAf"/>
-                            </constraints>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你是否患有颈椎病？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYg-6c-h3a">
+                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你是否患有颈椎病？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tYg-6c-h3a">
                             <rect key="frame" x="103" y="49" width="153" height="17"/>
-                            <constraints>
-                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="iAs-xx-tet"/>
-                            </constraints>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HiraginoSansGB-W6" family="Hiragino Sans GB" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9e-P5-bG0">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B9e-P5-bG0">
                             <rect key="frame" x="35" y="318" width="100" height="38"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="100" id="QUN-0d-Ioz"/>
-                                <constraint firstAttribute="height" constant="38" id="thG-O7-5bk"/>
-                            </constraints>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
                             <state key="normal" title="上一题" backgroundImage="forward_btn_bg.png">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tu-8s-6Ie">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4tu-8s-6Ie">
                             <rect key="frame" x="165" y="318" width="100" height="38"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="38" id="QYC-wW-NBE"/>
-                                <constraint firstAttribute="width" constant="100" id="gza-Ti-hPt"/>
-                            </constraints>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
                             <state key="normal" title="下一题" backgroundImage="next_btn_bg.png">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,45 +73,16 @@
                             </state>
                         </button>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="Qjq-sz-mnW" firstAttribute="top" secondItem="CHf-Ne-Zsp" secondAttribute="top" constant="20" id="0Nw-DE-FxP"/>
-                        <constraint firstItem="B9e-P5-bG0" firstAttribute="leading" secondItem="CHf-Ne-Zsp" secondAttribute="leading" constant="35" id="0cs-E8-9pk"/>
-                        <constraint firstItem="aH2-8T-A7c" firstAttribute="top" secondItem="CHf-Ne-Zsp" secondAttribute="top" id="9Y9-ro-bXU"/>
-                        <constraint firstAttribute="bottom" secondItem="aH2-8T-A7c" secondAttribute="bottom" id="A3t-4f-Qh2"/>
-                        <constraint firstItem="Qjq-sz-mnW" firstAttribute="leading" secondItem="CHf-Ne-Zsp" secondAttribute="leading" constant="15" id="GdD-Io-VcX"/>
-                        <constraint firstItem="tYg-6c-h3a" firstAttribute="top" secondItem="CHf-Ne-Zsp" secondAttribute="top" constant="49" id="LW0-gB-LGe"/>
-                        <constraint firstAttribute="bottom" secondItem="4tu-8s-6Ie" secondAttribute="bottom" constant="30" id="X4V-Ji-ZvQ"/>
-                        <constraint firstAttribute="trailing" secondItem="4tu-8s-6Ie" secondAttribute="trailing" constant="35" id="XtE-vp-Jo0"/>
-                        <constraint firstAttribute="bottom" secondItem="B9e-P5-bG0" secondAttribute="bottom" constant="30" id="bbT-cF-51K"/>
-                        <constraint firstItem="tYg-6c-h3a" firstAttribute="leading" secondItem="Qjq-sz-mnW" secondAttribute="trailing" constant="8" id="cVh-io-bjf"/>
-                        <constraint firstAttribute="trailing" secondItem="aH2-8T-A7c" secondAttribute="trailing" id="w0N-CR-VrO"/>
-                        <constraint firstItem="aH2-8T-A7c" firstAttribute="leading" secondItem="CHf-Ne-Zsp" secondAttribute="leading" id="w3P-LD-ZdU"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tYg-6c-h3a" secondAttribute="trailing" constant="15" id="yoy-KW-eWZ"/>
-                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RH1-yq-zJu">
+                <view contentMode="scaleToFill" id="RH1-yq-zJu">
                     <rect key="frame" x="20" y="78" width="280" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="1UM-0n-wBp"/>
-                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="RH1-yq-zJu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="5j0-eG-0Lt"/>
-                <constraint firstAttribute="trailing" secondItem="CHf-Ne-Zsp" secondAttribute="trailing" constant="10" id="C8d-ft-f4N"/>
-                <constraint firstAttribute="bottom" secondItem="CHf-Ne-Zsp" secondAttribute="bottom" constant="49" id="U4c-he-C1D"/>
-                <constraint firstAttribute="trailing" secondItem="E1H-kY-yVu" secondAttribute="trailing" constant="20" id="YNX-33-rZJ"/>
-                <constraint firstItem="E1H-kY-yVu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="108" id="fR4-TM-jOA"/>
-                <constraint firstItem="CHf-Ne-Zsp" firstAttribute="top" secondItem="E1H-kY-yVu" secondAttribute="bottom" constant="15" id="g1f-06-FI1"/>
-                <constraint firstItem="E1H-kY-yVu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="jHM-l8-eas"/>
-                <constraint firstItem="E1H-kY-yVu" firstAttribute="top" secondItem="RH1-yq-zJu" secondAttribute="bottom" id="oH6-UZ-xD7"/>
-                <constraint firstItem="CHf-Ne-Zsp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="udV-o8-4Cw"/>
-                <constraint firstAttribute="trailing" secondItem="RH1-yq-zJu" secondAttribute="trailing" constant="20" id="z3K-W5-uPz"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="312" y="170"/>
+            <point key="canvasLocation" x="257" y="167"/>
         </view>
     </objects>
     <resources>
@@ -132,4 +92,9 @@
         <image name="test_icon.png" width="153" height="160"/>
         <image name="test_top_line.png" width="288" height="7"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
