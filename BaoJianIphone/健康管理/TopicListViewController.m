@@ -23,7 +23,6 @@
 }
 
 - (void)initPlat{
-    self.view.backgroundColor = [UIColor lightGrayColor];
     _mainTableView.backgroundColor = [UIColor clearColor];
     _mainTableView.opaque = NO;
 }
@@ -56,7 +55,10 @@
         TopicListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"TopicListTableViewCell"];
         if(cell == nil){
             cell = [[[NSBundle mainBundle] loadNibNamed:@"TopicListTableViewCell" owner:self options:nil] lastObject];
+            cell.zanNum.layer.cornerRadius = 3;
+            cell.evaluates.layer.cornerRadius = 3;
         }
+        
         cell.content_title.text = @"免费去巴黎 摘星 不容迟疑 免费去巴黎 摘星 不容迟疑";
         cell.content_desc.text = @"12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。";
         [cell.contentView sizeToFit];

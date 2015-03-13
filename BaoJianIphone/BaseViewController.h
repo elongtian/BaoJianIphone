@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Const.h"
-@interface BaseViewController : UIViewController<JRNavDelegate>
+@interface BaseViewController : UIViewController<JRNavDelegate>{
+    
+}
 @property (retain, nonatomic) JRNavgationBar * navbar;
+@property (retain, nonatomic) UIImageView * bottom_logoV;
+//@property (retain, nonatomic) acti
 @end

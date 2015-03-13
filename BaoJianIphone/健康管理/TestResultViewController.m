@@ -17,6 +17,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self initPlat];
+}
+
+- (void)initPlat{
+    _resultL.text = @"测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果";
+    _topViewHeight.constant = _resultL.frame.origin.y+_resultL.frame.size.height+20*2+40*2;
+    _topViewWidth.constant = SCREENWIDTH-20;
+    
+    _topView.backgroundColor = [UIColor redColor];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 5;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH, _topView.frame.size.height+_maintableView.contentSize.height);
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {

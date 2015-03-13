@@ -25,10 +25,13 @@
             btn.frame = CGRectMake(0, 0, width, 49);
             btn.center = CGPointMake(20+((width+20)*(i%3)+width/2.0), btn.center.y);
             [btn setImage:[UIImage imageNamed:@"s2"] forState:UIControlStateNormal];
+            
             [btn setTitle:@"标题" forState:UIControlStateNormal];
             btn.titleLabel.textAlignment = NSTextAlignmentCenter;
             btn.titleLabel.font = UIFontHiraginoSansGBW3(13);
             [btn setTitleColor:UIColorFromRGB(0x5b5757) forState:UIControlStateNormal];
+            btn.tag = 100+i;
+            [btn addTarget:self action:@selector(touchDownAction:) forControlEvents:UIControlEventTouchDown];
             [self addSubview:btn];
         }
     }
@@ -61,4 +64,10 @@
         [btn setImage:[UIImage imageNamed:[_icons objectAtIndex:i]] forState:UIControlStateNormal];
     }
 }
+- (void)touchDownAction:(UIButton *)sender{
+    if(self.callback){
+        _callback(sender);
+    }
+}
+
 @end

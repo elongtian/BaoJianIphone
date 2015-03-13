@@ -11,6 +11,8 @@
 @interface TestFinalViewController : BaseViewController<ReuseScrollViewDelegate,UIScrollViewDelegate>{
     NSInteger numbers;
     NSInteger current_index;
+    NSMutableArray * answers;
+    NSMutableArray * questions;
 }
 @property (strong, nonatomic) IBOutlet UIImageView *topLineView;
 @property (strong, nonatomic) IBOutlet UIView *mainContentView;

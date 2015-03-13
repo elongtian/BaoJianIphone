@@ -25,13 +25,19 @@
 - (void)initParameters
 {
     titles = [[NSMutableArray alloc]initWithObjects:@"坚定目标",@"专业研发",@"良心服务",@"密集网点",@"专业物流",@"注重环保",@"扶持创业",@"爱心公益", nil];
+    icons = [[NSMutableArray alloc]initWithObjects:@"jdmb",@"zyyf",@"lxfw",@"mjwd",@"zywl",@"zzhb",@"fccy",@"axgy", nil];
+    
+    
     self.navbar.titleLabel.text = @"企业特色";
+    
+    self.bottom_logoV.hidden = NO;
+    
     mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(10, NAVHEIGHT, SCREENWIDTH-20, SCREENHEIGHT-NAVHEIGHT-49)];
     //    mainScrollView.delegate = self;
     [self.view addSubview:mainScrollView];
     
     TopicIMageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 10, mainScrollView.frame.size.width, mainScrollView.frame.size.width*(387.0/1035.0))];
-    TopicIMageView.backgroundColor = [UIColor yellowColor];
+    [TopicIMageView setImage:[UIImage imageNamed:@"qyts_banner"]];
     [mainScrollView addSubview:TopicIMageView];
 }
 
@@ -43,6 +49,9 @@
     {
         HomeChannelView * channel = [[HomeChannelView alloc]initWithFrame:CGRectMake((width+10)*(i%3), 10+TopicIMageView.frame.origin.y+TopicIMageView.frame.size.height+(width+10)*(i/3), width, width)];
         channel.titleL.text = [titles objectAtIndex:i];
+        channel.titleL.textColor = UIColorFromRGB(0x272727);
+        [channel.imgV setImage:[UIImage imageNamed:[icons objectAtIndex:i]]];
+        [channel setBackgroundColor:[UIColor whiteColor]];
         channel.tag = 100+i;
         channel.call_back = ^(HomeChannelView *view){
             
@@ -92,7 +101,7 @@
             }
         };
         [mainScrollView addSubview:channel];
-        size = CGSizeMake(SCREENWIDTH, channel.frame.origin.y+channel.frame.size.height+10);
+        size = CGSizeMake(SCREENWIDTH-20, channel.frame.origin.y+channel.frame.size.height+10);
     }
     mainScrollView.contentSize = size;
 }

@@ -12,6 +12,7 @@
 @interface ProductHomeViewController : BaseViewController<JCTopicDelegate,UIScrollViewDelegate>
 {
     NSMutableArray * titles;
+    NSMutableArray * icons;
 }
 @property (retain, nonatomic) UIScrollView * mainScrollView;
 @property (retain, nonatomic) JCTopic * Topic;

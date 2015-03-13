@@ -11,6 +11,8 @@
 @interface EnterpriseFeaturesViewController : BaseViewController
 {
     NSMutableArray * titles;
+    NSMutableArray * icons;
+    NSMutableArray * colors;
 }
 @property (retain, nonatomic) UIScrollView * mainScrollView;
 @property (retain, nonatomic) UIImageView * TopicIMageView;

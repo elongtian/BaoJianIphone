@@ -31,6 +31,7 @@
 - (void)initParameters
 {
     titles = [[NSMutableArray alloc]initWithObjects:@"营养保健食品",@"美容护肤",@"日用护理",@"健康家居",@"组合套装", nil];
+     icons = [[NSMutableArray alloc]initWithObjects:@"yybj",@"mrhf",@"ryhl",@"jkjj",@"zhtz", nil];
     self.navbar.titleLabel.text = @"产品";
     mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, NAVHEIGHT, SCREENWIDTH, SCREENHEIGHT-NAVHEIGHT-49)];
     //    mainScrollView.delegate = self;
@@ -46,6 +47,9 @@
     {
         HomeChannelView * channel = [[HomeChannelView alloc]initWithFrame:CGRectMake(10+(width+10)*(i%3), 10+(SCREENWIDTH-10*2)*(790.0/1035.0)+(width+10)*(i/3)+10, width, width)];
         channel.titleL.text = [titles objectAtIndex:i];
+        channel.titleL.textColor = UIColorFromRGB(0x272727);
+        [channel.imgV setImage:[UIImage imageNamed:[icons objectAtIndex:i]]];
+        channel.backgroundColor = [UIColor whiteColor];
         channel.tag = 100+i;
         channel.call_back = ^(HomeChannelView *view){
             

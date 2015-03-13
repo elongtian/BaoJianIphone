@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_bj_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gMQ-ei-bw5">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom_bj_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gMQ-ei-bw5">
                     <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="49" id="0OI-b0-KOU"/>

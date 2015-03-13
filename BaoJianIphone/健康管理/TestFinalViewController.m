@@ -7,7 +7,7 @@
 //
 
 #import "TestFinalViewController.h"
-
+#import "TestResultViewController.h"
 @interface TestFinalViewController ()
 
 @end
@@ -35,6 +35,19 @@
     
     [_forwardBtn addTarget:self action:@selector(forwardAction:) forControlEvents:UIControlEventTouchDown];
     [_nextBtn addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchDown];
+    
+    answers = [[NSMutableArray alloc]init];
+    for(int i = 0;i<numbers;i++){
+        NSArray * arr = [[NSArray alloc]initWithObjects:@"测试A",@"测试B",@"测试C",@"测试D",@"测试E测试E测试E测试E测试E测试E测试E测试E", nil];
+        [answers addObject:arr];
+    }
+    
+    questions = [[NSMutableArray alloc]init];
+    for(int i = 0;i<numbers;i++){
+        
+        NSString * str = [NSString stringWithFormat:@"这是一个测试题%d",i];
+        [questions addObject:str];
+    }
 }
 
 
@@ -96,7 +109,7 @@
     
     UIView *view = [reusrScroll getReusableView];
     
-    NSString * str = @"测试题答案测试题答案测试题答案测试题答案测试题答案测试题答案";
+//    NSString * str = @"测试题答案测试题答案测试题答案测试题答案测试题答案测试题答案";
     
 //    UIFont * font = UIFontHiraginoSansGBW3(12);
 //    
@@ -104,35 +117,28 @@
 //    CGSize size = [str getcontentsizeWithfont:font constrainedtosize:CGSizeMake(_mainContentView.frame.size.width, 100) linemode:NSLineBreakByCharWrapping];
     
     if (view == nil) {
-        
-        
         //复用scrollview上加的view
         view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _mainContentView.frame.size.width-20, _mainContentView.frame.size.height)];
         view.backgroundColor = [UIColor greenColor];
         UIImageView * imge = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 40, 40)];
+        imge.tag = 1000;
         [imge setImage:[UIImage imageNamed:@"q_icon"]];
         [view addSubview:imge];
         
         UILabel * questionL = [[UILabel alloc]initWithFrame:CGRectMake(imge.frame.origin.x+imge.frame.size.width+10, imge.frame.origin.y+10, view.frame.size.width-(imge.frame.origin.x+imge.frame.size.width+10)-10-10, 100)];
         questionL.text = @"请选择您的身高：请选择您的身高：请选择您的身高：";
         questionL.numberOfLines = 0;
-        
-        CGSize qsize = [questionL.text getcontentsizeWithfont:questionL.font constrainedtosize:CGSizeMake(view.frame.size.width-(imge.frame.size.width+imge.frame.origin.x+10)-10, 100) linemode:NSLineBreakByCharWrapping];
-        
-        questionL.frame = CGRectMake(questionL.frame.origin.x, questionL.frame.origin.y, qsize.width, qsize.height);
+        questionL.tag = 1001;
         [view addSubview:questionL];
         
 //--------------------------------------------------------------------------
         
         
         CGFloat y = imge.frame.origin.y+imge.frame.size.height>questionL.frame.origin.y+questionL.frame.size.height?imge.frame.origin.y+imge.frame.size.height:questionL.frame.origin.y+questionL.frame.size.height;
-        
         UIScrollView * childScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, y, view.frame.size.width, view.frame.size.height-y)];
-        
-        [view addSubview:childScrollView];
-        
+        childScrollView.tag = 1002;
         childScrollView.backgroundColor = [UIColor yellowColor];
-        
+        [view addSubview:childScrollView];
         
         CGFloat lx = 0;
         CGFloat ly = 0;
@@ -146,30 +152,44 @@
             
 
             UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(btn.frame.size.width+btn.frame.origin.x+5, btn.frame.origin.y, 20, 20)];
-            label.text = str;
+            label.tag = 200+i;
             label.numberOfLines = 0;
-             CGSize lsize = [str getcontentsizeWithfont:questionL.font constrainedtosize:CGSizeMake(childScrollView.frame.size.width-20-10*2, 100) linemode:NSLineBreakByCharWrapping];
-            label.frame = CGRectMake(label.frame.origin.x, label.frame.origin.y, lsize.width, lsize.height);
-            
             [childScrollView addSubview:label];
-            
-            
-            ly+=(label.frame.size.height>20?label.frame.size.height:20);
-            ly+=5;
-            
-//            if(YES){
-//                lx = label.frame.size.width+label.frame.origin.x;
-//            }else{
-//                lx = label.frame.size.width+label.frame.origin.x;
-//            }
+
         }
-       
-        NSLog(@"%f",childScrollView.frame.size.height);
-        
+
         childScrollView.contentSize = CGSizeMake(childScrollView.frame.size.width, 400);
-        
     }
     
+    
+    UIImageView * imgeV = (UIImageView *)[view viewWithTag:1000];
+    UILabel * question = (UILabel *)[view viewWithTag:1001];
+    UIScrollView * ScrollView = (UIScrollView *)[view viewWithTag:1002];
+    
+    question.text = [questions objectAtIndex:current_index-1];
+    CGSize qsize = [question.text getcontentsizeWithfont:question.font constrainedtosize:CGSizeMake(view.frame.size.width-(imgeV.frame.size.width+imgeV.frame.origin.x+10)-10, 100) linemode:NSLineBreakByCharWrapping];
+    question.frame = CGRectMake(question.frame.origin.x, question.frame.origin.y, qsize.width, qsize.height);
+    
+    
+    CGFloat y = imgeV.frame.origin.y+imgeV.frame.size.height>question.frame.origin.y+question.frame.size.height?imgeV.frame.origin.y+imgeV.frame.size.height:question.frame.origin.y+question.frame.size.height;
+    ScrollView.frame = CGRectMake(0, y, view.frame.size.width, view.frame.size.height-y);
+    
+    CGFloat lx = 0;
+    CGFloat ly = 0;
+    for(int i = 0;i<5;i++){
+        UIButton * btn = (UIButton *)[ScrollView viewWithTag:100+i];
+        UILabel * label = (UILabel *)[ScrollView viewWithTag:200+i];
+        
+        btn.frame = CGRectMake(imgeV.frame.origin.x, ly+10, 20, 20);
+        
+        label.text = [[answers objectAtIndex:current_index-1] objectAtIndex:i];
+        CGSize lsize = [label.text getcontentsizeWithfont:label.font constrainedtosize:CGSizeMake(ScrollView.frame.size.width-20-10*2, 100) linemode:NSLineBreakByCharWrapping];
+        label.frame = CGRectMake(btn.frame.size.width+btn.frame.origin.x+5, btn.frame.origin.y, lsize.width, lsize.height);
+        
+        ly+=(label.frame.size.height>20?label.frame.size.height:20);
+        ly+=5;
+    }
+    ScrollView.contentSize = CGSizeMake(ScrollView.frame.size.width, ly);
     
     return view;
 }
@@ -187,6 +207,7 @@
     {
         if(current_index != numbers){
             [_nextBtn setTitle:@"下一题" forState:UIControlStateNormal];
+            [_nextBtn setBackgroundImage:[UIImage imageNamed:@"next_btn_bg"] forState:UIControlStateNormal];
         }
         
         [self setSelected_btnIndex:current_index];
@@ -197,7 +218,8 @@
 - (void)nextAction:(UIButton *)sender{
     if(current_index == numbers){
         //提交
-        
+        TestResultViewController * result = [[TestResultViewController alloc]initWithNibName:@"TestResultViewController" bundle:nil];
+        [self.navigationController pushViewController:result animated:YES];
         return;
     }
     else
@@ -207,7 +229,7 @@
     
     if(current_index == numbers){
         [_nextBtn setTitle:@"提交" forState:UIControlStateNormal];
-        
+        [_nextBtn setBackgroundImage:[UIImage imageNamed:@"test_commit_btn_bg"] forState:UIControlStateNormal];
     }
     [self setSelected_btnIndex:current_index];
     

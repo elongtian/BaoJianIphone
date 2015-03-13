@@ -13,6 +13,7 @@
 #import "HealthManagementViewController.h"
 #import "CareerChanceViewController.h"
 #import "InfomationCenterViewController.h"
+#import "SearchResultViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -148,8 +149,8 @@
     [pageView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     
     [pageView setPageControlStyle:PageControlStyleThumb];
-    [pageView setThumbImage:[UIImage imageNamed:@"a.png"]];
-    [pageView setSelectedThumbImage:[UIImage imageNamed:@"b.png"]];
+    [pageView setThumbImage:[UIImage imageNamed:@"common_no_selected.png"]];
+    [pageView setSelectedThumbImage:[UIImage imageNamed:@"common_selected.png"]];
     [pageView setNumberOfPages:(int)[tempArray count]];
     
     pageView.backgroundColor = [UIColor redColor];
@@ -209,6 +210,30 @@
     ELBottomBar * bar = [[ELBottomBar alloc]initWithFrame:CGRectMake(0, SCREENHEIGHT-49, SCREENWIDTH, 49)];
     NSArray * titlesArray = @[@"个人中心",@"搜索",@"帮助"];
     NSArray * bottom_icons = @[@"member",@"search_icon",@"help"];
+    bar.callback = ^(UIButton * sender){
+    
+        switch (sender.tag-100) {
+            case 0:
+            {
+                //个人中心
+            }
+                break;
+            case 1:
+            {
+                //搜索
+                SearchResultViewController * search = [[SearchResultViewController alloc]initWithNibName:@"SearchResultViewController" bundle:nil];
+                [self.navigationController pushViewController:search animated:YES];
+            }
+                break;
+            case 2:
+            {
+                //帮助
+            }
+                break;
+            default:
+                break;
+        }
+    };
     bar.titles = (NSMutableArray *)titlesArray;
     bar.icons = (NSMutableArray *)bottom_icons;
     [self.view addSubview:bar];

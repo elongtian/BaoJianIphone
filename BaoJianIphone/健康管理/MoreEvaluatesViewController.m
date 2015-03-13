@@ -22,7 +22,6 @@
 }
 
 - (void)initPlat{
-    self.view.backgroundColor = [UIColor redColor];
     [_evaluateBtn addTarget:self action:@selector(evaluateAction:) forControlEvents:UIControlEventTouchDown];
 }
 

@@ -155,7 +155,7 @@
     {
         if (self.thumbImage && self.selectedThumbImage)
         {
-            _diameter = 20;//self.thumbImage.size.width;
+            _diameter = self.thumbImage.size.width;
         }
     }
 	

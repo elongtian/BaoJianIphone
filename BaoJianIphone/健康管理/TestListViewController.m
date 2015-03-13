@@ -23,6 +23,8 @@
     _mainTableView.backgroundColor = [UIColor clearColor];
     _mainTableView.opaque = NO;
     
+    
+    
 }
 
 #pragma mark - 

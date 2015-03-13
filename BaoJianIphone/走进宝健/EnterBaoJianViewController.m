@@ -32,6 +32,8 @@
 {
     _Topic = [[JCTopic alloc]initWithFrame:CGRectMake(10, 10, SCREENWIDTH-10*2, (SCREENWIDTH-10*2)*(790.0/1035.0))];
     titles = [[NSMutableArray alloc]initWithObjects:@"企业简介",@"企业特色",@"园区全景", nil];
+    icons = [[NSMutableArray alloc]initWithObjects:@"qyjj_icon",@"qyts_icon",@"yqqj_icon", nil];
+    colors = [[NSMutableArray alloc]initWithObjects:UIColorFromRGB(0x39b735),UIColorFromRGB(0x1aafa2),UIColorFromRGB(0x2893d6), nil];
     mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, NAVHEIGHT, SCREENWIDTH, SCREENHEIGHT-NAVHEIGHT-49)];
     //    mainScrollView.delegate = self;
     [self.view addSubview:mainScrollView];
@@ -45,14 +47,14 @@
     [mainScrollView addSubview:descripView];
     
     UIImageView * icon = [[UIImageView alloc]initWithFrame:CGRectMake(15, 10, 25, 25)];
-    icon.backgroundColor = [UIColor whiteColor];
+    [icon setImage:[UIImage imageNamed:@"zjbj_title_img"]];
     [descripView addSubview:icon];
     
     UILabel * titleL = [[UILabel alloc]initWithFrame:CGRectMake(icon.frame.origin.x+icon.frame.size.width+10, icon.frame.origin.y, mainScrollView.frame.size.width-(icon.frame.origin.x+icon.frame.size.width+10), icon.frame.size.height)];
     titleL.text = @"健康 成就人生价值";
     [descripView addSubview:titleL];
     
-    UILabel * desL = [[UILabel alloc]initWithFrame:CGRectMake(icon.frame.origin.x, icon.frame.origin.y+icon.frame.size.height+15,descripView.frame.size.width-2*15, 60)];
+    UILabel * desL = [[UILabel alloc]initWithFrame:CGRectMake(icon.frame.origin.x, icon.frame.origin.y+icon.frame.size.height+10,descripView.frame.size.width-2*15, 60)];
     desL.text = @"宝健致力于以优质的产品和贴心的服务为消费者提供个性化的健康保障，倡导摆脱依赖，自助健康，实现对更高人生价值的追求。";
     [descripView addSubview:desL];
     
@@ -64,7 +66,7 @@
     
     descripView.frame = CGRectMake(descripView.frame.origin.x, _Topic.frame.size.height+_Topic.frame.origin.y+10, descripView.frame.size.width, desL.frame.origin.y+desL.frame.size.height+10);
     
-    descripView.backgroundColor = [UIColor greenColor];
+    descripView.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)createChannel
@@ -75,6 +77,8 @@
     {
         HomeChannelView * channel = [[HomeChannelView alloc]initWithFrame:CGRectMake(10+(width+10)*(i%3), 10+descripView.frame.origin.y+descripView.frame.size.height+(width+10)*(i/3)+10, width, width)];
         channel.titleL.text = [titles objectAtIndex:i];
+        [channel.imgV setImage:[UIImage imageNamed:[icons objectAtIndex:i]]];
+        channel.backgroundColor = [colors objectAtIndex:i];
         channel.tag = 100+i;
         channel.call_back = ^(HomeChannelView * view){
             switch (view.tag-100) {

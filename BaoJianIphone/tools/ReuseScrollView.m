@@ -28,7 +28,9 @@
     self.delegate = nil;
     self.reuseViews = nil;//可重用的视图
     self.showViews = nil;//显示出来的页面
-    
+    if(_isobserver){
+        [self removeObserver:self forKeyPath:@"contentOffset"];
+    }
 }
 
 

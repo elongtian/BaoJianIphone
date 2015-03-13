@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    _evaluateTextView.placeholder = @"请您留下宝贵意见";
 }
 
 

@@ -24,7 +24,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="qq4-Dr-9pN">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pro_list_img.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qq4-Dr-9pN">
                         <rect key="frame" x="10" y="10" width="100" height="100"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="IO0-e1-Qaq"/>
@@ -84,11 +84,11 @@
                             </mask>
                         </variation>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3oV-9V-PJR">
-                        <rect key="frame" x="272" y="93" width="20" height="20"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="3oV-9V-PJR">
+                        <rect key="frame" x="282" y="93" width="10" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Ux9-1X-3b8"/>
-                            <constraint firstAttribute="width" constant="20" id="XbT-kP-ciz"/>
+                            <constraint firstAttribute="width" constant="10" id="XbT-kP-ciz"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -121,10 +121,19 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="215" y="188.5"/>
+            <connections>
+                <outlet property="content_desc1" destination="6rZ-74-EdQ" id="Ev8-0N-dir"/>
+                <outlet property="content_desc2" destination="SCZ-uh-eUN" id="zux-5k-PYq"/>
+                <outlet property="content_img" destination="qq4-Dr-9pN" id="D6U-ec-5LT"/>
+                <outlet property="content_name" destination="Udm-QJ-Rha" id="kQN-Ws-dmb"/>
+                <outlet property="content_price" destination="GT5-8t-QgP" id="mdm-ZU-UsS"/>
+                <outlet property="price" destination="Iam-cQ-0D1" id="m3E-9t-cqq"/>
+            </connections>
+            <point key="canvasLocation" x="290" y="195.5"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="banner.png" width="1080" height="479"/>
+        <image name="detail_arrow.png" width="23" height="41"/>
+        <image name="pro_list_img.jpg" width="196" height="190"/>
     </resources>
 </document>

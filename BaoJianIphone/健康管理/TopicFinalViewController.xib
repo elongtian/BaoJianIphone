@@ -43,7 +43,7 @@
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <subviews>
                         <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="54" translatesAutoresizingMaskIntoConstraints="NO" id="Zfg-aL-XJc">
-                            <rect key="frame" x="0.0" y="8" width="320" height="54"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="免费去巴黎 摘星 不容迟疑" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xj-a4-7ir">
                                     <rect key="frame" x="10" y="1" width="300" height="15"/>
@@ -54,7 +54,7 @@
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s2.png" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-vo-USh">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topic_time.png" translatesAutoresizingMaskIntoConstraints="NO" id="WZi-vo-USh">
                                     <rect key="frame" x="10" y="26" width="16" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="16" id="M6x-tU-sco"/>
@@ -62,14 +62,15 @@
                                     </constraints>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9C9-a9-Tj2">
-                                    <rect key="frame" x="202" y="24" width="63" height="20"/>
+                                    <rect key="frame" x="218" y="24" width="47" height="20"/>
                                     <color key="backgroundColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="fG9-O2-Oi8"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="11"/>
-                                    <state key="normal" title=" 1000 " image="s2.png">
-                                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <inset key="imageEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title=" 1000 " image="topic_praise.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                 </button>
@@ -80,7 +81,7 @@
                                         <constraint firstAttribute="height" constant="20" id="o2c-02-v5I"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="11"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-05-09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kp-uy-xYz">
@@ -90,7 +91,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.99607843139999996" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="jeu-iA-vlB" firstAttribute="leading" secondItem="9C9-a9-Tj2" secondAttribute="trailing" constant="1" id="5E7-Fn-f1u"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="6x5-G1-39c"/>
@@ -109,7 +110,7 @@
                             </constraints>
                         </view>
                         <webView contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="252" translatesAutoresizingMaskIntoConstraints="NO" id="ee7-04-4ic">
-                            <rect key="frame" x="10" y="70" width="300" height="252"/>
+                            <rect key="frame" x="10" y="62" width="300" height="252"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="252" id="Zyj-0H-GMC"/>
@@ -119,7 +120,7 @@
                             </connections>
                         </webView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="179" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mIv-0y-BX2">
-                            <rect key="frame" x="0.0" y="322" width="320" height="179"/>
+                            <rect key="frame" x="0.0" y="314" width="320" height="179"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="179" id="Wky-QH-0Nj"/>
@@ -140,7 +141,7 @@
                         <constraint firstAttribute="trailing" secondItem="mIv-0y-BX2" secondAttribute="trailing" id="fF9-8k-d9d"/>
                         <constraint firstAttribute="trailing" secondItem="Zfg-aL-XJc" secondAttribute="trailing" id="gYA-ct-ZPt"/>
                         <constraint firstItem="mIv-0y-BX2" firstAttribute="top" secondItem="ee7-04-4ic" secondAttribute="bottom" id="oyr-Pq-fu5"/>
-                        <constraint firstItem="Zfg-aL-XJc" firstAttribute="top" secondItem="KsR-do-SbX" secondAttribute="top" constant="8" id="rZp-dV-r0u"/>
+                        <constraint firstItem="Zfg-aL-XJc" firstAttribute="top" secondItem="KsR-do-SbX" secondAttribute="top" id="rZp-dV-r0u"/>
                     </constraints>
                     <connections>
                         <outlet property="delegate" destination="-1" id="wmk-nj-mXO"/>
@@ -155,10 +156,11 @@
                 <constraint firstItem="KsR-do-SbX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="c1r-QH-LbM"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="365" y="108"/>
+            <point key="canvasLocation" x="364" y="76"/>
         </view>
     </objects>
     <resources>
-        <image name="s2.png" width="26" height="27"/>
+        <image name="topic_praise.png" width="10" height="9"/>
+        <image name="topic_time.png" width="23" height="23"/>
     </resources>
 </document>

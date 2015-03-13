@@ -27,14 +27,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="QrG-wI-1Qt">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topic_headImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="QrG-wI-1Qt">
                         <rect key="frame" x="20" y="23" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="MYw-ah-bHi"/>
                             <constraint firstAttribute="width" constant="60" id="dlj-MI-ouq"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ePb-uE-Qf2">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topic_time.png" translatesAutoresizingMaskIntoConstraints="NO" id="ePb-uE-Qf2">
                         <rect key="frame" x="198" y="25" width="16" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="1yd-dd-4p9"/>
@@ -47,13 +47,13 @@
                             <constraint firstAttribute="height" constant="20" id="AGl-FK-OOp"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.72549019607843135" green="0.72549019607843135" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="字里行间充满了爱！慢慢的爱感动了你我他！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYt-ZS-77Z">
                         <rect key="frame" x="88" y="131" width="208" height="33"/>
                         <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.41176470588235292" green="0.41176470588235292" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="216" placeholderIntrinsicHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="4dO-og-OvM">
@@ -62,16 +62,16 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="免费去巴黎  " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ny-9R-W2w">
                                 <rect key="frame" x="8" y="8" width="80" height="14"/>
                                 <fontDescription key="fontDescription" name="HiraginoSansGB-W6" family="Hiragino Sans GB" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.23921568627450981" green="0.23921568627450981" blue="0.23921568627450981" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保证的产品加上年轻的心态，活出自我风采" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wuc-zb-EwJ">
                                 <rect key="frame" x="8" y="33" width="200" height="26"/>
                                 <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.41176470588235292" green="0.41176470588235292" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s2.png" translatesAutoresizingMaskIntoConstraints="NO" id="gMK-bg-rdb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topic_time.png" translatesAutoresizingMaskIntoConstraints="NO" id="gMK-bg-rdb">
                                 <rect key="frame" x="90" y="7" width="16" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="fky-Tr-tcX"/>
@@ -84,11 +84,11 @@
                                     <constraint firstAttribute="height" constant="20" id="rbi-rM-1vJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.72549019607843135" green="0.72549019607843135" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.20392156859999999" green="0.72156862749999995" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.99607843137254903" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="J5U-KS-Jzw" firstAttribute="leading" secondItem="gMK-bg-rdb" secondAttribute="trailing" constant="1" id="04E-fG-x6r"/>
                             <constraint firstItem="2Ny-9R-W2w" firstAttribute="top" secondItem="4dO-og-OvM" secondAttribute="top" constant="8" id="EiD-Z4-XMH"/>
@@ -106,17 +106,18 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="免费去巴黎 摘星 " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruy-mA-KN4">
                         <rect key="frame" x="88" y="26" width="108" height="14"/>
                         <fontDescription key="fontDescription" name="HiraginoSansGB-W6" family="Hiragino Sans GB" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.23921568627450981" green="0.23921568627450981" blue="0.23921568627450981" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VWO-Qc-s7I">
                         <rect key="frame" x="0.0" y="179" width="320" height="1"/>
-                        <color key="backgroundColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="b5R-oY-7h0"/>
                         </constraints>
                     </imageView>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="VWO-Qc-s7I" secondAttribute="trailing" constant="-8" id="0lY-eI-FSI"/>
                     <constraint firstItem="Ruy-mA-KN4" firstAttribute="leading" secondItem="QrG-wI-1Qt" secondAttribute="trailing" constant="8" id="1UF-Ni-o9f"/>
@@ -139,7 +140,6 @@
                     <constraint firstItem="QrG-wI-1Qt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="wRs-Jv-QSh"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.99607843139999996" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="content_desc" destination="HYt-ZS-77Z" id="JcW-jv-nyY"/>
                 <outlet property="content_desc2" destination="Wuc-zb-EwJ" id="BMP-Hm-WDN"/>
@@ -154,7 +154,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="banner.png" width="1080" height="479"/>
-        <image name="s2.png" width="26" height="27"/>
+        <image name="topic_headImg.png" width="63" height="63"/>
+        <image name="topic_time.png" width="23" height="23"/>
     </resources>
 </document>

@@ -25,67 +25,88 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0lv-Ir-j4q">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="health_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0lv-Ir-j4q">
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                 </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lMC-f7-daG">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMC-f7-daG">
                     <rect key="frame" x="191" y="204" width="100" height="100"/>
                     <subviews>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="vyd-od-9BL">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="health_test_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="vyd-od-9BL">
                             <rect key="frame" x="30" y="15" width="40" height="40"/>
                         </imageView>
                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="测试" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgO-J9-agd">
-                            <rect key="frame" x="29" y="71" width="42" height="21"/>
+                            <rect key="frame" x="29" y="63" width="42" height="21"/>
                             <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.70196078431372544" green="0.81568627450980391" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="6Ks-Wr-sRj"/>
+                        <constraint firstAttribute="width" constant="100" id="Us1-ia-ujf"/>
+                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5We-12-D9c">
-                    <rect key="frame" x="191" y="91" width="100" height="100"/>
-                    <subviews>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="uqT-ss-1A8">
-                            <rect key="frame" x="30" y="15" width="40" height="40"/>
-                        </imageView>
-                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="产品" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM6-70-8l6">
-                            <rect key="frame" x="29" y="71" width="42" height="21"/>
-                            <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-tN-Q34">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-tN-Q34">
                     <rect key="frame" x="191" y="317" width="100" height="100"/>
                     <subviews>
-                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="k30-f3-Ybe">
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="health_topic_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="k30-f3-Ybe">
                             <rect key="frame" x="30" y="15" width="40" height="40"/>
                         </imageView>
                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="话题" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pu-5I-iLm">
-                            <rect key="frame" x="29" y="71" width="42" height="21"/>
+                            <rect key="frame" x="29" y="63" width="42" height="21"/>
                             <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.92549019610000005" green="0.93725490199999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.29803921568627451" green="0.65490196078431373" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="COZ-3O-ZRl"/>
+                        <constraint firstAttribute="width" constant="100" id="nCi-BG-ZsF"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5We-12-D9c">
+                    <rect key="frame" x="191" y="91" width="100" height="100"/>
+                    <subviews>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="health_pro_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="uqT-ss-1A8">
+                            <rect key="frame" x="30" y="18" width="40" height="40"/>
+                        </imageView>
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="产品" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM6-70-8l6">
+                            <rect key="frame" x="29" y="66" width="42" height="21"/>
+                            <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.35686274509803922" green="0.74901960784313726" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="MSC-bK-wKk"/>
+                        <constraint firstAttribute="width" constant="100" id="nbF-Vv-Wpq"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="lMC-f7-daG" firstAttribute="centerX" secondItem="5We-12-D9c" secondAttribute="centerX" id="0Xk-b9-4dh"/>
+                <constraint firstItem="5We-12-D9c" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="91" id="3yY-1a-bVR"/>
                 <constraint firstAttribute="bottom" secondItem="0lv-Ir-j4q" secondAttribute="bottom" id="5x3-e9-92J"/>
                 <constraint firstAttribute="trailing" secondItem="0lv-Ir-j4q" secondAttribute="trailing" id="ChQ-Kd-1qj"/>
+                <constraint firstAttribute="trailing" secondItem="5We-12-D9c" secondAttribute="trailing" constant="29" id="KLa-1N-2s0"/>
+                <constraint firstItem="lMC-f7-daG" firstAttribute="top" secondItem="5We-12-D9c" secondAttribute="bottom" constant="13" id="NuT-Nl-t8J"/>
                 <constraint firstItem="0lv-Ir-j4q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="dUP-iz-UtY"/>
+                <constraint firstItem="4n6-tN-Q34" firstAttribute="top" secondItem="lMC-f7-daG" secondAttribute="bottom" constant="13" id="h4B-2j-H0f"/>
                 <constraint firstItem="0lv-Ir-j4q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="reR-Cl-bQI"/>
+                <constraint firstItem="lMC-f7-daG" firstAttribute="centerX" secondItem="4n6-tN-Q34" secondAttribute="centerX" id="zNN-s8-GIz"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="158" y="276"/>
+            <point key="canvasLocation" x="52" y="196"/>
         </view>
     </objects>
     <resources>
-        <image name="banner.png" width="1080" height="479"/>
+        <image name="health_bg.jpg" width="640" height="1007"/>
+        <image name="health_pro_icon.png" width="32" height="28"/>
+        <image name="health_test_icon.png" width="39" height="39"/>
+        <image name="health_topic_icon.png" width="35" height="34"/>
     </resources>
 </document>

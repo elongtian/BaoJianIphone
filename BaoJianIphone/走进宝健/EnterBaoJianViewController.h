@@ -13,6 +13,9 @@
 {
     NSMutableArray * titles;
     UIView * descripView;
+    NSMutableArray * icons;
+    NSMutableArray * colors;
+    
 }
 @property (retain, nonatomic) JCTopic * Topic;
 @property (retain, nonatomic) UIScrollView * mainScrollView;

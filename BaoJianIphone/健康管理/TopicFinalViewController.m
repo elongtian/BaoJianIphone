@@ -23,6 +23,8 @@
 }
 
 - (void)initPlat{
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     [_mainwebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
 //    _scrollEndDistance.constant = 0;
 //    _headViewDistance.constant = 0;
@@ -36,7 +38,8 @@
     _mainwebView.scrollView.bounces = NO;
     _mainwebView.scrollView.scrollEnabled = NO;
     
-    
+    _zanNumL.layer.cornerRadius = 3;
+    _evaluateL.layer.cornerRadius = 5;
     
 }
 
@@ -53,12 +56,13 @@
             
             UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
             [btn setTitle:@"查看更多评论" forState:UIControlStateNormal];
-            [btn setBackgroundColor:[UIColor lightGrayColor]];
+            [btn setBackgroundColor:UIColorFromRGB(0xe0e0e0)];
             [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             btn.frame = CGRectMake(0, 0, SCREENWIDTH-20, 30);
             btn.center = CGPointMake((SCREENWIDTH)/2, 44/2);
             
             btn.titleLabel.font = UIFontHiraginoSansGBW3(13);
+            
             [btn addTarget:self action:@selector(seeMore:) forControlEvents:UIControlEventTouchDown];
             
             [cell.contentView addSubview:btn];

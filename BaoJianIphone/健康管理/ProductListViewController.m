@@ -44,7 +44,7 @@
             
             Self.searchField.placeholder = @"请输入商品名称";
             UIImageView *leftView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
-            leftView.image=[UIImage imageNamed:@"s2"];
+            leftView.image=[UIImage imageNamed:@"pro_search_icon"];
             Self.searchField.leftView=leftView;
             //设置leftView的frame
             //     leftView.frame.width=40;
@@ -77,6 +77,8 @@
     ProductListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ProductListTableViewCell"];
     if(cell == nil){
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ProductListTableViewCell" owner:self options:nil] lastObject];
+        cell.content_img.layer.borderColor = UIColorFromRGB(0x8f8f91).CGColor;
+        cell.content_img.layer.borderWidth = 1;
     }
     return cell;
 }

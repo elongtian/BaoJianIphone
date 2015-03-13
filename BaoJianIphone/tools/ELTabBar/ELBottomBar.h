@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^ELBottomBarCallBack) (UIButton * sender);
+
 @interface ELBottomBar : UIView
 @property (retain, nonatomic) NSMutableArray * titles;
 @property (retain, nonatomic) NSMutableArray * icons;
+@property (copy, nonatomic) ELBottomBarCallBack callback;
 @end

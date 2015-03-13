@@ -27,7 +27,8 @@
 
 - (void)initPlat{
     _icon = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
-    _icon.image = [UIImage imageNamed:@"s2"];
+    _icon.image = [UIImage imageNamed:@"pro_search_icon"];
+    _icon.contentMode = UIViewContentModeCenter;
     _title = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
     
     _title.numberOfLines = 0;
