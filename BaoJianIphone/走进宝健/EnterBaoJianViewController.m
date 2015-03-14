@@ -35,8 +35,11 @@
     icons = [[NSMutableArray alloc]initWithObjects:@"qyjj_icon",@"qyts_icon",@"yqqj_icon", nil];
     colors = [[NSMutableArray alloc]initWithObjects:UIColorFromRGB(0x39b735),UIColorFromRGB(0x1aafa2),UIColorFromRGB(0x2893d6), nil];
     mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, NAVHEIGHT, SCREENWIDTH, SCREENHEIGHT-NAVHEIGHT-49)];
+    mainScrollView.showsVerticalScrollIndicator = NO;
     //    mainScrollView.delegate = self;
     [self.view addSubview:mainScrollView];
+    
+    self.bottom_logoV.hidden = NO;
 }
    
 

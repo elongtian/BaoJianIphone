@@ -71,11 +71,10 @@
     [pageView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     
     [pageView setPageControlStyle:PageControlStyleThumb];
-    [pageView setThumbImage:[UIImage imageNamed:@"a.png"]];
-    [pageView setSelectedThumbImage:[UIImage imageNamed:@"b.png"]];
+    [pageView setThumbImage:[UIImage imageNamed:@"final_common_no_selected.png"]];
+    [pageView setSelectedThumbImage:[UIImage imageNamed:@"final_common_selected.png"]];
     [pageView setNumberOfPages:(int)[tempArray count]];
     
-    pageView.backgroundColor = [UIColor redColor];
     
     [pageView setCurrentPage:0];
 }

@@ -24,17 +24,16 @@
     photosArray = [[NSMutableArray alloc]init];
     
 //    panoramaListCell = [[[NSBundle mainBundle] loadNibNamed:@"PanoramaListCell" owner:self options:nil] lastObject];
-    self.view.backgroundColor = [UIColor grayColor];
-    mainTableView.rowHeight = UITableViewAutomaticDimension;
-    mainTableView.estimatedRowHeight = 10.0;
     mainTableView.backgroundColor = [UIColor clearColor];
     mainTableView.opaque = NO;
+    
+    self.view.backgroundColor = BackGround_Color;
 }
 
 #pragma mark - UItableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 100;
+    return 20;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -46,9 +45,6 @@
             cell = [[[NSBundle mainBundle] loadNibNamed:@"PanoramaListCell" owner:self options:nil] lastObject];
         }
         
-        [cell setNeedsUpdateConstraints];
-        [cell updateConstraintsIfNeeded];
-
         return cell;
     }
     else
@@ -60,6 +56,11 @@
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
             cell.contentView.backgroundColor = [UIColor clearColor];
             cell.backgroundColor = [UIColor clearColor];
+            
+            UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(16, 0, 1, 10)];
+            label.backgroundColor = UIColorFromRGB(0xc6c6c6);
+            
+            [cell.contentView addSubview:label];
         }
         return cell;
     }
@@ -68,7 +69,7 @@
 {
     if(indexPath.row %2 == 0)
     {
-      return 149.f;
+      return 143.f;
     }
     else
     {

@@ -13,8 +13,9 @@
 }
 @property (retain, nonatomic) UIScrollView * _scrollView;
 @property (retain, nonatomic) UIImageView * _imageView;
-@property (retain, nonatomic) UILabel * _content_descL;
+@property (retain, nonatomic) UITextView * _content_descL;
 @property (retain, nonatomic) UILabel * _numofpageL;
-@property (assign, nonatomic) CGFloat scale;//宽高比
-
+@property (retain, nonatomic) UIView * bottom_View;
+//@property (assign, nonatomic) CGFloat scale;//宽高比
+- (void)loadImage:(id)obj;
 @end

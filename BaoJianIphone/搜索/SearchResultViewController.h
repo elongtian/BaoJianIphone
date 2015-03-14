@@ -7,7 +7,9 @@
 //
 
 #import "BaseViewController.h"
-
-@interface SearchResultViewController : BaseViewController
+#import "SearchResultShowViewController.h"
+@interface SearchResultViewController : BaseViewController<UITextFieldDelegate>{
+    SearchResultShowViewController * resultViewController;
+}
 
 @end

@@ -153,7 +153,7 @@
     [pageView setSelectedThumbImage:[UIImage imageNamed:@"common_selected.png"]];
     [pageView setNumberOfPages:(int)[tempArray count]];
     
-    pageView.backgroundColor = [UIColor redColor];
+    
     
     [pageView setCurrentPage:0];
 }

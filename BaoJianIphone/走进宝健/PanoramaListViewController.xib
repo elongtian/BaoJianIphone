@@ -4,6 +4,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PanoramaListViewController">
             <connections>
@@ -17,20 +22,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1f3-S3-A6X">
-                    <rect key="frame" x="10" y="64" width="300" height="504"/>
+                    <rect key="frame" x="10" y="90" width="300" height="478"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="zJW-rG-3Uo"/>
                         <outlet property="delegate" destination="-1" id="woT-rF-1sA"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="园区全景" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKL-1f-cwP">
+                    <rect key="frame" x="10" y="70" width="64" height="16"/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="1f3-S3-A6X" secondAttribute="trailing" constant="10" id="BwQ-0c-LsW"/>
                 <constraint firstItem="1f3-S3-A6X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Hmk-jb-3aY"/>
                 <constraint firstAttribute="bottom" secondItem="1f3-S3-A6X" secondAttribute="bottom" id="MnF-1p-8q4"/>
-                <constraint firstItem="1f3-S3-A6X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="OHH-eG-OZu"/>
+                <constraint firstItem="1f3-S3-A6X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="90" id="OHH-eG-OZu"/>
+                <constraint firstItem="YKL-1f-cwP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="Psh-YY-QBa"/>
+                <constraint firstItem="YKL-1f-cwP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="WFv-yd-KTh"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="155" y="127"/>

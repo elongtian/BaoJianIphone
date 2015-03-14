@@ -3,51 +3,67 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PanoramaListCell" rowHeight="149" id="BJq-30-dy6" customClass="PanoramaListCell">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="149"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PanoramaListCell" rowHeight="143" id="BJq-30-dy6" customClass="PanoramaListCell">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="143"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BJq-30-dy6" id="zYx-xM-Bus">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="jwd-Rs-G5z">
-                        <rect key="frame" x="5" y="5" width="290" height="115"/>
-                        <color key="backgroundColor" red="0.61632677749999998" green="0.66666666669999997" blue="0.11435567150000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="115" id="6qa-g7-Jce"/>
-                            <constraint firstAttribute="width" constant="290" id="CFk-ff-OS9"/>
-                        </constraints>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9Z-lM-2uh">
+                        <rect key="frame" x="46" y="-1" width="254" height="144"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yqqj_list_img.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jwd-Rs-G5z">
+                                <rect key="frame" x="10" y="11" width="234" height="100"/>
+                                <color key="backgroundColor" red="0.61632677749999998" green="0.66666666669999997" blue="0.11435567150000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="宝健健康产业集团 园区" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyR-JQ-O1Z">
+                                <rect key="frame" x="10" y="116" width="234" height="21"/>
+                                <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                                <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHm-a6-YSj">
+                        <rect key="frame" x="16" y="86" width="1" height="57"/>
+                        <color key="backgroundColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yqqj_lead_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="BzJ-rr-Mwr">
+                        <rect key="frame" x="6" y="49" width="20" height="30"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宝健健康产业集团 园区" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyR-JQ-O1Z">
-                        <rect key="frame" x="8" y="125" width="175" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-Bx-HWV">
+                        <rect key="frame" x="16" y="0.0" width="1" height="45"/>
+                        <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="jwd-Rs-G5z" firstAttribute="top" secondItem="zYx-xM-Bus" secondAttribute="topMargin" constant="-3" id="JmH-BH-qoO"/>
-                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="lyR-JQ-O1Z" secondAttribute="trailing" constant="5" id="T6W-cm-YsE"/>
-                    <constraint firstItem="lyR-JQ-O1Z" firstAttribute="top" secondItem="jwd-Rs-G5z" secondAttribute="bottom" constant="5" id="V4W-8w-jRI"/>
-                    <constraint firstItem="jwd-Rs-G5z" firstAttribute="leading" secondItem="zYx-xM-Bus" secondAttribute="leadingMargin" constant="-3" id="enS-nG-3aE"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="lyR-JQ-O1Z" secondAttribute="bottom" constant="-3" id="fia-MX-X72"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="jwd-Rs-G5z" secondAttribute="trailing" constant="-3" id="j35-zD-5EN"/>
-                    <constraint firstItem="lyR-JQ-O1Z" firstAttribute="leading" secondItem="zYx-xM-Bus" secondAttribute="leadingMargin" id="u3C-WE-K5z"/>
-                </constraints>
+                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="content_img" destination="jwd-Rs-G5z" id="mgI-Gv-ySo"/>
                 <outlet property="title" destination="lyR-JQ-O1Z" id="ak4-5V-Fxb"/>
             </connections>
-            <point key="canvasLocation" x="195" y="206.5"/>
+            <point key="canvasLocation" x="198" y="152.5"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="banner.png" width="1080" height="479"/>
+        <image name="yqqj_lead_icon.png" width="30" height="48"/>
+        <image name="yqqj_list_img.jpg" width="517" height="204"/>
     </resources>
 </document>

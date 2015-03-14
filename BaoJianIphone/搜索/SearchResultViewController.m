@@ -18,6 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.view.backgroundColor = UIColorFromRGB(0xffffff);
+    
     UILabel * bottom_line = [[UILabel alloc]initWithFrame:CGRectMake(50, NAVHEIGHT-10, SCREENWIDTH-50-20, 1)];
     bottom_line.backgroundColor = [UIColor whiteColor];
     [self.navbar addSubview:bottom_line];
@@ -35,6 +37,8 @@
     [self.navbar addSubview:sss_line];
     
     UITextField * textField = [[UITextField alloc]initWithFrame:CGRectMake(bottom_line.frame.origin.x+5+20, NAVHEIGHT-10-20-3, bottom_line.frame.size.width-50-5-20, 20)];
+    textField.delegate = self;
+    textField.returnKeyType = UIReturnKeySearch;
     
     [self.navbar addSubview:textField];
     
@@ -44,10 +48,20 @@
     
     UIButton * cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     cancelBtn.frame = CGRectMake(ss_line.frame.origin.x+1, NAVHEIGHT-10-20-5, 44, 30);
-    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    cancelBtn.tag = 101311;
+    [cancelBtn setTitle:@"搜索" forState:UIControlStateNormal];
     cancelBtn.titleLabel.font = UIFontHiraginoSansGBW3(15);
     [self.navbar addSubview:cancelBtn];
     
+    resultViewController = [[SearchResultShowViewController alloc]initWithNibName:@"SearchResultShowViewController" bundle:nil];
+    resultViewController.view.frame = CGRectMake(0, NAVHEIGHT, self.view.frame.size.width, SCREENHEIGHT-NAVHEIGHT);
+//    resultViewController.mainTableView.frame = CGRectMake(0, 0, self.view.frame.size.width, SCREENHEIGHT-NAVHEIGHT);
+    [self.view addSubview:resultViewController.view];
+    
+}
+
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
