@@ -65,6 +65,7 @@
 #import "Toast+UIView.h"
 #import "NSString+Addtion.h"
 
+#import "BJObject.h"
 
 #define HTTP @"http://www.ipaosos.com/app/index.php?com=com_appService"
 //首页轮播

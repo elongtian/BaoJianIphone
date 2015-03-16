@@ -26,6 +26,8 @@
 - (void)initPlat{
     _mainWebView.scrollView.bounces = NO;
     [_mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+    _headViewWidth.constant = _mainScrollView.frame.size.width;
+    [self.view layoutIfNeeded];
 }
 
 - (void)ad_request

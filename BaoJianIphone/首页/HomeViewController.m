@@ -14,6 +14,8 @@
 #import "CareerChanceViewController.h"
 #import "InfomationCenterViewController.h"
 #import "SearchResultViewController.h"
+#import "MemberCenterViewController.h"
+#import "MoreViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -40,7 +42,11 @@
     titles = [[NSMutableArray alloc]initWithObjects:@"走进宝健",@"健康管理",@"事业机会",@"资讯中心",@"宝健商场",@"热门活动", nil];
     icons = [[NSMutableArray alloc]initWithObjects:@"comebj",@"health",@"career",@"infocenter",@"shop",@"activity", nil];
     colors = [[NSMutableArray alloc]initWithObjects:UIColorFromRGB(0x39b735),UIColorFromRGB(0x2893d6),UIColorFromRGB(0xc300de),UIColorFromRGB(0xbb9b09),UIColorFromRGB(0xff5f7e),UIColorFromRGB(0xe89d3d), nil];
-    self.navbar.titleLabel.text = @"首页";
+//    self.navbar.titleLabel.text = @"首页";
+    [self.navbar.backbtn setBackgroundImage:[UIImage imageNamed:@"logo"] forState:UIControlStateNormal];
+    [self.navbar.backbtn setImage:nil forState:UIControlStateNormal];
+    self.navbar.backbtn.frame = CGRectMake(0, 0, 100, 35);
+    self.navbar.backbtn.center = CGPointMake(SCREENWIDTH/2, 20+44/2);
     mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, NAVHEIGHT, SCREENWIDTH, SCREENHEIGHT-NAVHEIGHT-49)];
 //    mainScrollView.delegate = self;
     [self.view addSubview:mainScrollView];
@@ -216,6 +222,8 @@
             case 0:
             {
                 //个人中心
+                MemberCenterViewController * member = [[MemberCenterViewController alloc]initWithNibName:@"MemberCenterViewController" bundle:nil];
+                [self.navigationController pushViewController:member animated:YES];
             }
                 break;
             case 1:
@@ -228,6 +236,8 @@
             case 2:
             {
                 //帮助
+                MoreViewController * more = [[MoreViewController alloc]initWithNibName:@"MoreViewController" bundle:nil];
+                [self.navigationController pushViewController:more animated:YES];
             }
                 break;
             default:

@@ -18,6 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _evaluateTextView.placeholder = @"请您留下宝贵意见";
+    self.navbar.titleLabel.text = self.titleName;
+    
+    [_commitBtn addTarget:self action:@selector(commitAction:) forControlEvents:UIControlEventTouchDown];
 }
 
 
@@ -44,6 +47,14 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [_evaluateTextView resignFirstResponder];
+}
+
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)commitAction:(UIButton *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,6 +9,7 @@
 #import "TopicFinalViewController.h"
 #import "EvaluateTableViewCell.h"
 
+#import "GoEvaluateViewController.h"
 #import "MoreEvaluatesViewController.h"
 @interface TopicFinalViewController ()
 
@@ -20,6 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initPlat];
+    self.navbar.titleLabel.text = @"话题最终";
 }
 
 - (void)initPlat{
@@ -39,7 +41,8 @@
     _mainwebView.scrollView.scrollEnabled = NO;
     
     _zanNumL.layer.cornerRadius = 3;
-    _evaluateL.layer.cornerRadius = 5;
+    _evaluateL.layer.cornerRadius = 3;
+    [_evaluateL.layer setMasksToBounds:YES];
     
 }
 
@@ -57,7 +60,7 @@
             UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
             [btn setTitle:@"查看更多评论" forState:UIControlStateNormal];
             [btn setBackgroundColor:UIColorFromRGB(0xe0e0e0)];
-            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [btn setTitleColor:UIColorFromRGB(0x656565) forState:UIControlStateNormal];
             btn.frame = CGRectMake(0, 0, SCREENWIDTH-20, 30);
             btn.center = CGPointMake((SCREENWIDTH)/2, 44/2);
             
@@ -107,6 +110,12 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    GoEvaluateViewController * go = [[GoEvaluateViewController alloc]initWithNibName:@"GoEvaluateViewController" bundle:nil];
+    go.titleName = @"我要回复";
+    [self.navigationController pushViewController:go animated:YES];
+}
+
 #pragma mark - UIwebViewDelegate
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     
@@ -134,6 +143,9 @@
     //查看更多
     MoreEvaluatesViewController * more = [[MoreEvaluatesViewController alloc]initWithNibName:@"MoreEvaluatesViewController" bundle:nil];
     [self.navigationController pushViewController:more animated:YES];
+}
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

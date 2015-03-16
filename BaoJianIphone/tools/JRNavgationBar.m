@@ -41,7 +41,7 @@
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.backgroundColor = [UIColor clearColor];
         [titleLabel setTextColor:[UIColor whiteColor]];
-        titleLabel.font = [UIFont boldSystemFontOfSize:16];
+        titleLabel.font = UIFontHiraginoSansGBW6(16);
         titleLabel.center = CGPointMake(self.frame.size.width/2, 44/2+(IOS7?25:5));
         titleLabel.userInteractionEnabled = YES;
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleTap:)];

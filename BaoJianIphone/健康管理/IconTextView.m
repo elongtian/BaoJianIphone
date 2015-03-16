@@ -33,6 +33,7 @@
     
     _title.numberOfLines = 0;
     _title.text = @"请输入商品名称";
+    _title.font = UIFontHiraginoSansGBW3(14);
     
     CGSize size = [_title.text getcontentsizeWithfont:_title.font constrainedtosize:CGSizeMake(self.frame.size.width, self.frame.size.height) linemode:NSLineBreakByCharWrapping];
     
@@ -40,7 +41,7 @@
     
     _title.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
     
-    _icon.frame = CGRectMake(_title.frame.origin.x-25, _title.frame.origin.y, _icon.frame.size.width, _icon.frame.size.height);
+    _icon.frame = CGRectMake(_title.frame.origin.x-25, _title.frame.origin.y-5, _icon.frame.size.width, _icon.frame.size.height);
     
     [self addSubview:_icon];
     

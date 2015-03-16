@@ -54,7 +54,8 @@
     [self.navbar addSubview:cancelBtn];
     
     resultViewController = [[SearchResultShowViewController alloc]initWithNibName:@"SearchResultShowViewController" bundle:nil];
-    resultViewController.view.frame = CGRectMake(0, NAVHEIGHT, self.view.frame.size.width, SCREENHEIGHT-NAVHEIGHT);
+    resultViewController.view.frame = CGRectMake(0, NAVHEIGHT, SCREENWIDTH-20, SCREENHEIGHT-NAVHEIGHT);
+    resultViewController.mainTableView.frame = CGRectMake(10, 0, resultViewController.view.frame.size.width, resultViewController.view.frame.size.height);
 //    resultViewController.mainTableView.frame = CGRectMake(0, 0, self.view.frame.size.width, SCREENHEIGHT-NAVHEIGHT);
     [self.view addSubview:resultViewController.view];
     

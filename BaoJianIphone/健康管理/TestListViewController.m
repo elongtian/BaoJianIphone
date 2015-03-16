@@ -18,12 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    
     _mainTableView.backgroundColor = [UIColor clearColor];
     _mainTableView.opaque = NO;
     
-    
+    cellHeight = (SCREENWIDTH-10*3-5*4)/2*(4.0/9.0)+5+8*2+21*2+1+10;
     
 }
 
@@ -33,38 +31,31 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if(indexPath.row %2 == 0)
-    {
+//    if(indexPath.row %2 == 0)
+//    {
         TestListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"TestListTableViewCell"];
         if(cell == nil)
         {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"TestListTableViewCell" owner:self options:nil] lastObject];
         }
         return cell;
-    }
-    else
-    {
-        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-        if(cell == nil)
-        {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-            cell.backgroundColor = [UIColor clearColor];
-            cell.contentView.backgroundColor = [UIColor clearColor];
-        }
-        return cell;
-    }
+//    }
+//    else
+//    {
+//        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+//        if(cell == nil)
+//        {
+//            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+//            cell.backgroundColor = [UIColor clearColor];
+//            cell.contentView.backgroundColor = [UIColor clearColor];
+//        }
+//        return cell;
+//    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row %2 == 0)
-    {
-        return 153.0;
-    }
-    else
-    {
-        return 10;
-    }
+    return cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

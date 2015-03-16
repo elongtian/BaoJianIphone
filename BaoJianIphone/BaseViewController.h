@@ -13,5 +13,6 @@
 }
 @property (retain, nonatomic) JRNavgationBar * navbar;
 @property (retain, nonatomic) UIImageView * bottom_logoV;
+@property (retain, nonatomic) NSString * titleName;
 //@property (retain, nonatomic) acti
 @end

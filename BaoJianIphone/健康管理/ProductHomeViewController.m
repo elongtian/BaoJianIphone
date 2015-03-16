@@ -55,6 +55,7 @@
             
             
             ProductListViewController * list = [[ProductListViewController alloc]initWithNibName:@"ProductListViewController" bundle:nil];
+            list.titleName = [titles objectAtIndex:view.tag-100];
             [self.navigationController pushViewController:list animated:YES];
             
             switch (view.tag-100) {
@@ -197,7 +198,9 @@
     }
 }
 
-
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -18,10 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navbar.titleLabel.text = @"更多评论";
+    _numberL.layer.cornerRadius = 3;
+    [_numberL.layer setMasksToBounds:YES];
     [self initPlat];
 }
 
 - (void)initPlat{
+    
     [_evaluateBtn addTarget:self action:@selector(evaluateAction:) forControlEvents:UIControlEventTouchDown];
 }
 
@@ -62,11 +67,21 @@
         
         return height+3;
 }
-
+//点击去回复某条评论
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    GoEvaluateViewController * go = [[GoEvaluateViewController alloc]initWithNibName:@"GoEvaluateViewController" bundle:nil];
+    go.titleName = @"我要回复";
+    [self.navigationController pushViewController:go animated:YES];
+}
 
 - (void)evaluateAction:(UIButton *)sender{
     GoEvaluateViewController * go = [[GoEvaluateViewController alloc]initWithNibName:@"GoEvaluateViewController" bundle:nil];
+    go.titleName = @"我要评论";
     [self.navigationController pushViewController:go animated:YES];
+}
+
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

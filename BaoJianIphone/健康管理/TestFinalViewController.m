@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.bottom_logoV.hidden = NO;
+    
     [self initPlat];
 }
 
@@ -26,12 +28,14 @@
     current_index = 1;
     [self CreateSerialNumber];
     
-    mainScrollView = [[ReuseScrollView alloc]initWithFrame:CGRectMake(10, _testicon.frame.origin.y+_testicon.frame.size.height, _mainContentView.frame.size.width-20, _forwardBtn.frame.origin.y-30-(_testicon.frame.origin.y+_testicon.frame.size.height))];
+    NSLog(@"%f",_mainContentView.frame.size.height);
+    
+    mainScrollView = [[ReuseScrollView alloc]initWithFrame:CGRectMake(10, _testicon.frame.origin.y+_testicon.frame.size.height, SCREENWIDTH-20-20, _mainContentView.frame.size.height-(_testicon.frame.origin.y+_testicon.frame.size.height))];
     mainScrollView.scrollEnabled = NO;
     mainScrollView.isobserver = YES;
     mainScrollView.reuseDelegate = self;
     mainScrollView.delegate = self;
-    mainScrollView.backgroundColor = [UIColor redColor];
+    mainScrollView.backgroundColor = [UIColor clearColor];
     [_mainContentView addSubview:mainScrollView];
     
     [_forwardBtn addTarget:self action:@selector(forwardAction:) forControlEvents:UIControlEventTouchDown];
@@ -46,7 +50,7 @@
     questions = [[NSMutableArray alloc]init];
     for(int i = 0;i<numbers;i++){
         
-        NSString * str = [NSString stringWithFormat:@"这是一个测试题%d",i];
+        NSString * str = [NSString stringWithFormat:@"这是一个测试题这是一个测试题这是一个测试题这是一个测试题这是一个测试题这是一个测试题这是一个测试题这是一个测试题%d",i];
         [questions addObject:str];
     }
 }
@@ -120,7 +124,6 @@
     if (view == nil) {
         //复用scrollview上加的view
         view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, mainScrollView.frame.size.width, mainScrollView.frame.size.height)];
-        view.backgroundColor = [UIColor greenColor];
         UIImageView * imge = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 40, 40)];
         imge.tag = 1000;
         [imge setImage:[UIImage imageNamed:@"q_icon"]];
@@ -137,7 +140,7 @@
         
         UIScrollView * childScrollView = [[UIScrollView alloc] init];
         childScrollView.tag = 1002;
-        childScrollView.backgroundColor = [UIColor yellowColor];
+        childScrollView.showsVerticalScrollIndicator = NO;
         [view addSubview:childScrollView];
         
         CGFloat lx = 0;
@@ -145,10 +148,11 @@
         for(int i = 0;i<5;i++){
             UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(imge.frame.origin.x, ly+10, 20, 20);
-            [btn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-            [btn setBackgroundColor:[UIColor greenColor]];
+            [btn setImage:[UIImage imageNamed:@"test_final_no_select"] forState:UIControlStateNormal];
             btn.tag = 100+i;
             [childScrollView addSubview:btn];
+            
+            [btn addTarget:self action:@selector(tapSelectAction:) forControlEvents:UIControlEventTouchDown];
             
 
             UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(btn.frame.size.width+btn.frame.origin.x+5, btn.frame.origin.y, 20, 20)];
@@ -163,6 +167,7 @@
     UIImageView * imgeV = (UIImageView *)[view viewWithTag:1000];
     UILabel * question = (UILabel *)[view viewWithTag:1001];
     UIScrollView * ScrollView = (UIScrollView *)[view viewWithTag:1002];
+    
     
     question.text = [questions objectAtIndex:current_index-1];
     CGSize qsize = [question.text getcontentsizeWithfont:question.font constrainedtosize:CGSizeMake(view.frame.size.width-(imgeV.frame.size.width+imgeV.frame.origin.x+10)-10, 100) linemode:NSLineBreakByCharWrapping];
@@ -190,6 +195,16 @@
         ly += 5;
     }
     ScrollView.contentSize = CGSizeMake(ScrollView.frame.size.width, ly+10);
+    
+    self.callback = ^(UIButton * sender){
+        
+        for(int i = 0;i<5;i++){
+            UIButton * b = (UIButton *)[view viewWithTag:100+i];
+            [b setImage:[UIImage imageNamed:@"test_final_no_select"] forState:UIControlStateNormal];
+        }
+        [sender setImage:[UIImage imageNamed:@"test_final_select"] forState:UIControlStateNormal];
+           };
+    
     
     return view;
 }
@@ -237,6 +252,16 @@
     
 }
 
+
+- (void)tapSelectAction:(UIButton *)sender{
+    if(self.callback){
+        _callback(sender);
+    }
+}
+
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

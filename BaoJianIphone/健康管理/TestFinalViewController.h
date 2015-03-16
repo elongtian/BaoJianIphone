@@ -8,6 +8,9 @@
 
 #import "BaseViewController.h"
 #import "ReuseScrollView.h"
+
+typedef void (^TestFinalCallBack) (UIButton *sender);
+
 @interface TestFinalViewController : BaseViewController<ReuseScrollViewDelegate,UIScrollViewDelegate>{
     NSInteger numbers;
     NSInteger current_index;
@@ -24,4 +27,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *selected_btn;
 
 @property (retain, nonatomic) ReuseScrollView * mainScrollView;
+
+@property (copy, nonatomic) TestFinalCallBack callback;
 @end

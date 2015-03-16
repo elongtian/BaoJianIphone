@@ -20,5 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *moreBtn;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *topViewWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *maintableViewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *maintableViewWidth;
 
 @end

@@ -7,9 +7,8 @@
 //
 
 #import "BaseViewController.h"
-#import "MyModifyViewController.h"
 #import "AppDelegate.h"
-@interface MoreViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,MyModifyDelegate>
+@interface MoreViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 {
     JRNavgationBar * navBar;
 }

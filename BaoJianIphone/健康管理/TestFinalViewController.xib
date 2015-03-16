@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -31,58 +31,96 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_top_line.png" id="E1H-kY-yVu">
-                    <rect key="frame" x="20" y="108" width="280" height="10"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RH1-yq-zJu">
+                    <rect key="frame" x="20" y="74" width="280" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="mst-yk-i6y"/>
+                    </constraints>
+                </view>
+                <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_top_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="E1H-kY-yVu">
+                    <rect key="frame" x="20" y="104" width="280" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="bFA-a1-Dgb"/>
+                    </constraints>
                 </imageView>
-                <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="CHf-Ne-Zsp">
-                    <rect key="frame" x="10" y="133" width="300" height="386"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHf-Ne-Zsp">
+                    <rect key="frame" x="10" y="134" width="300" height="385"/>
                     <subviews>
-                        <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_bg.png" id="aH2-8T-A7c">
-                            <rect key="frame" x="0.0" y="0.0" width="300" height="386"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="aH2-8T-A7c">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="385"/>
                         </imageView>
-                        <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_icon.png" id="Qjq-sz-mnW">
+                        <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qjq-sz-mnW">
                             <rect key="frame" x="15" y="20" width="80" height="80"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="T6f-WS-weW"/>
+                                <constraint firstAttribute="height" constant="80" id="W1V-jq-mAu"/>
+                            </constraints>
                         </imageView>
-                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你是否患有颈椎病？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tYg-6c-h3a">
-                            <rect key="frame" x="103" y="49" width="153" height="17"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你是否患有颈椎病？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYg-6c-h3a">
+                            <rect key="frame" x="103" y="39" width="153" height="17"/>
                             <fontDescription key="fontDescription" name="HiraginoSansGB-W6" family="Hiragino Sans GB" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B9e-P5-bG0">
-                            <rect key="frame" x="35" y="318" width="100" height="38"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
-                            <state key="normal" title="上一题" backgroundImage="forward_btn_bg.png">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4tu-8s-6Ie">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tu-8s-6Ie">
                             <rect key="frame" x="165" y="318" width="100" height="38"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="Lz6-ha-9Tu"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
                             <state key="normal" title="下一题" backgroundImage="next_btn_bg.png">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9e-P5-bG0">
+                            <rect key="frame" x="35" y="318" width="100" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="60R-Nl-BtK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                            <state key="normal" title="上一题" backgroundImage="forward_btn_bg.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                     </subviews>
-                </view>
-                <view contentMode="scaleToFill" id="RH1-yq-zJu">
-                    <rect key="frame" x="20" y="78" width="280" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="tYg-6c-h3a" firstAttribute="leading" secondItem="Qjq-sz-mnW" secondAttribute="trailing" constant="8" id="5yh-vY-4XL"/>
+                        <constraint firstItem="B9e-P5-bG0" firstAttribute="leading" secondItem="CHf-Ne-Zsp" secondAttribute="leading" constant="35" id="Bax-p7-aH2"/>
+                        <constraint firstAttribute="trailing" secondItem="aH2-8T-A7c" secondAttribute="trailing" id="E1T-dS-7jF"/>
+                        <constraint firstItem="aH2-8T-A7c" firstAttribute="top" secondItem="CHf-Ne-Zsp" secondAttribute="top" id="GYT-eW-tQM"/>
+                        <constraint firstAttribute="bottom" secondItem="aH2-8T-A7c" secondAttribute="bottom" id="J4F-KE-mU2"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tYg-6c-h3a" secondAttribute="trailing" constant="20" id="JxG-4A-7wU"/>
+                        <constraint firstItem="tYg-6c-h3a" firstAttribute="top" secondItem="CHf-Ne-Zsp" secondAttribute="top" constant="39" id="KKn-m9-FJn"/>
+                        <constraint firstItem="4tu-8s-6Ie" firstAttribute="width" secondItem="B9e-P5-bG0" secondAttribute="width" id="MHW-7g-p1i"/>
+                        <constraint firstItem="Qjq-sz-mnW" firstAttribute="top" secondItem="CHf-Ne-Zsp" secondAttribute="top" constant="20" id="Uo9-hV-oBr"/>
+                        <constraint firstItem="Qjq-sz-mnW" firstAttribute="leading" secondItem="CHf-Ne-Zsp" secondAttribute="leading" constant="15" id="b8U-Or-nYk"/>
+                        <constraint firstItem="aH2-8T-A7c" firstAttribute="leading" secondItem="CHf-Ne-Zsp" secondAttribute="leading" id="cR0-HN-FVb"/>
+                        <constraint firstAttribute="bottom" secondItem="B9e-P5-bG0" secondAttribute="bottom" constant="29" id="eDU-If-RHI"/>
+                        <constraint firstAttribute="trailing" secondItem="4tu-8s-6Ie" secondAttribute="trailing" constant="35" id="ek8-Xj-dil"/>
+                        <constraint firstAttribute="bottom" secondItem="4tu-8s-6Ie" secondAttribute="bottom" constant="29" id="ule-1C-OmW"/>
+                        <constraint firstItem="4tu-8s-6Ie" firstAttribute="leading" secondItem="B9e-P5-bG0" secondAttribute="trailing" constant="30" id="yVC-hJ-xSZ"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="CHf-Ne-Zsp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="08p-lT-AOX"/>
+                <constraint firstAttribute="trailing" secondItem="E1H-kY-yVu" secondAttribute="trailing" constant="20" id="59J-nY-Hy1"/>
+                <constraint firstItem="RH1-yq-zJu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="BhH-23-Rux"/>
+                <constraint firstAttribute="trailing" secondItem="RH1-yq-zJu" secondAttribute="trailing" constant="20" id="C7B-6u-QwR"/>
+                <constraint firstItem="E1H-kY-yVu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="E6K-JO-dPo"/>
+                <constraint firstItem="CHf-Ne-Zsp" firstAttribute="top" secondItem="E1H-kY-yVu" secondAttribute="bottom" constant="20" id="Zkd-0b-HY3"/>
+                <constraint firstItem="E1H-kY-yVu" firstAttribute="top" secondItem="RH1-yq-zJu" secondAttribute="bottom" id="b13-KH-SHt"/>
+                <constraint firstAttribute="trailing" secondItem="CHf-Ne-Zsp" secondAttribute="trailing" constant="10" id="iut-x8-eUL"/>
+                <constraint firstItem="RH1-yq-zJu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="n8B-hb-JES"/>
+                <constraint firstAttribute="bottom" secondItem="CHf-Ne-Zsp" secondAttribute="bottom" constant="49" id="vT8-m5-RV4"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="257" y="167"/>
+            <point key="canvasLocation" x="258" y="196"/>
         </view>
     </objects>
     <resources>
@@ -92,9 +130,4 @@
         <image name="test_icon.png" width="153" height="160"/>
         <image name="test_top_line.png" width="288" height="7"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

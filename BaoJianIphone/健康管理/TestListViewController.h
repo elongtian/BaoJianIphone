@@ -8,7 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface TestListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+@interface TestListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>{
+    CGFloat cellHeight;
+}
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 
 @end

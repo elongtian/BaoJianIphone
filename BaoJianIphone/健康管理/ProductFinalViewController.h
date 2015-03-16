@@ -26,4 +26,5 @@
 @property (retain, nonatomic) JCTopic * Topic;
 @property (retain, nonatomic) StyledPageControl * pageView;
 @property (retain, nonatomic) NSMutableArray * pics;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headViewWidth;
 @end

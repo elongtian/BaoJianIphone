@@ -35,9 +35,9 @@
     
     self.slideSwitchView.slideSwitchViewDelegate = self;
     
-    self.title = @"滑动切换视图";
+    self.navbar.titleLabel.text = @"资讯中心";
     self.slideSwitchView.tabItemNormalColor = [QCSlideSwitchView colorFromHexRGB:@"868686"];
-    self.slideSwitchView.tabItemSelectedColor = [QCSlideSwitchView colorFromHexRGB:@"bb0b15"];
+    self.slideSwitchView.tabItemSelectedColor = [QCSlideSwitchView colorFromHexRGB:@"00a200"];
     self.slideSwitchView.shadowImage = [[UIImage imageNamed:@"red_line_and_shadow.png"]
                                         stretchableImageWithLeftCapWidth:59.0f topCapHeight:0.0f];
 
@@ -92,7 +92,9 @@
     }
 }
 
-
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning {

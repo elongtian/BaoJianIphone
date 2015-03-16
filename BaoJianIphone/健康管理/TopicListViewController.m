@@ -23,6 +23,7 @@
 }
 
 - (void)initPlat{
+    self.navbar.titleLabel.text = @"热门话题";
     _mainTableView.backgroundColor = [UIColor clearColor];
     _mainTableView.opaque = NO;
 }
@@ -57,6 +58,7 @@
             cell = [[[NSBundle mainBundle] loadNibNamed:@"TopicListTableViewCell" owner:self options:nil] lastObject];
             cell.zanNum.layer.cornerRadius = 3;
             cell.evaluates.layer.cornerRadius = 3;
+            [cell.evaluates.layer setMasksToBounds:YES];
         }
         
         cell.content_title.text = @"免费去巴黎 摘星 不容迟疑 免费去巴黎 摘星 不容迟疑";
@@ -80,6 +82,9 @@
     [self.navigationController pushViewController:final animated:YES];
 }
 
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

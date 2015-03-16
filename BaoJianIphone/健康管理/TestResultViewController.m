@@ -7,7 +7,8 @@
 //
 
 #import "TestResultViewController.h"
-
+#import "ProductListTableViewCell.h"
+#import "TestFinalViewController.h"
 @interface TestResultViewController ()
 
 @end
@@ -21,23 +22,53 @@
 }
 
 - (void)initPlat{
+    
+    [_againBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchDown];
+    [_moreBtn addTarget:self action:@selector(moreBtnAction:) forControlEvents:UIControlEventTouchDown];
+    
     _resultL.text = @"测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果";
     _topViewHeight.constant = _resultL.frame.origin.y+_resultL.frame.size.height+20*2+40*2;
     _topViewWidth.constant = SCREENWIDTH-20;
+    NSLog(@"%@",[NSValue valueWithCGRect:_maintableView.frame]);
+    _maintableViewWidth.constant = SCREENWIDTH-20;
+
     
-    _topView.backgroundColor = [UIColor redColor];
+//    _maintableView.frame = CGRectMake(_maintableView.frame.origin.x, _maintableView.frame.origin.y, _maintableView.frame.size.width, <#CGFloat height#>)
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 20;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    ProductListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if(cell == nil){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"ProductListTableViewCell" owner:self options:nil] lastObject];
     }
-    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH, _topView.frame.size.height+_maintableView.contentSize.height);
+    
+    _maintableViewHeight.constant = _maintableView.contentSize.height;
+    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH, _topView.frame.size.height+_maintableView.contentSize.height+10);
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 122;
+}
+
+
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)moreBtnAction:(UIButton *)sender{
+    NSMutableArray * arr = [[NSMutableArray alloc]init];
+    for(UIViewController * vc in self.navigationController.viewControllers){
+        if([vc isKindOfClass:[TestFinalViewController class]]){
+            continue;
+        }
+        [arr addObject:vc];
+    }
+    self.navigationController.viewControllers = arr;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

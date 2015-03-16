@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -71,7 +71,7 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠价：¥175.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iam-cQ-0D1">
-                        <rect key="frame" x="118" y="96" width="116" height="14"/>
+                        <rect key="frame" x="118" y="96" width="115.5" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="jor-DF-Og5"/>
                         </constraints>
@@ -85,7 +85,7 @@
                         </variation>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="3oV-9V-PJR">
-                        <rect key="frame" x="282" y="93" width="10" height="20"/>
+                        <rect key="frame" x="277" y="93" width="10" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Ux9-1X-3b8"/>
                             <constraint firstAttribute="width" constant="10" id="XbT-kP-ciz"/>
@@ -103,7 +103,7 @@
                     <constraint firstItem="qq4-Dr-9pN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="QhD-Rm-tcp"/>
                     <constraint firstItem="3oV-9V-PJR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Iam-cQ-0D1" secondAttribute="trailing" constant="14" id="VYy-yG-amf"/>
                     <constraint firstItem="Udm-QJ-Rha" firstAttribute="leading" secondItem="qq4-Dr-9pN" secondAttribute="trailing" constant="8" id="ZC5-Q0-FwJ"/>
-                    <constraint firstItem="3oV-9V-PJR" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="brd-4e-56J"/>
+                    <constraint firstItem="3oV-9V-PJR" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-5" id="brd-4e-56J"/>
                     <constraint firstItem="Iam-cQ-0D1" firstAttribute="centerY" secondItem="3oV-9V-PJR" secondAttribute="centerY" id="fTF-aK-l01"/>
                     <constraint firstItem="GT5-8t-QgP" firstAttribute="leading" secondItem="qq4-Dr-9pN" secondAttribute="trailing" constant="8" id="iWW-GM-7S2"/>
                     <constraint firstItem="6rZ-74-EdQ" firstAttribute="leading" secondItem="qq4-Dr-9pN" secondAttribute="trailing" constant="8" id="lel-jt-ByL"/>

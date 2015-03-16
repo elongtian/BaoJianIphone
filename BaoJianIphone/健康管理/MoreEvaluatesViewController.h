@@ -11,5 +11,6 @@
 @interface MoreEvaluatesViewController : BaseViewController
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 @property (strong, nonatomic) IBOutlet UIButton *evaluateBtn;
+@property (weak, nonatomic) IBOutlet UILabel *numberL;
 
 @end
