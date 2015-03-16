@@ -85,7 +85,13 @@
                     <constraint firstItem="78u-bp-ZNs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="ulr-aB-qVy"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="303" y="128"/>
+            <connections>
+                <outlet property="content_desc" destination="Gxv-ae-K6G" id="Ff6-wx-jrT"/>
+                <outlet property="content_img" destination="aH9-Gi-85S" id="GyC-Ug-QUf"/>
+                <outlet property="content_name" destination="78u-bp-ZNs" id="s5e-Gu-TIm"/>
+                <outlet property="content_time" destination="saV-im-0nK" id="yzK-MK-hY2"/>
+            </connections>
+            <point key="canvasLocation" x="379" y="159"/>
         </tableViewCell>
     </objects>
     <resources>
