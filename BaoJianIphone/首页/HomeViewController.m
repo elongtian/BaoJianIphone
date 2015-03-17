@@ -16,6 +16,8 @@
 #import "SearchResultViewController.h"
 #import "MemberCenterViewController.h"
 #import "MoreViewController.h"
+
+#import "LoginViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -222,8 +224,10 @@
             case 0:
             {
                 //个人中心
-                MemberCenterViewController * member = [[MemberCenterViewController alloc]initWithNibName:@"MemberCenterViewController" bundle:nil];
-                [self.navigationController pushViewController:member animated:YES];
+//                MemberCenterViewController * member = [[MemberCenterViewController alloc]initWithNibName:@"MemberCenterViewController" bundle:nil];
+//                [self.navigationController pushViewController:member animated:YES];
+                LoginViewController * login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+                [self.navigationController pushViewController:login animated:YES];
             }
                 break;
             case 1:

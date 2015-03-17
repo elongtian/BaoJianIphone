@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
             <string>HiraginoSansGB-W3</string>
             <string>HiraginoSansGB-W3</string>
             <string>HiraginoSansGB-W3</string>
@@ -43,18 +45,18 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRE-gj-hBB" customClass="ELButton">
                             <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="49" id="egS-rL-LOY"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal">
+                            <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                            <state key="normal" title="收藏" image="pro_collection.png">
+                                <color key="titleColor" red="0.46666666670000001" green="0.49019607840000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYX-nP-c4v">
                             <rect key="frame" x="49" y="0.0" width="1" height="49"/>
-                            <color key="backgroundColor" red="0.99607843139999996" green="0.30196078430000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="1" id="T3n-Fx-mnH"/>
                             </constraints>
@@ -64,13 +66,13 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTj-L0-I0j" customClass="ELButton">
                             <rect key="frame" x="50" y="0.0" width="49" height="49"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="49" id="09F-25-T6z"/>
                                 <constraint firstAttribute="width" constant="49" id="Qzo-cq-wnF"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal">
+                            <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                            <state key="normal" title="购买" image="purchase_btn.png">
+                                <color key="titleColor" red="0.46666666670000001" green="0.49019607840000001" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <variation key="default">
@@ -80,7 +82,7 @@
                             </variation>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJS-MO-JZw">
-                            <rect key="frame" x="99" y="0.0" width="111" height="49"/>
+                            <rect key="frame" x="99" y="0.0" width="110.5" height="49"/>
                             <color key="backgroundColor" red="1" green="0.61176470589999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="49" id="6hP-3X-jpd"/>
@@ -98,7 +100,7 @@
                             </variation>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj3-Tt-wEi">
-                            <rect key="frame" x="210" y="0.0" width="110" height="49"/>
+                            <rect key="frame" x="209" y="0.0" width="110" height="49"/>
                             <color key="backgroundColor" red="0.99607843139999996" green="0.30588235289999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="49" id="SuG-zo-o7D"/>
@@ -141,15 +143,14 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFY-Pc-9sQ">
                     <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBJ-0W-fpA">
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="243" translatesAutoresizingMaskIntoConstraints="NO" id="bBJ-0W-fpA">
                             <rect key="frame" x="10" y="10" width="300" height="243"/>
-                            <color key="backgroundColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="300" id="7yQ-Oh-Fo5"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="7yQ-Oh-Fo5"/>
                                 <constraint firstAttribute="width" secondItem="bBJ-0W-fpA" secondAttribute="height" multiplier="100:81" id="C4x-Vh-9U6"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYw-b1-8sA">
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="mYw-b1-8sA">
                             <rect key="frame" x="10" y="254" width="300" height="80"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宝萃健即溶茶固体饮料" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPE-W2-cP0">
@@ -171,7 +172,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="建议零售价：¥220.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMH-rD-lTc">
-                                    <rect key="frame" x="8" y="56" width="144" height="14"/>
+                                    <rect key="frame" x="8" y="56" width="143.5" height="14"/>
                                     <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
                                     <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -193,7 +194,6 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.61632677749999998" green="0.66666666669999997" blue="0.11435567150000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="JBP-Sr-aQb" firstAttribute="leading" secondItem="mYw-b1-8sA" secondAttribute="leading" constant="8" id="0at-Pq-iKq"/>
                                 <constraint firstItem="XMH-rD-lTc" firstAttribute="top" secondItem="uKg-Fj-R7t" secondAttribute="bottom" constant="10" id="2ia-Of-T9H"/>
@@ -207,6 +207,7 @@
                                 <constraint firstItem="PKj-h3-DL9" firstAttribute="centerX" secondItem="8iS-rD-HJs" secondAttribute="centerX" id="cxQ-K9-IdK"/>
                                 <constraint firstItem="8iS-rD-HJs" firstAttribute="top" secondItem="mYw-b1-8sA" secondAttribute="top" constant="13" id="hvK-dw-VGP"/>
                                 <constraint firstItem="8iS-rD-HJs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yPE-W2-cP0" secondAttribute="trailing" constant="14" id="iYO-xV-h8Y"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="l6z-DL-fVW"/>
                                 <constraint firstItem="yPE-W2-cP0" firstAttribute="top" secondItem="mYw-b1-8sA" secondAttribute="top" constant="10" id="nWE-Fr-D52"/>
                                 <constraint firstItem="uKg-Fj-R7t" firstAttribute="top" secondItem="yPE-W2-cP0" secondAttribute="bottom" constant="6" id="q7T-Gx-rJB"/>
                                 <constraint firstItem="uKg-Fj-R7t" firstAttribute="leading" secondItem="JBP-Sr-aQb" secondAttribute="trailing" constant="6" id="qap-Ro-nV1"/>
@@ -219,11 +220,12 @@
                                 </mask>
                             </variation>
                         </view>
-                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwc-CF-5t3">
+                        <webView contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="140" translatesAutoresizingMaskIntoConstraints="NO" id="Jwc-CF-5t3">
                             <rect key="frame" x="10" y="339" width="300" height="140"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="140" id="0jD-g7-7Py"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="F9U-gb-LYp"/>
                             </constraints>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="1BY-ok-RHH"/>
@@ -277,7 +279,11 @@
                 <constraint firstItem="PFY-Pc-9sQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="qew-mA-oay"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="181" y="46"/>
+            <point key="canvasLocation" x="161" y="-60"/>
         </view>
     </objects>
+    <resources>
+        <image name="pro_collection.png" width="17" height="17"/>
+        <image name="purchase_btn.png" width="24" height="20"/>
+    </resources>
 </document>

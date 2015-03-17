@@ -39,7 +39,7 @@
     // Do any additional setup after loading the view from its nib.
     navBar = [[JRNavgationBar alloc]initWithFrame:CGRectMake(0,0, SCREENWIDTH, NAVHEIGHT) Option:JRNAVGATIONLOGINBAR];
     navBar.delegate = self;
-    navBar.titleLabel.text = @"更多";
+    navBar.titleLabel.text = @"帮助";
     [self.view addSubview:navBar];
     
     self.bottom_logoV.hidden = NO;

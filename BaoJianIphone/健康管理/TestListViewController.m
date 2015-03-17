@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navbar.titleLabel.text = @"测试";
     _mainTableView.backgroundColor = [UIColor clearColor];
     _mainTableView.opaque = NO;
     

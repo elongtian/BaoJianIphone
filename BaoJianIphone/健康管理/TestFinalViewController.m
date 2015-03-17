@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navbar.titleLabel.text = @"测试最终";
     self.bottom_logoV.hidden = NO;
     
     [self initPlat];
@@ -30,7 +32,7 @@
     
     NSLog(@"%f",_mainContentView.frame.size.height);
     
-    mainScrollView = [[ReuseScrollView alloc]initWithFrame:CGRectMake(10, _testicon.frame.origin.y+_testicon.frame.size.height, SCREENWIDTH-20-20, _mainContentView.frame.size.height-(_testicon.frame.origin.y+_testicon.frame.size.height))];
+    mainScrollView = [[ReuseScrollView alloc]initWithFrame:CGRectMake(10, _testicon.frame.origin.y+_testicon.frame.size.height, SCREENWIDTH-20-20, _forwardBtn.frame.origin.y-(_testicon.frame.origin.y+_testicon.frame.size.height)-20)];
     mainScrollView.scrollEnabled = NO;
     mainScrollView.isobserver = YES;
     mainScrollView.reuseDelegate = self;

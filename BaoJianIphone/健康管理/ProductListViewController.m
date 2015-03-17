@@ -20,8 +20,20 @@
     // Do any additional setup after loading the view from its nib.
     self.navbar.titleLabel.text = self.titleName;
     [self initPlat];
+    
+    price_bool = NO;
+    sale_bool = YES;
+    sortindex = 0;
 }
 - (void)initPlat{
+    
+    [_scannerBtn addTarget:self action:@selector(scannerAction:) forControlEvents:UIControlEventTouchDown];
+    
+    UITapGestureRecognizer * saletap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(saleAction:)];
+    [_salesView addGestureRecognizer:saletap];
+    
+    UITapGestureRecognizer * pricetap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(priceAction:)];
+    [_priceView addGestureRecognizer:pricetap];
     
     _coverControl = [[UIControl alloc]initWithFrame:CGRectMake(0, _searchField.frame.origin.y+_searchField.frame.size.height+5,SCREENWIDTH, SCREENHEIGHT-(_searchField.frame.origin.y+_searchField.frame.size.height+5))];
     _coverControl.backgroundColor = [UIColor blackColor];
@@ -77,7 +89,7 @@
     ProductListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ProductListTableViewCell"];
     if(cell == nil){
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ProductListTableViewCell" owner:self options:nil] lastObject];
-        cell.content_img.layer.borderColor = UIColorFromRGB(0x8f8f91).CGColor;
+        cell.content_img.layer.borderColor = UIColorFromRGB(0xaeaeb0).CGColor;
         cell.content_img.layer.borderWidth = 1;
     }
     return cell;
@@ -121,6 +133,80 @@
     [Self.view setNeedsLayout]; //更新视图
     [Self.view layoutIfNeeded];
     
+}
+
+
+- (void)saleAction:(id)sender {
+    
+    if(sale_bool)
+    {
+        [_salesV setImage:[UIImage imageNamed:@"xl_select_up"]];
+        _salesL.textColor = UIColorFromRGB(0xff602a);
+        sale_bool = NO;
+//        sort = 11;
+    }
+    else
+    {
+        [_salesV setImage:[UIImage imageNamed:@"xl_select_down"]];
+        _salesL.textColor = UIColorFromRGB(0xff602a);
+        sale_bool = YES;
+//        sort = 12;
+    }
+    
+    if(index == 0)
+    {
+        
+    }
+    else
+    {
+        
+        [_priceV setImage:[UIImage imageNamed:@"jg_no_select_up"]];
+        _priceL.textColor = [UIColor blackColor];
+    }
+    
+    sortindex = 0;
+    price_bool = NO;
+    
+}
+
+- (void)priceAction:(id)sender {
+    if(price_bool)
+    {
+        [_priceV setImage:[UIImage imageNamed:@"jg_select_down"]];
+        _priceL.textColor = UIColorFromRGB(0xff602a);
+        price_bool = NO;
+//        sort = 5;
+    }
+    else
+    {
+        [_priceV setImage:[UIImage imageNamed:@"jg_select_up"]];
+        _priceL.textColor = UIColorFromRGB(0xff602a);
+        price_bool = YES;
+//        sort = 6;
+    }
+    
+    if(sortindex == 1)
+    {
+        
+    }
+    else
+    {
+        [_salesV setImage:[UIImage imageNamed:@"xl_no_select_down"]];
+        _salesL.textColor = [UIColor blackColor];
+    }
+    sortindex = 1;
+    sale_bool = NO;
+    
+   }
+#pragma mark - 扫描
+- (void)scannerAction:(UIButton *)sender{
+    QrCodeScanningController * qr = [[QrCodeScanningController alloc]initWithNibName:@"QrCodeScanningController" bundle:nil];
+    qr.delegate = self;
+    [self.navigationController pushViewController:qr animated:YES];
+}
+#pragma mark - 返回二维码的扫描结果
+- (void)returnQrCode:(NSString *)code{
+
 }
 
 - (void)back:(id)sender{

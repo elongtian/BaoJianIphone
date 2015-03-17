@@ -18,16 +18,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.navbar.titleLabel.text = @"产品最终";
+    
     [self initPlat];
     [self ad_request];
-    
+    _headViewWidth.constant = SCREENWIDTH-20;
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)initPlat{
+    
+    _leftOneBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+    _leftTwoBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     _mainWebView.scrollView.bounces = NO;
     [_mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
-    _headViewWidth.constant = _mainScrollView.frame.size.width;
-    [self.view layoutIfNeeded];
 }
 
 - (void)ad_request
@@ -142,6 +146,10 @@
     [self.view layoutIfNeeded];
     
     _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH, _mainWebView.frame.origin.y+_mainWebView.frame.size.height+15);
+}
+
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

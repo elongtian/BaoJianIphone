@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MobileFindResultViewController">
             <connections>
@@ -11,9 +17,50 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜您，密码设置成功！现在开始健康之旅吧！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRv-r8-T6Z">
+                    <rect key="frame" x="26" y="84" width="284" height="12"/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                    <color key="textColor" red="1" green="0.37653962639999999" blue="0.16784965330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_xing.png" translatesAutoresizingMaskIntoConstraints="NO" id="M2X-sv-WkV">
+                    <rect key="frame" x="10" y="84" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="7Mr-aM-JJL"/>
+                        <constraint firstAttribute="height" constant="12" id="qVz-X1-hhF"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erM-Rf-dZN">
+                    <rect key="frame" x="80" y="136" width="150" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="O5J-S7-m31"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="确定" backgroundImage="login_sure_btn_bg.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="M2X-sv-WkV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Fwv-xZ-hcd"/>
+                <constraint firstAttribute="trailing" secondItem="erM-Rf-dZN" secondAttribute="trailing" constant="90" id="Rrj-GS-B3Z"/>
+                <constraint firstItem="erM-Rf-dZN" firstAttribute="top" secondItem="XRv-r8-T6Z" secondAttribute="bottom" constant="40" id="VA2-1M-yyE"/>
+                <constraint firstItem="erM-Rf-dZN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="fnl-EB-wDE"/>
+                <constraint firstAttribute="trailing" secondItem="XRv-r8-T6Z" secondAttribute="trailing" constant="10" id="gDz-jg-Hqx"/>
+                <constraint firstItem="M2X-sv-WkV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="jap-DP-Llk"/>
+                <constraint firstItem="XRv-r8-T6Z" firstAttribute="leading" secondItem="M2X-sv-WkV" secondAttribute="trailing" constant="4" id="svw-91-1tN"/>
+                <constraint firstItem="M2X-sv-WkV" firstAttribute="top" secondItem="XRv-r8-T6Z" secondAttribute="top" id="wzH-TZ-7hq"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="202" y="322"/>
         </view>
     </objects>
+    <resources>
+        <image name="login_sure_btn_bg.png" width="368" height="82"/>
+        <image name="login_xing.png" width="9" height="9"/>
+    </resources>
 </document>

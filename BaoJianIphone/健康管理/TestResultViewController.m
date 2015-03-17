@@ -9,6 +9,7 @@
 #import "TestResultViewController.h"
 #import "ProductListTableViewCell.h"
 #import "TestFinalViewController.h"
+#import "ProductFinalViewController.h"
 @interface TestResultViewController ()
 
 @end
@@ -54,6 +55,10 @@
     return 122;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ProductFinalViewController * final = [[ProductFinalViewController alloc]initWithNibName:@"ProductFinalViewController" bundle:nil];
+    [self.navigationController pushViewController:final animated:YES];
+}
 
 - (void)back:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];

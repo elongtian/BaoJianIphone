@@ -47,6 +47,7 @@
     {
         HomeChannelView * channel = [[HomeChannelView alloc]initWithFrame:CGRectMake(10+(width+10)*(i%3), 10+(SCREENWIDTH-10*2)*(790.0/1035.0)+(width+10)*(i/3)+10, width, width)];
         channel.titleL.text = [titles objectAtIndex:i];
+        channel.titleL.font = UIFontHiraginoSansGBW3(14);
         channel.titleL.textColor = UIColorFromRGB(0x272727);
         [channel.imgV setImage:[UIImage imageNamed:[icons objectAtIndex:i]]];
         channel.backgroundColor = [UIColor whiteColor];

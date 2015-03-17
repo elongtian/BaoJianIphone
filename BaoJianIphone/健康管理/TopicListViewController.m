@@ -32,7 +32,7 @@
 //免费去巴黎 摘星 不容迟疑
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row%2 == 0){
+    if(indexPath.row%2 != 0){
     
         NSString * str1 = @"免费去巴黎 摘星 不容迟疑 免费去巴黎 摘星 不容迟疑";
         NSString * str2 = @"12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。";
@@ -51,7 +51,7 @@
     return 20;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row%2 == 0){
+    if(indexPath.row%2 != 0){
     
         TopicListTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"TopicListTableViewCell"];
         if(cell == nil){

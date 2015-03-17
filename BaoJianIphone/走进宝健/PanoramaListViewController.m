@@ -20,6 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.navbar.titleLabel.text = @"园区全景";
     self.offscreenCells = [[NSMutableDictionary alloc]init];
     photosArray = [[NSMutableArray alloc]init];
     
@@ -28,6 +29,9 @@
     mainTableView.opaque = NO;
     
     self.view.backgroundColor = BackGround_Color;
+    
+    cellHeight = (SCREENWIDTH-46-20*2)*(100/234.0);
+    
 }
 
 #pragma mark - UItableViewDelegate
@@ -69,7 +73,7 @@
 {
     if(indexPath.row %2 == 0)
     {
-      return 143.f;
+      return cellHeight;
     }
     else
     {

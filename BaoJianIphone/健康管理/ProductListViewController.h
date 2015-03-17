@@ -10,8 +10,11 @@
 #import "ELTextField.h"
 #import "IconTextView.h"
 #import "Const.h"
-@interface ProductListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>{
-    
+#import "QrCodeScanningController.h"
+@interface ProductListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,QrCodeScanningDelegate>{
+    BOOL price_bool;
+    BOOL sale_bool;
+    NSInteger sortindex;
 }
 @property (strong, nonatomic) IBOutlet UIButton *scannerBtn;
 @property (strong, nonatomic) IBOutlet ELTextField *searchField;

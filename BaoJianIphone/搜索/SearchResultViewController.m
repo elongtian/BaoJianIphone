@@ -51,14 +51,19 @@
     cancelBtn.tag = 101311;
     [cancelBtn setTitle:@"搜索" forState:UIControlStateNormal];
     cancelBtn.titleLabel.font = UIFontHiraginoSansGBW3(15);
+    [cancelBtn addTarget:self action:@selector(searchAction:) forControlEvents:UIControlEventTouchDown];
     [self.navbar addSubview:cancelBtn];
     
     resultViewController = [[SearchResultShowViewController alloc]initWithNibName:@"SearchResultShowViewController" bundle:nil];
     resultViewController.view.frame = CGRectMake(0, NAVHEIGHT, SCREENWIDTH-20, SCREENHEIGHT-NAVHEIGHT);
     resultViewController.mainTableView.frame = CGRectMake(10, 0, resultViewController.view.frame.size.width, resultViewController.view.frame.size.height);
 //    resultViewController.mainTableView.frame = CGRectMake(0, 0, self.view.frame.size.width, SCREENHEIGHT-NAVHEIGHT);
-    [self.view addSubview:resultViewController.view];
     
+    
+}
+
+- (void)searchAction:(UIButton *)sender{
+    [self.view addSubview:resultViewController.view];
 }
 
 - (void)back:(id)sender{

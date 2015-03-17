@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navbar.titleLabel.text = @"事业机会";
     self.bottom_logoV.hidden = NO;
 }
 

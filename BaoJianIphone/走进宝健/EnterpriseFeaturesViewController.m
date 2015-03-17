@@ -50,6 +50,7 @@
         HomeChannelView * channel = [[HomeChannelView alloc]initWithFrame:CGRectMake((width+10)*(i%3), 10+TopicIMageView.frame.origin.y+TopicIMageView.frame.size.height+(width+10)*(i/3), width, width)];
         channel.titleL.text = [titles objectAtIndex:i];
         channel.titleL.textColor = UIColorFromRGB(0x272727);
+        channel.titleL.font = UIFontHiraginoSansGBW3(14);
         [channel.imgV setImage:[UIImage imageNamed:[icons objectAtIndex:i]]];
         [channel setBackgroundColor:[UIColor whiteColor]];
         channel.tag = 100+i;

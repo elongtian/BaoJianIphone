@@ -7,7 +7,7 @@
 //
 
 #import "MobileFindBack2ViewController.h"
-
+#import "MobileFindResultViewController.h"
 @interface MobileFindBack2ViewController ()
 
 @end
@@ -17,6 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navbar.titleLabel.text = @"手机找回密码";
+    [_sure addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchDown];
+}
+
+- (void)sureAction:(UIButton *)sender{
+    MobileFindResultViewController * final = [[MobileFindResultViewController alloc]initWithNibName:@"MobileFindResultViewController" bundle:nil];
+    [self.navigationController pushViewController:final animated:YES];
+}
+
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

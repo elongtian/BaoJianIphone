@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UpgradeRegisterViewController">
+            <connections>
+                <outlet property="cardid" destination="L1i-FB-km6" id="A4x-VZ-r6F"/>
+                <outlet property="doneBtn" destination="gpN-R6-Qq6" id="1bg-EH-cz2"/>
+                <outlet property="memberid" destination="nil-YJ-lvn" id="zqs-CD-wqf"/>
+                <outlet property="name" destination="7A6-PL-SW9" id="MJ5-Ge-W1P"/>
+                <outlet property="region" destination="JdY-SZ-M7q" id="8Th-Xz-k4I"/>
+                <outlet property="scannerBtn" destination="alR-Ta-Mx8" id="6hw-aL-DOo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入邀请会员编号" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="nil-YJ-lvn">
+                    <rect key="frame" x="10" y="234" width="255" height="35"/>
+                    <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="PhG-RM-Qq2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alR-Ta-Mx8">
+                    <rect key="frame" x="275" y="236.5" width="35" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="2Yu-cL-byK"/>
+                        <constraint firstAttribute="width" constant="35" id="dZt-aK-NpY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" backgroundImage="saomiao.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入真实姓名" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="7A6-PL-SW9">
+                    <rect key="frame" x="10" y="84" width="300" height="35"/>
+                    <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="1J8-2o-3MK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入身份证号" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="L1i-FB-km6">
+                    <rect key="frame" x="10" y="134" width="300" height="35"/>
+                    <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="4fN-3A-PJB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择地区" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="JdY-SZ-M7q">
+                    <rect key="frame" x="10" y="184" width="300" height="35"/>
+                    <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="hUC-WI-tM1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpN-R6-Qq6">
+                    <rect key="frame" x="10" y="314" width="300" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="xHx-Bh-FW9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="确认注册" backgroundImage="login_sure_btn_bg.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="L1i-FB-km6" firstAttribute="leading" secondItem="7A6-PL-SW9" secondAttribute="leading" id="3sK-GO-co0"/>
+                <constraint firstItem="L1i-FB-km6" firstAttribute="top" secondItem="7A6-PL-SW9" secondAttribute="bottom" constant="15" id="9xt-kE-sdY"/>
+                <constraint firstItem="alR-Ta-Mx8" firstAttribute="leading" secondItem="nil-YJ-lvn" secondAttribute="trailing" constant="10" id="ANe-xp-Uvg"/>
+                <constraint firstItem="JdY-SZ-M7q" firstAttribute="top" secondItem="L1i-FB-km6" secondAttribute="bottom" constant="15" id="Cxj-Ql-SQK"/>
+                <constraint firstItem="L1i-FB-km6" firstAttribute="leading" secondItem="JdY-SZ-M7q" secondAttribute="leading" id="EDK-yq-1MB"/>
+                <constraint firstItem="L1i-FB-km6" firstAttribute="trailing" secondItem="JdY-SZ-M7q" secondAttribute="trailing" id="Hxj-op-Pts"/>
+                <constraint firstItem="gpN-R6-Qq6" firstAttribute="top" secondItem="nil-YJ-lvn" secondAttribute="bottom" constant="45" id="KSy-ic-S2f"/>
+                <constraint firstItem="7A6-PL-SW9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="WPk-XQ-yoH"/>
+                <constraint firstItem="gpN-R6-Qq6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Waf-b9-Q75"/>
+                <constraint firstItem="L1i-FB-km6" firstAttribute="trailing" secondItem="alR-Ta-Mx8" secondAttribute="trailing" id="WgE-j5-5Va"/>
+                <constraint firstAttribute="trailing" secondItem="gpN-R6-Qq6" secondAttribute="trailing" constant="10" id="grJ-9S-Ym5"/>
+                <constraint firstItem="alR-Ta-Mx8" firstAttribute="centerY" secondItem="nil-YJ-lvn" secondAttribute="centerY" id="hA5-8h-II9"/>
+                <constraint firstItem="L1i-FB-km6" firstAttribute="leading" secondItem="nil-YJ-lvn" secondAttribute="leading" id="iBc-1W-jxU"/>
+                <constraint firstItem="7A6-PL-SW9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="jD8-LM-EIR"/>
+                <constraint firstAttribute="trailing" secondItem="7A6-PL-SW9" secondAttribute="trailing" constant="10" id="jSM-gm-GUE"/>
+                <constraint firstItem="nil-YJ-lvn" firstAttribute="top" secondItem="JdY-SZ-M7q" secondAttribute="bottom" constant="15" id="pmO-Kb-fzn"/>
+                <constraint firstItem="L1i-FB-km6" firstAttribute="trailing" secondItem="7A6-PL-SW9" secondAttribute="trailing" id="ruW-vN-elz"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="386" y="283"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login_input_bg.png" width="612" height="79"/>
+        <image name="login_sure_btn_bg.png" width="368" height="82"/>
+        <image name="saomiao.png" width="48" height="48"/>
+    </resources>
+</document>

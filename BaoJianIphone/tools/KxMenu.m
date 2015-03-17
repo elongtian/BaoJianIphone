@@ -435,8 +435,8 @@ typedef enum {
     
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectZero];
     contentView.autoresizingMask = UIViewAutoresizingNone;
-    contentView.backgroundColor = [UIColor clearColor];
-    contentView.opaque = NO;
+    contentView.backgroundColor = [UIColor whiteColor];
+//    contentView.opaque = NO;
     
     CGFloat itemY = kMarginY * 2;
     NSUInteger itemNum = 0;
@@ -619,8 +619,12 @@ typedef enum {
 - (void)drawBackground:(CGRect)frame
              inContext:(CGContextRef) context
 {
-    CGFloat R0 = 0.267, G0 = 0.303, B0 = 0.335;
-    CGFloat R1 = 0.040, G1 = 0.040, B1 = 0.040;
+//    CGFloat R0 = 0.267, G0 = 0.303, B0 = 0.335;
+//    CGFloat R1 = 0.040, G1 = 0.040, B1 = 0.040;  马东凯修改
+    
+    CGFloat R0 = 1, G0 = 1, B0 = 1;
+    CGFloat R1 = 1, G1 = 1, B1 = 1;
+
     
     UIColor *tintColor = [KxMenu tintColor];
     if (tintColor) {

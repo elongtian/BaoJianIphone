@@ -20,6 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.navbar.titleLabel.text = @"健康管理";
+    
     UITapGestureRecognizer * protap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(proAction:)];
     [_pro_view addGestureRecognizer:protap];
     

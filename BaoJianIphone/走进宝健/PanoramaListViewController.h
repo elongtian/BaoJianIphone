@@ -8,7 +8,9 @@
 
 #import "BaseViewController.h"
 #import "PanoramaListCell.h"
-@interface PanoramaListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+@interface PanoramaListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>{
+    CGFloat cellHeight;
+}
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 @property (retain, nonatomic) NSMutableArray * photosArray;
 @property (retain, nonatomic) PanoramaListCell * panoramaListCell;

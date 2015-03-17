@@ -9,5 +9,8 @@
 #import "BaseViewController.h"
 
 @interface MobileFindBack2ViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *password2;
+@property (weak, nonatomic) IBOutlet UIButton *sure;
 
 @end
