@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "UpgradeRegisterViewController.h"
+#import "DaiDodgeKeyboard.h"
 @interface RegisterViewController ()
 
 @end
@@ -20,12 +21,29 @@
     self.navbar.titleLabel.text = @"注册";
     
     [_nextbtn addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchDown];
+    
+//     [inputHelper setupInputHelperForView:_mScrollView withDismissType:InputHelperDismissTypeTapGusture];
+//    _mScrollViewWidth.constant = SCREENWIDTH;
+//    _mScrollView.contentSize = CGSizeMake(SCREENWIDTH, _mScrollView.frame.size.height);
+    [DaiDodgeKeyboard addRegisterTheViewNeedDodgeKeyboard:self.view];
+    _mScrollView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapScrollView)];
+    [_mScrollView addGestureRecognizer:tap];
+}
+- (void)tapScrollView{
+    [self.view endEditing:YES];
+}
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 
 - (void)nextAction:(UIButton *)sender{
     //下一步
     UpgradeRegisterViewController * upgrade = [[UpgradeRegisterViewController alloc]initWithNibName:@"UpgradeRegisterViewController" bundle:nil];
     [self.navigationController pushViewController:upgrade animated:YES];
+    
+    
 }
 
 - (void)back:(id)sender{

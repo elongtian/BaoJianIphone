@@ -13,5 +13,4 @@
 
 + (instancetype)sharedClient;
 
-+ (void)sessionDownloadWithUrl:(NSString *)urlStr success:(void (^)(NSURL *fileURL))success fail:(void (^)())fail;
 @end

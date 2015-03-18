@@ -44,7 +44,7 @@
             cell.content_desc.text = @"字里行间充满了爱！慢慢的爱感动了你我他！ 字里行间充满了爱！慢慢的爱感动了你我他！";
             cell.content_desc2.text = @"保证的产品加上年轻的心态，活出自我风采 保证的产品加上年轻的心态，活出自我风采";
         }
-        [cell.contentView sizeToFit];
+//        [cell.contentView sizeToFit];
         return cell;
 }
 
@@ -65,7 +65,7 @@
         
         CGFloat height = 26+14+13+8+14+8+size2.height+8+8+size.height+18;
         
-        return height+3;
+        return height+5;
 }
 //点击去回复某条评论
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -281,6 +281,10 @@
 		926045EB1AB41925009F4BF8 /* yqqj_lead_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 926045EA1AB41925009F4BF8 /* yqqj_lead_icon.png */; };
 		926045EF1AB433C4009F4BF8 /* SearchResultShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926045ED1AB433C4009F4BF8 /* SearchResultShowViewController.m */; };
 		926045F01AB433C4009F4BF8 /* SearchResultShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 926045EE1AB433C4009F4BF8 /* SearchResultShowViewController.xib */; };
+		92801B591AB9766000B0C2F7 /* DaiDodgeKeyboard+AccessObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 92801B521AB9766000B0C2F7 /* DaiDodgeKeyboard+AccessObject.m */; };
+		92801B5A1AB9766000B0C2F7 /* DaiDodgeKeyboard+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 92801B541AB9766000B0C2F7 /* DaiDodgeKeyboard+Animation.m */; };
+		92801B5B1AB9766000B0C2F7 /* DaiDodgeKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 92801B561AB9766000B0C2F7 /* DaiDodgeKeyboard.m */; };
+		92801B5C1AB9766000B0C2F7 /* UIView+FirstResponderNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = 92801B581AB9766000B0C2F7 /* UIView+FirstResponderNotify.m */; };
 		929AA81F1AB2D8D40081FA12 /* detail_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 929AA81E1AB2D8D40081FA12 /* detail_arrow.png */; };
 		929AA8321AB2DF5C0081FA12 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929AA8231AB2DF5C0081FA12 /* AboutUsViewController.m */; };
 		929AA8331AB2DF5C0081FA12 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929AA8241AB2DF5C0081FA12 /* AboutUsViewController.xib */; };
@@ -694,6 +698,14 @@
 		926045EC1AB433C4009F4BF8 /* SearchResultShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultShowViewController.h; sourceTree = "<group>"; };
 		926045ED1AB433C4009F4BF8 /* SearchResultShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultShowViewController.m; sourceTree = "<group>"; };
 		926045EE1AB433C4009F4BF8 /* SearchResultShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultShowViewController.xib; sourceTree = "<group>"; };
+		92801B511AB9766000B0C2F7 /* DaiDodgeKeyboard+AccessObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DaiDodgeKeyboard+AccessObject.h"; sourceTree = "<group>"; };
+		92801B521AB9766000B0C2F7 /* DaiDodgeKeyboard+AccessObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DaiDodgeKeyboard+AccessObject.m"; sourceTree = "<group>"; };
+		92801B531AB9766000B0C2F7 /* DaiDodgeKeyboard+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DaiDodgeKeyboard+Animation.h"; sourceTree = "<group>"; };
+		92801B541AB9766000B0C2F7 /* DaiDodgeKeyboard+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DaiDodgeKeyboard+Animation.m"; sourceTree = "<group>"; };
+		92801B551AB9766000B0C2F7 /* DaiDodgeKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiDodgeKeyboard.h; sourceTree = "<group>"; };
+		92801B561AB9766000B0C2F7 /* DaiDodgeKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiDodgeKeyboard.m; sourceTree = "<group>"; };
+		92801B571AB9766000B0C2F7 /* UIView+FirstResponderNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FirstResponderNotify.h"; sourceTree = "<group>"; };
+		92801B581AB9766000B0C2F7 /* UIView+FirstResponderNotify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FirstResponderNotify.m"; sourceTree = "<group>"; };
 		929AA81E1AB2D8D40081FA12 /* detail_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail_arrow.png; sourceTree = "<group>"; };
 		929AA8221AB2DF5C0081FA12 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
 		929AA8231AB2DF5C0081FA12 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
@@ -1238,6 +1250,7 @@
 		925A70741A9EE635000E9D28 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				92801B501AB9766000B0C2F7 /* DaiDodgeKeyboard */,
 				517DF7691AB7F81A0053EEFE /* libqrencode */,
 				517DF7611AB7F7700053EEFE /* QrCodeScanningController.h */,
 				517DF7621AB7F7700053EEFE /* QrCodeScanningController.m */,
@@ -1368,6 +1381,21 @@
 			path = ELTabBar;
 			sourceTree = "<group>";
 		};
+		92801B501AB9766000B0C2F7 /* DaiDodgeKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				92801B511AB9766000B0C2F7 /* DaiDodgeKeyboard+AccessObject.h */,
+				92801B521AB9766000B0C2F7 /* DaiDodgeKeyboard+AccessObject.m */,
+				92801B531AB9766000B0C2F7 /* DaiDodgeKeyboard+Animation.h */,
+				92801B541AB9766000B0C2F7 /* DaiDodgeKeyboard+Animation.m */,
+				92801B551AB9766000B0C2F7 /* DaiDodgeKeyboard.h */,
+				92801B561AB9766000B0C2F7 /* DaiDodgeKeyboard.m */,
+				92801B571AB9766000B0C2F7 /* UIView+FirstResponderNotify.h */,
+				92801B581AB9766000B0C2F7 /* UIView+FirstResponderNotify.m */,
+			);
+			path = DaiDodgeKeyboard;
+			sourceTree = "<group>";
+		};
 		929AA8201AB2DF5C0081FA12 /* 版本更新 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1444,7 +1472,6 @@
 				9215D7CC1AAECA1700FC2B77 /* images */,
 				925A706B1A9EC735000E9D28 /* 首页 */,
 				92D4B61C1A8B39B500177CD3 /* 帮助 */,
-				92D4B61D1A8B39B500177CD3 /* 宝健商场 */,
 				92D4B61E1A8B39B500177CD3 /* 个人中心 */,
 				92D4B61F1A8B39B500177CD3 /* 健康管理 */,
 				92D4B6201A8B39B500177CD3 /* 热门活动 */,
@@ -1517,7 +1544,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = "宝健商场";
+			name = "宝健商场";
+			path = "../宝健商场";
 			sourceTree = "<group>";
 		};
 		92D4B61E1A8B39B500177CD3 /* 个人中心 */ = {
@@ -1547,6 +1575,7 @@
 		92D4B6201A8B39B500177CD3 /* 热门活动 */ = {
 			isa = PBXGroup;
 			children = (
+				92D4B61D1A8B39B500177CD3 /* 宝健商场 */,
 			);
 			path = "热门活动";
 			sourceTree = "<group>";
@@ -1962,6 +1991,7 @@
 				920E33C31AB02FDB00E84A79 /* PanoramaImageView.m in Sources */,
 				929AA8341AB2DF5C0081FA12 /* AboutAppViewController.m in Sources */,
 				5120FDD11AB6C7CB000E9BE1 /* MemberCenterViewController.m in Sources */,
+				92801B591AB9766000B0C2F7 /* DaiDodgeKeyboard+AccessObject.m in Sources */,
 				925A6FEC1A9EBD27000E9D28 /* EnterBaoJianViewController.m in Sources */,
 				920B78381AA458B60096EA1D /* FileMangerObject.m in Sources */,
 				925A70BE1A9EE76D000E9D28 /* AFSecurityPolicy.m in Sources */,
@@ -1970,6 +2000,7 @@
 				920B78351AA451560096EA1D /* NSString+Addtion.m in Sources */,
 				925A705A1A9EC5F9000E9D28 /* MobileFindBackViewController.m in Sources */,
 				925A70911A9EE6FF000E9D28 /* ELTextView.m in Sources */,
+				92801B5B1AB9766000B0C2F7 /* DaiDodgeKeyboard.m in Sources */,
 				925A70C41A9EE76D000E9D28 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				925A70491A9EC273000E9D28 /* SearchResultViewController.m in Sources */,
 				925A703F1A9EC194000E9D28 /* InfomationFinalViewController.m in Sources */,
@@ -1996,12 +2027,14 @@
 				929AA8361AB2DF5C0081FA12 /* HelpViewController.m in Sources */,
 				92CB72E01AA6FF8400DF2587 /* TestListTableViewCell.m in Sources */,
 				925A70D11A9EE799000E9D28 /* KxMenu.m in Sources */,
+				92801B5C1AB9766000B0C2F7 /* UIView+FirstResponderNotify.m in Sources */,
 				925A6FE71A9EBCE6000E9D28 /* EnterpriseIntroViewController.m in Sources */,
 				517DF77C1AB7F81A0053EEFE /* qrspec.c in Sources */,
 				517DF7781AB7F81A0053EEFE /* bitstream.c in Sources */,
 				925A70081A9EBF12000E9D28 /* ProductListViewController.m in Sources */,
 				929AA8321AB2DF5C0081FA12 /* AboutUsViewController.m in Sources */,
 				925A708B1A9EE6CA000E9D28 /* Toast+UIView.m in Sources */,
+				92801B5A1AB9766000B0C2F7 /* DaiDodgeKeyboard+Animation.m in Sources */,
 				920B783B1AA463950096EA1D /* PanoramaListCell.m in Sources */,
 				517DF77E1AB7F81A0053EEFE /* split.c in Sources */,
 				925A70691A9EC690000E9D28 /* MobileFindResultViewController.m in Sources */,

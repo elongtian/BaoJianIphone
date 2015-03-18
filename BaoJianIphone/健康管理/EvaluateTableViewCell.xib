@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -51,7 +51,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="字里行间充满了爱！慢慢的爱感动了你我他！" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYt-ZS-77Z">
-                        <rect key="frame" x="88" y="131" width="208" height="33"/>
+                        <rect key="frame" x="88" y="131" width="208" height="29"/>
                         <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="13"/>
                         <color key="textColor" red="0.41176470588235292" green="0.41176470588235292" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VWO-Qc-s7I">
-                        <rect key="frame" x="0.0" y="179" width="320" height="1"/>
+                        <rect key="frame" x="0.0" y="175" width="320" height="1"/>
                         <color key="backgroundColor" red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="b5R-oY-7h0"/>
@@ -127,7 +127,7 @@
                     <constraint firstItem="SQa-FZ-Crb" firstAttribute="leading" secondItem="ePb-uE-Qf2" secondAttribute="trailing" constant="1" id="9li-Ig-9pH"/>
                     <constraint firstItem="SQa-FZ-Crb" firstAttribute="centerY" secondItem="ePb-uE-Qf2" secondAttribute="centerY" id="Onc-pj-kMW"/>
                     <constraint firstItem="VWO-Qc-s7I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="S6l-3a-Ffa"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="VWO-Qc-s7I" secondAttribute="bottom" constant="-12" id="UYa-bL-aS2"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="VWO-Qc-s7I" secondAttribute="bottom" constant="-8" id="UYa-bL-aS2"/>
                     <constraint firstItem="QrG-wI-1Qt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="WYM-DP-Haa"/>
                     <constraint firstAttribute="trailingMargin" secondItem="4dO-og-OvM" secondAttribute="trailing" constant="8" id="X45-dx-E4b"/>
                     <constraint firstItem="4dO-og-OvM" firstAttribute="leading" secondItem="QrG-wI-1Qt" secondAttribute="trailing" constant="8" id="XWC-c8-3ri"/>
@@ -150,7 +150,7 @@
                 <outlet property="content_time2" destination="J5U-KS-Jzw" id="cKa-o1-Lek"/>
                 <outlet property="evaluateView" destination="4dO-og-OvM" id="4h0-4e-jV1"/>
             </connections>
-            <point key="canvasLocation" x="336" y="150.5"/>
+            <point key="canvasLocation" x="345" y="146.5"/>
         </tableViewCell>
     </objects>
     <resources>

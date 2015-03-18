@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navbar.titleLabel.text = @"测试结果";
+    
     [self initPlat];
 }
 
@@ -27,14 +29,14 @@
     [_againBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchDown];
     [_moreBtn addTarget:self action:@selector(moreBtnAction:) forControlEvents:UIControlEventTouchDown];
     
-    _resultL.text = @"测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果";
-    _topViewHeight.constant = _resultL.frame.origin.y+_resultL.frame.size.height+20*2+40*2;
+    _resultL.text = @"测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果测试结果";
+    [_resultL sizeToFit];
+    _topViewHeight.constant = _resultL.frame.origin.y+_resultL.frame.size.height+16+38+21;
+    
     _topViewWidth.constant = SCREENWIDTH-20;
-    NSLog(@"%@",[NSValue valueWithCGRect:_maintableView.frame]);
+    NSLog(@"%@",[NSValue valueWithCGRect:_topView.frame]);
     _maintableViewWidth.constant = SCREENWIDTH-20;
 
-    
-//    _maintableView.frame = CGRectMake(_maintableView.frame.origin.x, _maintableView.frame.origin.y, _maintableView.frame.size.width, <#CGFloat height#>)
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

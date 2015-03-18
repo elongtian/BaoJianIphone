@@ -7,15 +7,18 @@
 //
 
 #import "BaseViewController.h"
-
+#import "ELTextField.h"
 @interface RegisterViewController : BaseViewController
-@property (weak, nonatomic) IBOutlet UITextField *mobile;
-@property (weak, nonatomic) IBOutlet UITextField *code;
-@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (strong, nonatomic) IBOutlet UIScrollView *mScrollView;
+@property (weak, nonatomic) IBOutlet ELTextField *mobile;
+@property (weak, nonatomic) IBOutlet ELTextField *code;
+@property (weak, nonatomic) IBOutlet ELTextField *password;
 
-@property (weak, nonatomic) IBOutlet UITextField *passwordtwo;
-@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet ELTextField *passwordtwo;
+@property (weak, nonatomic) IBOutlet ELTextField *email;
+@property (strong, nonatomic) IBOutlet UILabel *agreeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *agreeBtn;
 @property (weak, nonatomic) IBOutlet UILabel *protcol;
 @property (weak, nonatomic) IBOutlet UIButton *nextbtn;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *mScrollViewWidth;
 @end

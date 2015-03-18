@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -29,7 +29,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入邀请会员编号" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="nil-YJ-lvn">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入邀请会员编号" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="nil-YJ-lvn" customClass="ELTextField">
                     <rect key="frame" x="10" y="234" width="255" height="35"/>
                     <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -39,7 +39,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alR-Ta-Mx8">
-                    <rect key="frame" x="275" y="236.5" width="35" height="30"/>
+                    <rect key="frame" x="275" y="237" width="35" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="2Yu-cL-byK"/>
                         <constraint firstAttribute="width" constant="35" id="dZt-aK-NpY"/>
@@ -49,7 +49,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入真实姓名" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="7A6-PL-SW9">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入真实姓名" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="7A6-PL-SW9" customClass="ELTextField">
                     <rect key="frame" x="10" y="84" width="300" height="35"/>
                     <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -58,7 +58,7 @@
                     <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入身份证号" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="L1i-FB-km6">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入身份证号" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="L1i-FB-km6" customClass="ELTextField">
                     <rect key="frame" x="10" y="134" width="300" height="35"/>
                     <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -67,7 +67,7 @@
                     <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择地区" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="JdY-SZ-M7q">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择地区" minimumFontSize="17" background="login_input_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="JdY-SZ-M7q" customClass="ELTextField">
                     <rect key="frame" x="10" y="184" width="300" height="35"/>
                     <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>

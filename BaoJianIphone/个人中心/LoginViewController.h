@@ -7,10 +7,10 @@
 //
 
 #import "BaseViewController.h"
-
+#import "ELTextField.h"
 @interface LoginViewController : BaseViewController
-@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passWordTextField;
+@property (weak, nonatomic) IBOutlet ELTextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet ELTextField *passWordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *sureBtn;
 @property (weak, nonatomic) IBOutlet UIButton *forgotPassBtn;
 

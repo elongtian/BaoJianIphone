@@ -8,6 +8,7 @@
 
 #import "UpgradeRegisterViewController.h"
 #import "RegistCompletedViewController.h"
+#import "DaiDodgeKeyboard.h"
 @interface UpgradeRegisterViewController ()
 
 @end
@@ -19,6 +20,12 @@
     // Do any additional setup after loading the view from its nib.
     self.navbar.titleLabel.text = @"注册宝健之友";
     [_doneBtn addTarget:self action:@selector(registDone:) forControlEvents:UIControlEventTouchDown];
+    
+    [DaiDodgeKeyboard addRegisterTheViewNeedDodgeKeyboard:self.view];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 
 - (void)registDone:(UIButton *)sender{

@@ -9,5 +9,7 @@
 #import "BaseViewController.h"
 
 @interface KefuFindBackViewController : BaseViewController
+@property (strong, nonatomic) IBOutlet UILabel *kefu_teleL;
+@property (strong, nonatomic) IBOutlet UIButton *copyBtn;
 
 @end

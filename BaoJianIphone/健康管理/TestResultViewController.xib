@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Hiragino Sans GB W3.otf">
@@ -79,7 +79,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZI-z4-TWL">
-                                    <rect key="frame" x="11" y="237" width="117" height="38"/>
+                                    <rect key="frame" x="11" y="238" width="117" height="38"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="38" id="dsL-Dv-Ws3"/>
                                     </constraints>
@@ -90,7 +90,7 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xz-F8-7dv">
-                                    <rect key="frame" x="172" y="237" width="117" height="38"/>
+                                    <rect key="frame" x="172" y="238" width="117" height="38"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="38" id="Y15-x4-9N2"/>
                                     </constraints>
@@ -107,13 +107,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的颈椎健康较差，患颈椎病的可能性较大。颈椎病重在预防，如果您常做在办公桌前缺乏运动，建议您经常做颈椎保健操，以预防颈椎病的发生。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yy-v6-G2t">
-                                    <rect key="frame" x="17" y="154" width="266" height="62.5"/>
+                                    <rect key="frame" x="17" y="154" width="266" height="63"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shf-1E-Pbq">
-                                    <rect key="frame" x="129" y="237" width="42" height="21"/>
+                                    <rect key="frame" x="129" y="238" width="42" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="Pat-0x-sE8"/>
                                         <constraint firstAttribute="width" constant="42" id="lPa-Fm-s8v"/>
@@ -144,6 +144,7 @@
                                 <constraint firstAttribute="centerX" secondItem="shf-1E-Pbq" secondAttribute="centerX" id="WIR-ZX-6YD"/>
                                 <constraint firstItem="EBO-HN-ZKx" firstAttribute="leading" secondItem="Yvh-Kh-NzP" secondAttribute="leading" constant="17" id="aaI-UN-gdb"/>
                                 <constraint firstItem="M1o-f9-041" firstAttribute="top" secondItem="Yvh-Kh-NzP" secondAttribute="top" constant="10" id="dDd-Yg-d1U"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aZI-z4-TWL" secondAttribute="bottom" constant="16" id="lBe-hF-H8z"/>
                                 <constraint firstAttribute="trailing" secondItem="4Yy-v6-G2t" secondAttribute="trailing" constant="17" id="rIH-dt-BJU"/>
                                 <constraint firstAttribute="height" constant="292" id="vGw-qB-cvt"/>
                                 <constraint firstItem="aZI-z4-TWL" firstAttribute="width" secondItem="5Xz-F8-7dv" secondAttribute="width" id="w0V-6S-aqI"/>
@@ -188,7 +189,7 @@
                 <constraint firstItem="LbV-Pb-azq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tZW-xv-q2X"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="-150" y="-95"/>
+            <point key="canvasLocation" x="-149" y="-151"/>
         </view>
     </objects>
     <resources>

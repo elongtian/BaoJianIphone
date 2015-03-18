@@ -7,12 +7,12 @@
 //
 
 #import "BaseViewController.h"
-
+#import "ELTextField.h"
 @interface UpgradeRegisterViewController : BaseViewController
-@property (weak, nonatomic) IBOutlet UITextField *name;
-@property (weak, nonatomic) IBOutlet UITextField *cardid;
-@property (weak, nonatomic) IBOutlet UITextField *region;
-@property (weak, nonatomic) IBOutlet UITextField *memberid;
+@property (weak, nonatomic) IBOutlet ELTextField *name;
+@property (weak, nonatomic) IBOutlet ELTextField *cardid;
+@property (weak, nonatomic) IBOutlet ELTextField *region;
+@property (weak, nonatomic) IBOutlet ELTextField *memberid;
 @property (weak, nonatomic) IBOutlet UIButton *scannerBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *doneBtn;

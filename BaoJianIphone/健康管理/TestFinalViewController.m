@@ -25,12 +25,8 @@
     [self initPlat];
 }
 
-- (void)initPlat{
-    numbers = 8;
-    current_index = 1;
-    [self CreateSerialNumber];
-    
-    NSLog(@"%f",_mainContentView.frame.size.height);
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     
     mainScrollView = [[ReuseScrollView alloc]initWithFrame:CGRectMake(10, _testicon.frame.origin.y+_testicon.frame.size.height, SCREENWIDTH-20-20, _forwardBtn.frame.origin.y-(_testicon.frame.origin.y+_testicon.frame.size.height)-20)];
     mainScrollView.scrollEnabled = NO;
@@ -40,19 +36,26 @@
     mainScrollView.backgroundColor = [UIColor clearColor];
     [_mainContentView addSubview:mainScrollView];
     
+   
+}
+
+- (void)initPlat{
+    numbers = 8;
+    current_index = 1;
+    [self CreateSerialNumber];
+
     [_forwardBtn addTarget:self action:@selector(forwardAction:) forControlEvents:UIControlEventTouchDown];
     [_nextBtn addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchDown];
     
     answers = [[NSMutableArray alloc]init];
     for(int i = 0;i<numbers;i++){
-        NSArray * arr = [[NSArray alloc]initWithObjects:@"测试A",@"测试B",@"测试C",@"测试D",@"测试E测试E测试E测试E测试E测试E测试E测试E", nil];
+        NSArray * arr = [[NSArray alloc]initWithObjects:@"150以下",@"150-160",@"160-170",@"170-180",@"180以上", nil];
         [answers addObject:arr];
     }
     
     questions = [[NSMutableArray alloc]init];
     for(int i = 0;i<numbers;i++){
-        
-        NSString * str = [NSString stringWithFormat:@"这是一个测试题这是一个测试题这是一个测试题这是一个测试题这是一个测试题这是一个测试题这是一个测试题这是一个测试题%d",i];
+        NSString * str = [NSString stringWithFormat:@"请选择您的身高："];
         [questions addObject:str];
     }
 }
