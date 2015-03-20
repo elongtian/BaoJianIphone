@@ -17,6 +17,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navbar.titleLabel.text = @"企业简介";
+    [self download];
+}
+
+- (void)download{
+    [ELRequestSingle articleDetailRequest:^(id objc) {
+        
+        BJObject * object = (BJObject *)objc;
+        [_mWebView loadHTMLString:object.content_body baseURL:nil];
+    } withObject:self.optionid];
+}
+
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+
+}
+
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

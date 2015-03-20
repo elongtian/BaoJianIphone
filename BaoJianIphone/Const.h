@@ -66,10 +66,11 @@
 #import "NSString+Addtion.h"
 
 #import "BJObject.h"
+#import "ELRequestSingle.h"
 
-#define HTTP @"http://www.ipaosos.com/app/index.php?com=com_appService"
+#define HTTP @"http://192.168.1.170/bj_app/app/index.php?com=com_appService"
 //首页轮播
-#define HomeAdUrl @"&method=save&app_com=com_lbsapp&task=Appadd"
 
+#define HomeBannerUrl @"&method=appSev&app_com=com_ad&task=top"
 
 #endif

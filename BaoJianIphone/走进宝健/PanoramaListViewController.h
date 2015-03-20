@@ -10,6 +10,7 @@
 #import "PanoramaListCell.h"
 @interface PanoramaListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>{
     CGFloat cellHeight;
+    NSInteger page;
 }
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 @property (retain, nonatomic) NSMutableArray * photosArray;

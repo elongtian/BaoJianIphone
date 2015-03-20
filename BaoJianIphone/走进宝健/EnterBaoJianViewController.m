@@ -10,6 +10,7 @@
 #import "HomeChannelView.h"
 #import "EnterpriseFeaturesViewController.h"
 #import "PanoramaListViewController.h"
+#import "EnterpriseIntroViewController.h"
 #import "KxMenu.h"
 @interface EnterBaoJianViewController ()
 
@@ -17,6 +18,7 @@
 
 @implementation EnterBaoJianViewController
 @synthesize mainScrollView;
+@synthesize pageView;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -33,6 +35,8 @@
 
 - (void)initParameters
 {
+    channelArray = [[NSArray alloc]init];
+    
     _Topic = [[JCTopic alloc]initWithFrame:CGRectMake(10, 10, SCREENWIDTH-10*2, (SCREENWIDTH-10*2)*(790.0/1035.0))];
     titles = [[NSMutableArray alloc]initWithObjects:@"企业简介",@"企业特色",@"园区全景", nil];
     icons = [[NSMutableArray alloc]initWithObjects:@"qyjj_icon",@"qyts_icon",@"yqqj_icon", nil];
@@ -86,22 +90,32 @@
         [channel.imgV setImage:[UIImage imageNamed:[icons objectAtIndex:i]]];
         channel.backgroundColor = [colors objectAtIndex:i];
         channel.tag = 100+i;
+        
         channel.call_back = ^(HomeChannelView * view){
+            if([channelArray count]==0){
+                [self.view makeToast:@"数据正在拉取中..."];
+                return ;
+            }
+            BJObject * object = [channelArray objectAtIndex:i];
             switch (view.tag-100) {
                 case 0:
                 {
-                
+                    EnterpriseIntroViewController * info = [[EnterpriseIntroViewController alloc]initWithNibName:@"EnterpriseIntroViewController" bundle:nil];
+                    info.optionid = object.auto_id;
+                    [self.navigationController pushViewController:info animated:YES];
                 }
                     break;
                 case 1:
                 {
                     EnterpriseFeaturesViewController * feature = [[EnterpriseFeaturesViewController alloc]init];
+                    feature.optionid = object.auto_id;
                     [self.navigationController pushViewController:feature animated:YES];
                 }
                     break;
                 case 2:
                 {
                     PanoramaListViewController * panoramalist = [[PanoramaListViewController alloc]initWithNibName:@"PanoramaListViewController" bundle:nil];
+                    panoramalist.optionid = object.auto_id;
                     [self.navigationController pushViewController:panoramalist animated:YES];
                 }
                     break;
@@ -119,18 +133,15 @@
 
 - (void)ad_request
 {
-    NSString * url = [NSString stringWithFormat:@"%@%@",HTTP,HomeAdUrl];
-    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary * dic = (NSDictionary *)responseObject;
-        
-        NSArray * arr = (NSArray *)[dic objectForKey:@"datalist"];
-        //            rootHeadView.hidden = YES;
-        self.pics = [NSMutableArray arrayWithArray:arr];
+    [ELRequestSingle comeBaoJianBannerRequest:^(id objc) {
+        self.pics = [NSMutableArray arrayWithArray:(NSArray *)objc];
         [self createBanner:self.pics];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self.view makeToast:NO_NET];
     }];
+    
+    [ELRequestSingle comeBjPlateRequest:^(id objc) {
+        
+        channelArray = [NSArray arrayWithArray:(NSArray *)objc];
+    } withObject:self.optionid];
 }
 
 - (void)createBanner:(NSArray *)arr
@@ -141,16 +152,26 @@
     NSMutableArray * tempArray = [[NSMutableArray alloc]init];
     for(NSDictionary * dic in arr)
     {
-        [tempArray addObject:[NSDictionary dictionaryWithObjects:@[OBJC([dic objectForKey:@"content_img"]) ,NSStringFromJson([dic objectForKey:@"content_name"]),@NO] forKeys:@[@"pic",@"title",@"isLoc"]]];
-        
-        //        [tempArray addObject:[NSDictionary dictionaryWithObjects:@[OBJC([dic objectForKey:@"content_value"]) ,OBJC([dic objectForKey:@"content_name"]),@NO,[UIImage imageNamed:@"no_phote"]] forKeys:@[@"pic",@"title",@"isLoc",@"placeholderImage"]]];
+        [tempArray addObject:[NSDictionary dictionaryWithObjects:@[OBJC([dic objectForKey:@"content_simg"]) ,NSStringFromJson([dic objectForKey:@"content_name"]),@NO] forKeys:@[@"pic",@"title",@"isLoc"]]];
     }
-    
-    
     _Topic.pics = tempArray;
     [_Topic upDate];
     _Topic.userInteractionEnabled = YES;
     [mainScrollView addSubview:_Topic];
+    
+    pageView = [[StyledPageControl alloc]initWithFrame:CGRectMake(_Topic.frame.origin.x+20, _Topic.frame.size.height+_Topic.frame.origin.y-30, _Topic.frame.size.width-40, 30)];
+    [mainScrollView addSubview:pageView];
+    
+    [pageView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+    
+    [pageView setPageControlStyle:PageControlStyleThumb];
+    [pageView setThumbImage:[UIImage imageNamed:@"common_no_selected.png"]];
+    [pageView setSelectedThumbImage:[UIImage imageNamed:@"common_selected.png"]];
+    [pageView setNumberOfPages:(int)[tempArray count]];
+    
+    
+    [pageView setCurrentPage:0];
+    
     
 }
 
@@ -197,7 +218,7 @@
 {
     if(jc == _Topic)
     {
-        
+        [pageView setCurrentPage:jc.contentOffset.x/SCREENWIDTH];
     }
 }
 

@@ -20,11 +20,15 @@
     // Do any additional setup after loading the view from its nib.
     self.navbar.titleLabel.text = @"注册";
     
+    isAgree = YES;
+    
     [_nextbtn addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchDown];
     
-//     [inputHelper setupInputHelperForView:_mScrollView withDismissType:InputHelperDismissTypeTapGusture];
-//    _mScrollViewWidth.constant = SCREENWIDTH;
-//    _mScrollView.contentSize = CGSizeMake(SCREENWIDTH, _mScrollView.frame.size.height);
+    [_agreeBtn addTarget:self action:@selector(agreeAction:) forControlEvents:UIControlEventTouchDown];
+    
+    UITapGestureRecognizer * tapprotocol = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(protocolAction:)];
+    [_protcol addGestureRecognizer:tapprotocol];
+
     [DaiDodgeKeyboard addRegisterTheViewNeedDodgeKeyboard:self.view];
     _mScrollView.userInteractionEnabled = YES;
     
@@ -44,6 +48,22 @@
     [self.navigationController pushViewController:upgrade animated:YES];
     
     
+}
+
+- (void)protocolAction:(id)sender{
+    //跳转到协议
+}
+
+- (void)agreeAction:(id)sender{
+    if(isAgree){
+        [_agreeBtn setImage:[UIImage imageNamed:@"login_no_select_icon"] forState:UIControlStateNormal];
+        _agreeLabel.text = @"不同意";
+    }
+    else{
+        [_agreeBtn setImage:[UIImage imageNamed:@"login_select_icon"] forState:UIControlStateNormal];
+        _agreeLabel.text = @"同意";
+    }
+    isAgree = !isAgree;
 }
 
 - (void)back:(id)sender{

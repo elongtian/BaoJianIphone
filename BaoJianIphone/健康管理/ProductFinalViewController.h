@@ -22,6 +22,11 @@
 @property (strong, nonatomic) IBOutlet UIButton *collectionBtn;
 @property (strong, nonatomic) IBOutlet UIButton *purchaseBtn;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *webHeghtConstraint;
+@property (strong, nonatomic) IBOutlet UILabel *content_name;
+@property (strong, nonatomic) IBOutlet UILabel *content_desc1;
+@property (strong, nonatomic) IBOutlet UILabel *content_desc2;
+@property (strong, nonatomic) IBOutlet UILabel *content_price;
+@property (strong, nonatomic) IBOutlet UILabel *content_preprice;
 
 @property (retain, nonatomic) JCTopic * Topic;
 @property (retain, nonatomic) StyledPageControl * pageView;

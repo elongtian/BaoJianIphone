@@ -7,7 +7,8 @@
 //
 
 #import "InfomationCenterViewController.h"
-
+#import "InfomationFinalViewController.h"
+#import "BookChapterListViewController.h"
 @interface InfomationCenterViewController ()
 
 @end
@@ -23,11 +24,21 @@
     // Do any additional setup after loading the view from its nib.
     
     [self initPlat];
-    
+    [self download];
+}
+
+- (void)download{
+    [ELRequestSingle infoCenterPlateRequest:^(id objc) {
+        channelArray = [NSArray arrayWithArray:(NSArray *)objc];
+        BJObject * object = [channelArray objectAtIndex:0];
+        newsController.optionid = object.auto_id;
+        [newsController download];
+    } withObject:self.optionid];
 }
 
 - (void)initPlat{
     
+    channelArray = [[NSArray alloc]init];
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -40,18 +51,47 @@
     self.slideSwitchView.tabItemSelectedColor = [QCSlideSwitchView colorFromHexRGB:@"00a200"];
     self.slideSwitchView.shadowImage = [[UIImage imageNamed:@"red_line_and_shadow.png"]
                                         stretchableImageWithLeftCapWidth:59.0f topCapHeight:0.0f];
-
+    
+    __block InfomationCenterViewController * SELF = self;
+    
+    
     newsController = [[InfoListViewController alloc]initWithNibName:@"InfoListViewController" bundle:nil];
     newsController.title = @"新闻";
+    newsController.callback = ^(NSIndexPath *indexpath){
+            InfomationFinalViewController * info = [[InfomationFinalViewController alloc]initWithNibName:@"InfomationFinalViewController" bundle:nil];
+            info.optionid = [(BJObject *)[SELF.newsController.dataArray objectAtIndex:indexpath.row] auto_id];
+            [SELF.navigationController pushViewController:info animated:YES];
+
+    };
     
     bookController = [[InfoListViewController alloc]initWithNibName:@"InfoListViewController" bundle:nil];
     bookController.title = @"刊物";
+    bookController.isbook = YES;
+    bookController.callback = ^(NSIndexPath * indexpath){
+    
+        BookChapterListViewController * chapter = [[BookChapterListViewController alloc]initWithNibName:@"BookChapterListViewController" bundle:nil];
+        chapter.optionid = [(BJObject *)[SELF.bookController.dataArray objectAtIndex:indexpath.row] auto_id];
+        [SELF.navigationController pushViewController:chapter animated:YES];
+
+    };
     
     videoController = [[InfoListViewController alloc]initWithNibName:@"InfoListViewController" bundle:nil];
     videoController.title = @"视频";
+    videoController.callback = ^(NSIndexPath *indexpath){
+        InfomationFinalViewController * info = [[InfomationFinalViewController alloc]initWithNibName:@"InfomationFinalViewController" bundle:nil];
+        info.optionid = [(BJObject *)[SELF.videoController.dataArray objectAtIndex:indexpath.row] auto_id];
+        [SELF.navigationController pushViewController:info animated:YES];
+        
+    };
     
     pptController = [[InfoListViewController alloc]initWithNibName:@"InfoListViewController" bundle:nil];
     pptController.title = @"产品PPT";
+    pptController.callback = ^(NSIndexPath *indexpath){
+        InfomationFinalViewController * info = [[InfomationFinalViewController alloc]initWithNibName:@"InfomationFinalViewController" bundle:nil];
+        info.optionid = [(BJObject *)[SELF.pptController.dataArray objectAtIndex:indexpath.row] auto_id];
+        [SELF.navigationController pushViewController:info animated:YES];
+        
+    };
     
     [self.slideSwitchView buildUI];
     
@@ -90,6 +130,12 @@
     } else if (number == 3) {
         vc = self.pptController;
     }
+    if([channelArray count]!=0){
+        BJObject * object = [channelArray objectAtIndex:number];
+        vc.optionid = object.auto_id;
+        [vc download];
+    }
+
 }
 
 - (void)back:(id)sender{

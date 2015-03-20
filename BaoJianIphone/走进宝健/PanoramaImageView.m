@@ -63,8 +63,7 @@
 }
 
 - (void)loadImage:(id)obj{
-//    if([obj isKindOfClass:[UIImage class]]){
-    if(/* DISABLES CODE */ (1)){
+    if([obj isKindOfClass:[UIImage class]]){
         UIImage * image = (UIImage *)obj;
         if(image.size.width>self.frame.size.width){
             float scale = image.size.width/self.frame.size.width;
@@ -82,9 +81,10 @@
 
         
     }else{
-        
+        NSLog(@"%@",obj);
         __block PanoramaImageView * SELF = self;
-        [_imageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:obj]] placeholderImage:[UIImage imageNamed:@"no_photo"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        [_imageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:obj]] placeholderImage:[UIImage imageNamed:@"yqqj1.jpg"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            NSLog(@"%@",image);
             if(image.size.width>SELF.frame.size.width){
                 float scale = image.size.width/SELF.frame.size.width;
                 SELF._imageView.frame = CGRectMake(0, 0, SELF.frame.size.width, image.size.height/scale);
@@ -97,6 +97,7 @@
                 SELF._imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
                 SELF._imageView.center = CGPointMake(SELF.frame.size.width/2, SELF.frame.size.height/2);
             }
+            [SELF._imageView setImage:image];
             
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
             

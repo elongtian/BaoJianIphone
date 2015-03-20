@@ -15,6 +15,8 @@
     BOOL price_bool;
     BOOL sale_bool;
     NSInteger sortindex;
+    NSMutableArray * dataArray;
+    NSInteger page;
 }
 @property (strong, nonatomic) IBOutlet UIButton *scannerBtn;
 @property (strong, nonatomic) IBOutlet ELTextField *searchField;

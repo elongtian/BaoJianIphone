@@ -1,19 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfomationFinalViewController">
             <connections>
+                <outlet property="content_name" destination="LJD-dR-6hw" id="2NG-fg-vGQ"/>
+                <outlet property="content_time" destination="JKS-y7-vbl" id="C6d-d1-nNf"/>
+                <outlet property="mWebView" destination="luH-nb-NNO" id="a3b-4G-Wuu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="轻松一刻:“大义灭亲”" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJD-dR-6hw">
+                    <rect key="frame" x="10" y="74" width="154" height="15"/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topic_time.png" translatesAutoresizingMaskIntoConstraints="NO" id="i4k-Az-NRd">
+                    <rect key="frame" x="10" y="99" width="15" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="Cun-ld-Qmb"/>
+                        <constraint firstAttribute="width" constant="15" id="ZuS-tL-2lW"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-05-09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKS-y7-vbl">
+                    <rect key="frame" x="26" y="97" width="72" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="ndD-Yq-N43"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                    <color key="textColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luH-nb-NNO">
+                    <rect key="frame" x="10" y="127" width="300" height="431"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="pQs-JQ-KaE"/>
+                    </connections>
+                </webView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="i4k-Az-NRd" firstAttribute="top" secondItem="LJD-dR-6hw" secondAttribute="bottom" constant="10" id="6gT-uz-d6o"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LJD-dR-6hw" secondAttribute="trailing" constant="10" id="7o0-US-eXJ"/>
+                <constraint firstItem="LJD-dR-6hw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="7ta-RY-LUu"/>
+                <constraint firstItem="i4k-Az-NRd" firstAttribute="centerY" secondItem="JKS-y7-vbl" secondAttribute="centerY" id="9NR-V0-yMM"/>
+                <constraint firstAttribute="bottom" secondItem="luH-nb-NNO" secondAttribute="bottom" constant="10" id="ANb-pl-whK"/>
+                <constraint firstItem="LJD-dR-6hw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="CsH-s6-f5z"/>
+                <constraint firstItem="i4k-Az-NRd" firstAttribute="leading" secondItem="LJD-dR-6hw" secondAttribute="leading" id="FxH-fa-pV9"/>
+                <constraint firstItem="JKS-y7-vbl" firstAttribute="leading" secondItem="i4k-Az-NRd" secondAttribute="trailing" constant="1" id="bar-tm-j2d"/>
+                <constraint firstItem="luH-nb-NNO" firstAttribute="top" secondItem="JKS-y7-vbl" secondAttribute="bottom" constant="10" id="dAD-6K-hyc"/>
+                <constraint firstAttribute="trailing" secondItem="luH-nb-NNO" secondAttribute="trailing" constant="10" id="ehf-Cd-Eub"/>
+                <constraint firstItem="luH-nb-NNO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="wzO-32-VQW"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="263" y="198"/>
         </view>
     </objects>
+    <resources>
+        <image name="topic_time.png" width="23" height="23"/>
+    </resources>
 </document>

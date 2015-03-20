@@ -24,8 +24,28 @@
     price_bool = NO;
     sale_bool = YES;
     sortindex = 0;
+    page = 1;
+    [self download];
 }
+
+- (void)download{
+    [ELRequestSingle productListRequest:^(id objc) {
+        [self loadData:objc];
+    } withObject:self.optionid Page:page];
+}
+- (void)loadData:(id)objc{
+    if(page == 1){
+        [dataArray removeAllObjects];
+    }else{
+    
+    }
+    [dataArray addObjectsFromArray:(NSArray *)objc];
+    [_maintableView reloadData];
+}
+
 - (void)initPlat{
+    
+    dataArray = [[NSMutableArray alloc]init];
     
     [_scannerBtn addTarget:self action:@selector(scannerAction:) forControlEvents:UIControlEventTouchDown];
     
@@ -79,10 +99,11 @@
     
 }
 
+
 #pragma mark - UItableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return [dataArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -92,6 +113,14 @@
         cell.content_img.layer.borderColor = UIColorFromRGB(0xaeaeb0).CGColor;
         cell.content_img.layer.borderWidth = 1;
     }
+    
+    BJObject * object = [dataArray objectAtIndex:indexPath.row];
+    [cell.content_img setImageWithURL:[NSURL URLWithString:object.content_img] placeholderImage:[UIImage imageNamed:@"no_phote"]];
+    cell.content_name.text = object.content_name;
+    cell.content_desc1.text = object.superiority;
+    cell.content_desc2.text = object.effect;
+    cell.content_price.text = [NSString stringWithFormat:@"建议零售价:%@",object.content_preprice];
+    cell.price.text = [NSString stringWithFormat:@"优惠价:%@",object.content_price];
     return cell;
 }
 
@@ -101,6 +130,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ProductFinalViewController * final = [[ProductFinalViewController alloc]initWithNibName:@"ProductFinalViewController" bundle:nil];
+    final.optionid = [(BJObject *)[dataArray objectAtIndex:indexPath.row] auto_id];
     [self.navigationController pushViewController:final animated:YES];
 }
 

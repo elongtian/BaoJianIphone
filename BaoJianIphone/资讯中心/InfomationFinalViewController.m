@@ -18,6 +18,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
+- (void)download{
+    [ELRequestSingle newsDetailRequest:^(id objc) {
+        BJObject * object = (BJObject *)objc;
+        _content_name.text = object.content_name;
+        _content_time.text = object.create_time;
+        [_mWebView loadHTMLString:object.content_body baseURL:nil];
+    } withOptionId:self.optionid];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+
+}
+
+- (void)back:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

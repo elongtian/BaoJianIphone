@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface EnterpriseIntroViewController : BaseViewController
+@interface EnterpriseIntroViewController : BaseViewController<UIWebViewDelegate>
+@property (strong, nonatomic) IBOutlet UIWebView *mWebView;
 
 @end

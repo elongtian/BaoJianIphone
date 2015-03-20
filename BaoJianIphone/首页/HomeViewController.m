@@ -40,7 +40,7 @@
 
 - (void)initParameters
 {
-    
+    channelArray = [[NSArray alloc]init];
     titles = [[NSMutableArray alloc]initWithObjects:@"走进宝健",@"健康管理",@"事业机会",@"资讯中心",@"宝健商场",@"热门活动", nil];
     icons = [[NSMutableArray alloc]initWithObjects:@"comebj",@"health",@"career",@"infocenter",@"shop",@"activity", nil];
     colors = [[NSMutableArray alloc]initWithObjects:UIColorFromRGB(0x39b735),UIColorFromRGB(0x2893d6),UIColorFromRGB(0xc300de),UIColorFromRGB(0xbb9b09),UIColorFromRGB(0xff5f7e),UIColorFromRGB(0xe89d3d), nil];
@@ -66,30 +66,42 @@
         [channel.imgV setImage:[UIImage imageNamed:[icons objectAtIndex:i]]];
         channel.backgroundColor = [colors objectAtIndex:i];
         channel.tag = 100+i;
-        channel.call_back = ^(HomeChannelView *view){
         
+        channel.call_back = ^(HomeChannelView *view){
+            
+        if([channelArray count] == 0){
+                [self.view makeToast:@"数据拉取中..."];
+                return ;
+            }
+        BJObject * object = [channelArray objectAtIndex:i];
+            
+            
             switch (view.tag-100) {
                 case 0:
                 {
                     EnterBaoJianViewController * enterBJ = [[EnterBaoJianViewController alloc]init];
+                    enterBJ.optionid = object.auto_id;
                     [self.navigationController pushViewController:enterBJ animated:YES];
                 }
                     break;
                 case 1:
                 {
                     HealthManagementViewController * health = [[HealthManagementViewController alloc]initWithNibName:@"HealthManagementViewController" bundle:nil];
+                    health.optionid = object.auto_id;
                     [self.navigationController pushViewController:health animated:YES];
                 }
                     break;
                 case 2:
                 {
                     CareerChanceViewController * career = [[CareerChanceViewController alloc]initWithNibName:@"CareerChanceViewController" bundle:nil];
+                    career.optionid = object.auto_id;
                     [self.navigationController pushViewController:career animated:YES];
                 }
                     break;
                 case 3:
                 {
                     InfomationCenterViewController * infocenter = [[InfomationCenterViewController alloc]initWithNibName:@"InfomationCenterViewController" bundle:nil];
+                    infocenter.optionid = object.auto_id;
                     [self.navigationController pushViewController:infocenter animated:YES];
                 }
                     break;
@@ -116,17 +128,13 @@
 
 - (void)ad_request
 {
-    NSString * url = [NSString stringWithFormat:@"%@%@",HTTP,HomeAdUrl];
-    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary * dic = (NSDictionary *)responseObject;
-        
-        NSArray * arr = (NSArray *)[dic objectForKey:@"datalist"];
-        //            rootHeadView.hidden = YES;
-        self.pics = [NSMutableArray arrayWithArray:arr];
+    [ELRequestSingle homeBannerRequest:^(id objc) {
+        self.pics = [NSMutableArray arrayWithArray:(NSArray *)objc];
         [self createBanner:self.pics];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self.view makeToast:NO_NET];
+    }];
+    
+    [ELRequestSingle homePlateRequest:^(id objc) {
+        channelArray = [NSArray arrayWithArray:(NSArray *)objc];
     }];
 }
 
@@ -140,7 +148,7 @@
     NSMutableArray * tempArray = [[NSMutableArray alloc]init];
     for(NSDictionary * dic in arr)
     {
-        [tempArray addObject:[NSDictionary dictionaryWithObjects:@[OBJC([dic objectForKey:@"content_img"]) ,NSStringFromJson([dic objectForKey:@"content_name"]),@NO] forKeys:@[@"pic",@"title",@"isLoc"]]];
+        [tempArray addObject:[NSDictionary dictionaryWithObjects:@[OBJC([dic objectForKey:@"content_simg"]) ,NSStringFromJson([dic objectForKey:@"content_name"]),@NO] forKeys:@[@"pic",@"title",@"isLoc"]]];
         
         //        [tempArray addObject:[NSDictionary dictionaryWithObjects:@[OBJC([dic objectForKey:@"content_value"]) ,OBJC([dic objectForKey:@"content_name"]),@NO,[UIImage imageNamed:@"no_phote"]] forKeys:@[@"pic",@"title",@"isLoc",@"placeholderImage"]]];
     }

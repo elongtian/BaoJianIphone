@@ -8,8 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface KefuFindBackViewController : BaseViewController
+@interface KefuFindBackViewController : BaseViewController{
+    UIWebView * phoneCallWebView;
+}
 @property (strong, nonatomic) IBOutlet UILabel *kefu_teleL;
-@property (strong, nonatomic) IBOutlet UIButton *copyBtn;
+@property (strong, nonatomic) IBOutlet UIButton *bjcopyBtn;
 
 @end

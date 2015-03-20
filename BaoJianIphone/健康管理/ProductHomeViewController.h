@@ -13,6 +13,7 @@
 {
     NSMutableArray * titles;
     NSMutableArray * icons;
+    NSArray * channelArray;
 }
 @property (retain, nonatomic) UIScrollView * mainScrollView;
 @property (retain, nonatomic) JCTopic * Topic;

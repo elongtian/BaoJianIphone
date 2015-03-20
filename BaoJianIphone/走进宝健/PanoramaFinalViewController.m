@@ -30,18 +30,22 @@
     self.navbar.homebtn.imageView.contentMode = UIViewContentModeCenter;
     
     _imageViews = [[NSMutableArray alloc]init];
-    UIImage * image1 = [UIImage imageNamed:@"yqqj1.jpg"];
-    [_imageViews addObject:image1];
+//    UIImage * image1 = [UIImage imageNamed:@"yqqj1.jpg"];
+//    [_imageViews addObject:image1];
+//    
+//    UIImage * image2 = [UIImage imageNamed:@"home_banner.jpg"];
+//    [_imageViews addObject:image2];
+//    
+//    UIImage * image3 = [UIImage imageNamed:@"yqqj_list_img.jpg"];
+//    [_imageViews addObject:image3];
+//    
+//    UIImage * image4 = [UIImage imageNamed:@"pro_list_img.jpg"];
+//    [_imageViews addObject:image4];
     
-    UIImage * image2 = [UIImage imageNamed:@"home_banner.jpg"];
-    [_imageViews addObject:image2];
+    [self download];
     
-    UIImage * image3 = [UIImage imageNamed:@"yqqj_list_img.jpg"];
-    [_imageViews addObject:image3];
-    
-    UIImage * image4 = [UIImage imageNamed:@"pro_list_img.jpg"];
-    [_imageViews addObject:image4];
-    
+}
+- (void)createScrollView{
     self.myScrollView = [[ReuseScrollView alloc] initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT-64)];
     self.myScrollView.isobserver = NO;
     self.myScrollView.delegate = self;
@@ -49,8 +53,19 @@
     self.myScrollView.pagingEnabled = YES;
     self.myScrollView.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:self.myScrollView];
-    
 }
+
+- (void)download{
+    [ELRequestSingle panoramicDetailRequest:^(id objc) {
+        
+        
+        [_imageViews addObjectsFromArray:(NSArray *)objc];
+        if([_imageViews count]!=0){
+            [self createScrollView];
+        }
+    } withOptionId:self.optionid];
+}
+
 
 #pragma mark-
 #pragma mark-UIScrollView代理方法
@@ -72,11 +87,11 @@
         
         view = [[PanoramaImageView alloc] initWithFrame:CGRectMake(0, 0, self.myScrollView.frame.size.width, self.myScrollView.frame.size.height)];
     }
-    
-    [view loadImage:[_imageViews objectAtIndex:page]];
+    BJObject * object = [_imageViews objectAtIndex:page];
+    [view loadImage:object.content_img];
     
     view._numofpageL.text = [NSString stringWithFormat:@"%ld/%lu",(long)page+1,(unsigned long)[_imageViews count]];
-    view._content_descL.text = @"宝健于1995年进入中国，1996年正式运营，2014年12月5日宝健（中国）日用品有限公司正式更名为宝健（中国）有限公司。";
+    view._content_descL.text = object.content_desc;
     
     return view;
 }

@@ -36,18 +36,32 @@
 
 - (void)ad_request
 {
-    NSString * url = [NSString stringWithFormat:@"%@%@",HTTP,HomeAdUrl];
-    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary * dic = (NSDictionary *)responseObject;
-        
-        NSArray * arr = (NSArray *)[dic objectForKey:@"datalist"];
-        //            rootHeadView.hidden = YES;
-        self.pics = [NSMutableArray arrayWithArray:arr];
+//    NSString * url = [NSString stringWithFormat:@"%@%@",HTTP,HomeBannerUrl];
+//    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSDictionary * dic = (NSDictionary *)responseObject;
+//        
+//        NSArray * arr = (NSArray *)[dic objectForKey:@"datalist"];
+//        //            rootHeadView.hidden = YES;
+//        self.pics = [NSMutableArray arrayWithArray:arr];
+//        [self createBanner:self.pics];
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        [self.view makeToast:NO_NET];
+//    }];
+    [ELRequestSingle productDetalBannerRequest:^(id objc) {
+        [_pics addObjectsFromArray:(NSArray *)objc];
         [self createBanner:self.pics];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self.view makeToast:NO_NET];
-    }];
+    } withObject:self.optionid];
+    
+    [ELRequestSingle productDetailRequest:^(id objc) {
+        BJObject * object = (BJObject *)objc;
+        _content_name.text = object.content_name;
+        _content_desc1.text = object.superiority;
+        _content_desc2.text = object.effect;
+        _content_price.text = object.content_price;
+        _content_preprice.text = object.content_preprice;
+        [_mainWebView loadHTMLString:object.content_body baseURL:nil];
+    } withOptionId:self.optionid];
 }
 
 - (void)createBanner:(NSArray *)arr

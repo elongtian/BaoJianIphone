@@ -13,6 +13,7 @@
     NSMutableArray * titles;
     NSMutableArray * icons;
     NSMutableArray * colors;
+    NSArray * channelArray;
 }
 @property (retain, nonatomic) UIScrollView * mainScrollView;
 @property (retain, nonatomic) UIImageView * TopicIMageView;

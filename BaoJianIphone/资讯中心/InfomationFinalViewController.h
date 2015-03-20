@@ -8,6 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface InfomationFinalViewController : BaseViewController
+@interface InfomationFinalViewController : BaseViewController<UIWebViewDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *content_name;
+@property (strong, nonatomic) IBOutlet UILabel *content_time;
+@property (strong, nonatomic) IBOutlet UIWebView *mWebView;
 
 @end

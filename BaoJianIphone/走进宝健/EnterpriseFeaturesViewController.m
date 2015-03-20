@@ -8,6 +8,7 @@
 
 #import "EnterpriseFeaturesViewController.h"
 #import "HomeChannelView.h"
+#import "FeatureFinalViewController.h"
 @interface EnterpriseFeaturesViewController ()
 
 @end
@@ -27,7 +28,7 @@
     titles = [[NSMutableArray alloc]initWithObjects:@"坚定目标",@"专业研发",@"良心服务",@"密集网点",@"专业物流",@"注重环保",@"扶持创业",@"爱心公益", nil];
     icons = [[NSMutableArray alloc]initWithObjects:@"jdmb",@"zyyf",@"lxfw",@"mjwd",@"zywl",@"zzhb",@"fccy",@"axgy", nil];
     
-    
+    channelArray = [[NSArray alloc]init];
     self.navbar.titleLabel.text = @"企业特色";
     
     self.bottom_logoV.hidden = NO;
@@ -39,6 +40,14 @@
     TopicIMageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 10, mainScrollView.frame.size.width, mainScrollView.frame.size.width*(387.0/1035.0))];
     [TopicIMageView setImage:[UIImage imageNamed:@"qyts_banner"]];
     [mainScrollView addSubview:TopicIMageView];
+    
+    [self download];
+}
+
+- (void)download{
+    [ELRequestSingle featurePlateRequest:^(id objc) {
+        channelArray = [NSArray arrayWithArray:(NSArray *)objc];
+    } withObject:self.optionid];
 }
 
 - (void)createChannel
@@ -55,7 +64,15 @@
         [channel setBackgroundColor:[UIColor whiteColor]];
         channel.tag = 100+i;
         channel.call_back = ^(HomeChannelView *view){
+            if([channelArray count] == 0){
+                [self.view makeToast:@"数据正在拉取中..."];
+                return ;
+            }
+            FeatureFinalViewController * final = [[FeatureFinalViewController alloc] initWithNibName:@"FeatureFinalViewController" bundle:nil];
+            final.titleName = [titles objectAtIndex:i];
             
+            final.optionid = [(BJObject *)[channelArray objectAtIndex:i] auto_id];
+            [self.navigationController pushViewController:final animated:YES];
             switch (view.tag-100) {
                 case 0:
                 {

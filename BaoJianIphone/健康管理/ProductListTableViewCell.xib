@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -71,7 +71,7 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠价：¥175.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iam-cQ-0D1">
-                        <rect key="frame" x="118" y="96" width="115.5" height="14"/>
+                        <rect key="frame" x="118" y="96" width="116" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="jor-DF-Og5"/>
                         </constraints>
@@ -93,7 +93,7 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="GT5-8t-QgP" firstAttribute="top" secondItem="SCZ-uh-eUN" secondAttribute="bottom" constant="8" id="6ED-fc-bal"/>
+                    <constraint firstItem="GT5-8t-QgP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SCZ-uh-eUN" secondAttribute="bottom" constant="8" id="6ED-fc-bal"/>
                     <constraint firstItem="SCZ-uh-eUN" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="7zm-JU-BTz"/>
                     <constraint firstItem="SCZ-uh-eUN" firstAttribute="leading" secondItem="qq4-Dr-9pN" secondAttribute="trailing" constant="8" id="DIZ-fu-aGo"/>
                     <constraint firstItem="GT5-8t-QgP" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="FUy-vu-p95"/>
@@ -101,6 +101,7 @@
                     <constraint firstItem="6rZ-74-EdQ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="NsR-Yp-JX1"/>
                     <constraint firstItem="Iam-cQ-0D1" firstAttribute="top" secondItem="GT5-8t-QgP" secondAttribute="bottom" constant="10" id="Oso-3a-6Hp"/>
                     <constraint firstItem="qq4-Dr-9pN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="QhD-Rm-tcp"/>
+                    <constraint firstItem="3oV-9V-PJR" firstAttribute="top" secondItem="GT5-8t-QgP" secondAttribute="bottom" constant="7" id="RCQ-A1-Nij"/>
                     <constraint firstItem="3oV-9V-PJR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Iam-cQ-0D1" secondAttribute="trailing" constant="14" id="VYy-yG-amf"/>
                     <constraint firstItem="Udm-QJ-Rha" firstAttribute="leading" secondItem="qq4-Dr-9pN" secondAttribute="trailing" constant="8" id="ZC5-Q0-FwJ"/>
                     <constraint firstItem="3oV-9V-PJR" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-5" id="brd-4e-56J"/>
@@ -111,12 +112,16 @@
                     <constraint firstAttribute="bottomMargin" secondItem="qq4-Dr-9pN" secondAttribute="bottom" constant="2" id="p62-Yc-LKc"/>
                     <constraint firstItem="6rZ-74-EdQ" firstAttribute="top" secondItem="Udm-QJ-Rha" secondAttribute="bottom" constant="8" id="pm4-ii-ps7"/>
                     <constraint firstItem="Iam-cQ-0D1" firstAttribute="leading" secondItem="qq4-Dr-9pN" secondAttribute="trailing" constant="8" id="pzN-cQ-xVj"/>
+                    <constraint firstAttribute="bottom" secondItem="Iam-cQ-0D1" secondAttribute="bottom" constant="10" id="rVA-2m-0o4"/>
                     <constraint firstAttribute="bottomMargin" secondItem="3oV-9V-PJR" secondAttribute="bottom" constant="-3" id="sFK-zJ-F9F"/>
                     <constraint firstItem="Udm-QJ-Rha" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="wxd-7s-PCn"/>
                     <constraint firstItem="Udm-QJ-Rha" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="xi5-Zt-9WE"/>
+                    <constraint firstItem="qq4-Dr-9pN" firstAttribute="top" secondItem="Udm-QJ-Rha" secondAttribute="top" id="y6F-m8-ngs"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
+                        <exclude reference="wxd-7s-PCn"/>
+                        <exclude reference="Oso-3a-6Hp"/>
                         <exclude reference="sFK-zJ-F9F"/>
                     </mask>
                 </variation>

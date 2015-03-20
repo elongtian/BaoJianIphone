@@ -30,14 +30,37 @@
     
     self.view.backgroundColor = BackGround_Color;
     
-    cellHeight = (SCREENWIDTH-46-20*2)*(100/234.0);
+    cellHeight = (SCREENWIDTH-46-20*2)*(100/234.0)+12+20+10;
     
+    page = 1;
+    
+    [self requestData];
+}
+
+- (void)requestData{
+    [ELRequestSingle panoramicListRequest:^(id objc) {
+        [self data_load:objc];
+    }
+    withPage:1 OptionId:self.optionid];
+}
+
+- (void)data_load:(id)obj{
+ 
+    if(page == 1){
+        [photosArray removeAllObjects];
+    }else{
+        
+    }
+    
+    [photosArray addObjectsFromArray:(NSArray *)obj];
+    NSLog(@"%@",photosArray);
+    [mainTableView reloadData];
 }
 
 #pragma mark - UItableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return [photosArray count]*2;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -48,6 +71,9 @@
         {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"PanoramaListCell" owner:self options:nil] lastObject];
         }
+        BJObject * object = [photosArray objectAtIndex:indexPath.row/2];
+        [cell.content_img setImageWithURL:[NSURL URLWithString:object.content_img] placeholderImage:[UIImage imageNamed:@"nophote"]];
+        cell.title.text = object.content_name;
         
         return cell;
     }
@@ -65,6 +91,7 @@
             label.backgroundColor = UIColorFromRGB(0xc6c6c6);
             
             [cell.contentView addSubview:label];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         return cell;
     }
@@ -83,9 +110,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //跳转到图集最终
-    PanoramaFinalViewController * final = [[PanoramaFinalViewController alloc]init];
-    [self.navigationController pushViewController:final animated:YES];
+    if(indexPath.row%2 == 0)
+    {
+        //跳转到图集最终
+        BJObject * object = [photosArray objectAtIndex:indexPath.row/2];
+        
+        PanoramaFinalViewController * final = [[PanoramaFinalViewController alloc]init];
+        final.optionid = object.auto_id;
+        [self.navigationController pushViewController:final animated:YES];
+    }
+    
 }
 
 - (void)back:(id)sender

@@ -20,12 +20,33 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initPlat];
+    
+    [self download];
 }
 
 - (void)initPlat{
+    
+    dataArray = [[NSMutableArray alloc]init];
+    
     self.navbar.titleLabel.text = @"热门话题";
     _mainTableView.backgroundColor = [UIColor clearColor];
     _mainTableView.opaque = NO;
+    
+    page = 1;
+    
+    
+}
+- (void)download{
+    [ELRequestSingle topicListRequest:^(id objc) {
+        if(page == 1){
+            [dataArray removeAllObjects];
+        }
+        else{
+            
+        }
+        [dataArray addObjectsFromArray:(NSArray *)objc];
+        [_mainTableView reloadData];
+    } Page:page];
 }
 
 //12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。
@@ -34,8 +55,11 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row%2 != 0){
     
-        NSString * str1 = @"免费去巴黎 摘星 不容迟疑 免费去巴黎 摘星 不容迟疑";
-        NSString * str2 = @"12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。";
+        BJObject * object = [dataArray objectAtIndex:indexPath.row/2];
+//        NSString * str1 = @"免费去巴黎 摘星 不容迟疑 免费去巴黎 摘星 不容迟疑";
+//        NSString * str2 = @"12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。";
+        NSString * str1 = object.content_name;
+        NSString * str2 = object.content_desc;
         CGSize size1 = [str1 getcontentsizeWithfont:UIFontHiraginoSansGBW6(14) constrainedtosize:CGSizeMake(SCREENWIDTH-75-3*8-10*2, 300) linemode:NSLineBreakByCharWrapping];
         
         CGSize size2 = [str2 getcontentsizeWithfont:UIFontHiraginoSansGBW3(13) constrainedtosize:CGSizeMake(SCREENWIDTH-75-3*8-10*2, 300) linemode:NSLineBreakByCharWrapping];
@@ -48,7 +72,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return [dataArray count]*2;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row%2 != 0){
@@ -60,9 +84,11 @@
             cell.evaluates.layer.cornerRadius = 3;
             [cell.evaluates.layer setMasksToBounds:YES];
         }
-        
-        cell.content_title.text = @"免费去巴黎 摘星 不容迟疑 免费去巴黎 摘星 不容迟疑";
-        cell.content_desc.text = @"12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。";
+        BJObject * object = [dataArray objectAtIndex:indexPath.row/2];
+//        cell.content_title.text = @"免费去巴黎 摘星 不容迟疑 免费去巴黎 摘星 不容迟疑";
+//        cell.content_desc.text = @"12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。";
+        cell.content_title.text = object.content_name;
+        cell.content_desc.text = object.content_desc;
         [cell.contentView sizeToFit];
         return cell;
     }else{
@@ -78,7 +104,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    BJObject * object = [dataArray objectAtIndex:indexPath.row/2];
     TopicFinalViewController * final = [[TopicFinalViewController alloc]initWithNibName:@"TopicFinalViewController" bundle:nil];
+    final.optionid = object.auto_id;
     [self.navigationController pushViewController:final animated:YES];
 }
 

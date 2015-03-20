@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BaoJianIphone/&#x8d44;&#x8baf;&#x4e2d;&#x5fc3;/InfomationCenterViewController.m"
-            timestampString = "447672762.534057"
+            filePath = "BaoJianIphone/&#x8d70;&#x8fdb;&#x5b9d;&#x5065;/PanoramaImageView.m"
+            timestampString = "448451990.288021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-initPlat"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-loadImage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BaoJianIphone/&#x8d44;&#x8baf;&#x4e2d;&#x5fc3;/InfoListViewController.m"
-            timestampString = "447749814.440745"
+            filePath = "BaoJianIphone/&#x8d70;&#x8fdb;&#x5b9d;&#x5065;/PanoramaImageView.m"
+            timestampString = "448452822.070896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "-loadImage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -9,6 +9,9 @@
 #import "BaseViewController.h"
 #import "ELTextField.h"
 @interface RegisterViewController : BaseViewController
+{
+    BOOL isAgree;
+}
 @property (strong, nonatomic) IBOutlet UIScrollView *mScrollView;
 @property (weak, nonatomic) IBOutlet ELTextField *mobile;
 @property (weak, nonatomic) IBOutlet ELTextField *code;

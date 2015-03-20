@@ -22,12 +22,22 @@
     // Do any additional setup after loading the view from its nib.
     [self initPlat];
     self.navbar.titleLabel.text = @"话题最终";
+    
+    [self download];
 }
+- (void)download{
+    [ELRequestSingle topicDetailRequest:^(id objc) {
+        BJObject * object = (BJObject *)objc;
+        [_mainwebView loadHTMLString:object.content_body baseURL:nil];
+        _content_nameL.text = object.content_name;
+    } withOptionId:self.optionid];
+}
+
 
 - (void)initPlat{
     
     self.view.backgroundColor = [UIColor whiteColor];
-    [_mainwebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+//    [_mainwebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
 //    _scrollEndDistance.constant = 0;
 //    _headViewDistance.constant = 0;
     

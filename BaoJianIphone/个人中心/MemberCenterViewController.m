@@ -19,7 +19,6 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navbar.titleLabel.text = @"个人中心";
-    
     entryArray = [[NSMutableArray alloc]initWithObjects:
   @{@"title":@"个人信息",@"subtitle":@"我的个人基本信息",@"img":@"member_info_icon"},
   @{@"title":@"业绩查询",@"subtitle":@"我的业绩查询",@"img":@"member_search_icon"},

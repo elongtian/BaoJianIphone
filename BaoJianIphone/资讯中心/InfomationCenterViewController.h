@@ -12,6 +12,7 @@
 @interface InfomationCenterViewController : BaseViewController<QCSlideSwitchViewDelegate>{
     QCSlideSwitchView *_slideSwitchView;
     float length;
+    NSArray * channelArray;
 }
 @property (strong, nonatomic) IBOutlet QCSlideSwitchView *slideSwitchView;
 @property (retain, nonatomic) NSMutableArray * titleLengthArray;

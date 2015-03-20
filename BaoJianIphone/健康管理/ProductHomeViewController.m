@@ -30,6 +30,7 @@
 
 - (void)initParameters
 {
+    channelArray = [[NSArray alloc]init];
     titles = [[NSMutableArray alloc]initWithObjects:@"营养保健食品",@"美容护肤",@"日用护理",@"健康家居",@"组合套装", nil];
      icons = [[NSMutableArray alloc]initWithObjects:@"yybj",@"mrhf",@"ryhl",@"jkjj",@"zhtz", nil];
     self.navbar.titleLabel.text = @"产品";
@@ -54,9 +55,14 @@
         channel.tag = 100+i;
         channel.call_back = ^(HomeChannelView *view){
             
-            
+            if([channelArray count]==0){
+                [self.view makeToast:@"数据正在拉取中..."];
+                return;
+            }
+            BJObject * object = [channelArray objectAtIndex:i];
             ProductListViewController * list = [[ProductListViewController alloc]initWithNibName:@"ProductListViewController" bundle:nil];
             list.titleName = [titles objectAtIndex:view.tag-100];
+            list.optionid = object.auto_code;
             [self.navigationController pushViewController:list animated:YES];
             
             switch (view.tag-100) {
@@ -103,18 +109,14 @@
 
 - (void)ad_request
 {
-    NSString * url = [NSString stringWithFormat:@"%@%@",HTTP,HomeAdUrl];
-    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary * dic = (NSDictionary *)responseObject;
-        
-        NSArray * arr = (NSArray *)[dic objectForKey:@"datalist"];
-        //            rootHeadView.hidden = YES;
-        self.pics = [NSMutableArray arrayWithArray:arr];
+    [ELRequestSingle productListBannerRequest:^(id objc) {
+        self.pics = [NSMutableArray arrayWithArray:(NSArray *)objc];
         [self createBanner:self.pics];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self.view makeToast:NO_NET];
     }];
+    
+    [ELRequestSingle productPlateRequest:^(id objc) {
+        channelArray = [NSArray arrayWithArray:(NSArray *)objc];
+    } withObject:self.optionid];
 }
 
 - (void)createBanner:(NSArray *)arr
@@ -127,7 +129,7 @@
     NSMutableArray * tempArray = [[NSMutableArray alloc]init];
     for(NSDictionary * dic in arr)
     {
-        [tempArray addObject:[NSDictionary dictionaryWithObjects:@[OBJC([dic objectForKey:@"content_img"]) ,NSStringFromJson([dic objectForKey:@"content_name"]),@NO] forKeys:@[@"pic",@"title",@"isLoc"]]];
+        [tempArray addObject:[NSDictionary dictionaryWithObjects:@[OBJC([dic objectForKey:@"content_simg"]) ,NSStringFromJson([dic objectForKey:@"content_name"]),@NO] forKeys:@[@"pic",@"title",@"isLoc"]]];
         
         //        [tempArray addObject:[NSDictionary dictionaryWithObjects:@[OBJC([dic objectForKey:@"content_value"]) ,OBJC([dic objectForKey:@"content_name"]),@NO,[UIImage imageNamed:@"no_phote"]] forKeys:@[@"pic",@"title",@"isLoc",@"placeholderImage"]]];
     }

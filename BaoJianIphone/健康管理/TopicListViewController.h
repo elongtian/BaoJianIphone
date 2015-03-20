@@ -8,7 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface TopicListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>
+@interface TopicListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate>{
+    NSMutableArray * dataArray;
+    NSInteger page;
+}
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 
 @end
