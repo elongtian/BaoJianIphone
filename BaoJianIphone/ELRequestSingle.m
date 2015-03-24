@@ -431,6 +431,7 @@
             object.content_desc = OBJC([dic objectForKey:@"content_desc"]);
             object.content_body = OBJC([dic objectForKey:@"content_body"]);
             object.create_time = OBJC([dic objectForKey:@"create_time"]);
+            object.content_img = OBJC([dic objectForKey:@"content_img"]);
             [dataArr addObject:object];
         }
         
@@ -476,14 +477,10 @@
         NSMutableArray * dataArr = [[NSMutableArray alloc]init];
         for(NSDictionary * dic in array){
             BJObject * object = [[BJObject alloc]init];
-            object.content_name = OBJC([dic objectForKey:@"content_name"]);
+            object.modules_name = OBJC([dic objectForKey:@"modules_name"]);
             object.auto_id = OBJC([dic objectForKey:@"auto_id"]);
             object.content_desc = OBJC([dic objectForKey:@"content_desc"]);
             object.content_img = OBJC([dic objectForKey:@"content_img"]);
-            object.superiority = OBJC([dic objectForKey:@"superiority"]);
-            object.effect = OBJC([dic objectForKey:@"effect"]);
-            object.content_preprice = OBJC([dic objectForKey:@"content_preprice"]);
-            object.content_price = OBJC([dic objectForKey:@"content_price"]);
             [dataArr addObject:object];
         }
         
@@ -713,4 +710,6 @@
     }];
     
 }
+
+
 @end

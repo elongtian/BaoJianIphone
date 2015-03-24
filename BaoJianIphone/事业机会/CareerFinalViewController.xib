@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Hiragino Sans GB W3.otf">
-            <string>HiraginoSansGB-W3</string>
-            <string>HiraginoSansGB-W3</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CareerFinalViewController">
             <connections>
-                <outlet property="content_name" destination="cIr-34-Mux" id="lz6-Pb-DSH"/>
-                <outlet property="content_time" destination="XVv-Zg-zI0" id="n7X-oH-T2x"/>
                 <outlet property="mWebView" destination="eth-ol-WAT" id="pvS-hF-vrq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,51 +16,23 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="轻松一刻:“大义灭亲”" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIr-34-Mux">
-                    <rect key="frame" x="10" y="74" width="154" height="15"/>
-                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topic_time.png" translatesAutoresizingMaskIntoConstraints="NO" id="RqW-QK-tOL">
-                    <rect key="frame" x="10" y="99" width="15" height="15"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="15" id="Wrc-HE-Ix3"/>
-                        <constraint firstAttribute="height" constant="15" id="gHE-yd-Gdk"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-05-09" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVv-Zg-zI0">
-                    <rect key="frame" x="26" y="97" width="72" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="20" id="F9h-GR-aux"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
-                    <color key="textColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eth-ol-WAT">
-                    <rect key="frame" x="10" y="127" width="300" height="431"/>
+                    <rect key="frame" x="10" y="74" width="300" height="484"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="GXB-gm-QNL"/>
+                    </connections>
                 </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="XVv-Zg-zI0" firstAttribute="leading" secondItem="RqW-QK-tOL" secondAttribute="trailing" constant="1" id="0e3-FO-eyw"/>
-                <constraint firstItem="RqW-QK-tOL" firstAttribute="top" secondItem="cIr-34-Mux" secondAttribute="bottom" constant="10" id="28e-0e-eMT"/>
-                <constraint firstItem="eth-ol-WAT" firstAttribute="top" secondItem="XVv-Zg-zI0" secondAttribute="bottom" constant="10" id="BzK-om-q6a"/>
-                <constraint firstItem="RqW-QK-tOL" firstAttribute="leading" secondItem="cIr-34-Mux" secondAttribute="leading" id="GQn-Pf-WQx"/>
-                <constraint firstItem="cIr-34-Mux" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="OWJ-ez-Hoq"/>
                 <constraint firstAttribute="bottom" secondItem="eth-ol-WAT" secondAttribute="bottom" constant="10" id="OmR-Ba-QuX"/>
-                <constraint firstItem="RqW-QK-tOL" firstAttribute="centerY" secondItem="XVv-Zg-zI0" secondAttribute="centerY" id="RnM-Fy-2Za"/>
                 <constraint firstAttribute="trailing" secondItem="eth-ol-WAT" secondAttribute="trailing" constant="10" id="TRs-LI-av2"/>
-                <constraint firstItem="cIr-34-Mux" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="mev-Vn-ojF"/>
+                <constraint firstItem="eth-ol-WAT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="XYF-Nk-kLq"/>
                 <constraint firstItem="eth-ol-WAT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="uTt-ya-aoY"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="160" y="154"/>
         </view>
     </objects>
-    <resources>
-        <image name="topic_time.png" width="23" height="23"/>
-    </resources>
 </document>

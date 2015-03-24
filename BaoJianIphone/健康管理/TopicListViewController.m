@@ -56,10 +56,10 @@
     if(indexPath.row%2 != 0){
     
         BJObject * object = [dataArray objectAtIndex:indexPath.row/2];
-//        NSString * str1 = @"免费去巴黎 摘星 不容迟疑 免费去巴黎 摘星 不容迟疑";
-//        NSString * str2 = @"12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。";
-        NSString * str1 = object.content_name;
-        NSString * str2 = object.content_desc;
+        NSString * str1 = @"免费去巴黎 摘星 不容迟疑 免费去巴黎 摘星 不容迟疑";
+        NSString * str2 = @"12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。";
+//        NSString * str1 = object.content_name;
+//        NSString * str2 = object.content_desc;
         CGSize size1 = [str1 getcontentsizeWithfont:UIFontHiraginoSansGBW6(14) constrainedtosize:CGSizeMake(SCREENWIDTH-75-3*8-10*2, 300) linemode:NSLineBreakByCharWrapping];
         
         CGSize size2 = [str2 getcontentsizeWithfont:UIFontHiraginoSansGBW3(13) constrainedtosize:CGSizeMake(SCREENWIDTH-75-3*8-10*2, 300) linemode:NSLineBreakByCharWrapping];
@@ -85,10 +85,10 @@
             [cell.evaluates.layer setMasksToBounds:YES];
         }
         BJObject * object = [dataArray objectAtIndex:indexPath.row/2];
-//        cell.content_title.text = @"免费去巴黎 摘星 不容迟疑 免费去巴黎 摘星 不容迟疑";
-//        cell.content_desc.text = @"12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。";
-        cell.content_title.text = object.content_name;
-        cell.content_desc.text = object.content_desc;
+        cell.content_title.text = @"免费去巴黎 摘星 不容迟疑 免费去巴黎 摘星 不容迟疑";
+        cell.content_desc.text = @"12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。12月摘星榜单来啦！随着摘星活动的持续进行，越来越多的宝健伙伴加入到奔驰人生与免费去巴黎的队伍中。";
+//        cell.content_title.text = object.content_name;
+//        cell.content_desc.text = object.content_desc;
         [cell.contentView sizeToFit];
         return cell;
     }else{

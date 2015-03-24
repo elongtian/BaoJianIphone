@@ -35,6 +35,9 @@
         if(sucess){
             MemberCenterViewController * member = [[MemberCenterViewController alloc]initWithNibName:@"MemberCenterViewController" bundle:nil];
             [self.navigationController pushViewController:member animated:YES];
+            [[UserLoginInfoManager loginmanager] setState:YES];
+            [[UserLoginInfoManager loginmanager] setUser:_userNameTextField.text];
+            [[UserLoginInfoManager loginmanager] setPwd:[FileMangerObject md5:_passWordTextField.text]];
         }else{
             
         }

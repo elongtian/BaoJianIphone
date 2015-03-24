@@ -237,6 +237,11 @@
 
 - (void)menuSelected:(id)sender{
     KxMenuItem * item = (KxMenuItem *)sender;
+    if(item.tag == 100){
+        NSLog(@"消息");
+    }else{
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 - (void)back:(id)sender

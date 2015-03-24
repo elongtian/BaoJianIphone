@@ -38,14 +38,19 @@
     _leftTwoBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     _mainWebView.scrollView.bounces = NO;
     _mainWebView.scrollView.scrollEnabled = NO;
+    _mainWebView.delegate = self;
 //    [_mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
     
-    _progressProxy = [[NJKWebViewProgress alloc] init];
-    _mainWebView.delegate = _progressProxy;
-    _progressProxy.webViewProxyDelegate = self;
-    _progressProxy.progressDelegate = self;
+//    _progressProxy = [[NJKWebViewProgress alloc] init];
+//    _mainWebView.delegate = _progressProxy;
+//    _progressProxy.webViewProxyDelegate = self;
+//    _progressProxy.progressDelegate = self;
     
 }
+//bj_app/app/index.php?com=com_appService&method=appSev&app_com=com_comtopic&task=view&auto_id=2
+
+
+//bj_app/app/index.php?com=com_appService&method=appSev&app_com=com_comtopic&task=view&auto_id=1
 
 - (void)ad_request
 {
@@ -154,53 +159,38 @@
 
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    if (!isCanLoadWeb){
-        isCanLoadWeb = !isCanLoadWeb;
-        return isCanLoadWeb;
-    }
-    return NO;
+//    if (!isCanLoadWeb){
+//        isCanLoadWeb = !isCanLoadWeb;
+//        return isCanLoadWeb;
+//    }
+//    return NO;
+    return YES;
 }
 
 #pragma mark - NJKWebViewProgressDelegate
 
--(void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress {
-    if (progress == 0.0) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        _progressView.progress = 0;
-        [UIView animateWithDuration:0.27 animations:^{
-            _progressView.alpha = 1.0;
-        }];
-    }
-    
-    if (progress == 1.0) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        [UIView animateWithDuration:0.27 delay:progress - _progressView.progress options:0 animations:^{
-            _progressView.alpha = 0.0;
-            
-            NSString *height_str= [_mainWebView stringByEvaluatingJavaScriptFromString: @"document.body.offsetHeight"];
-            int height = [height_str intValue];
-            _webHeghtConstraint.constant = height;
-            [self.view setNeedsLayout]; //更新视图
-            [self.view layoutIfNeeded];
-            
-            [_mainWebView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.background='#EDF0EB'"];
-            
-            
-            
-            _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH, _mainWebView.frame.origin.y+_mainWebView.frame.size.height+15);
-        } completion:^(BOOL finished) {
-            UIImageView * img_line = [[UIImageView alloc]initWithFrame:CGRectMake(_mainWebView.frame.origin.x, _mainWebView.frame.origin.y-1, _mainWebView.frame.size.width, 1)];
-            [img_line setImage:[UIImage imageNamed:@"dashed_line"]];
-            [_mainScrollView addSubview:img_line];
-            
-            UIImageView * img_line2 = [[UIImageView alloc]initWithFrame:CGRectMake(_mainWebView.frame.origin.x, _mainWebView.frame.origin.y+_mainWebView.frame.size.height, _mainWebView.frame.size.width, 2)];
-            [img_line2 setImage:[UIImage imageNamed:@"juchi"]];
-            [_mainScrollView addSubview:img_line2];
-        }];
-    }
-    
-    [_progressView setProgress:progress animated:NO];
-}
+//-(void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress {
+//    if (progress == 0.0) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+//        _progressView.progress = 0;
+//        [UIView animateWithDuration:0.27 animations:^{
+//            _progressView.alpha = 1.0;
+//        }];
+//    }
+//    
+//    if (progress == 1.0) {
+//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//        [UIView animateWithDuration:0.27 delay:progress - _progressView.progress options:0 animations:^{
+//            _progressView.alpha = 0.0;
+//            
+//           
+//        } completion:^(BOOL finished) {
+//            
+//        }];
+//    }
+//    
+//    [_progressView setProgress:progress animated:NO];
+//}
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
 
@@ -208,7 +198,23 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     
-   
+    NSString *height_str= [_mainWebView stringByEvaluatingJavaScriptFromString: @"document.body.offsetHeight"];
+    int height = [height_str intValue];
+    _webHeghtConstraint.constant = height;
+    [self.view setNeedsLayout]; //更新视图
+    [self.view layoutIfNeeded];
+    
+    [_mainWebView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.background='#EDF0EB'"];
+    
+    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH, _mainWebView.frame.origin.y+_mainWebView.frame.size.height+15);
+    
+    UIImageView * img_line = [[UIImageView alloc]initWithFrame:CGRectMake(_mainWebView.frame.origin.x, _mainWebView.frame.origin.y-1, _mainWebView.frame.size.width, 1)];
+    [img_line setImage:[UIImage imageNamed:@"dashed_line"]];
+    [_mainScrollView addSubview:img_line];
+    
+    UIImageView * img_line2 = [[UIImageView alloc]initWithFrame:CGRectMake(_mainWebView.frame.origin.x, _mainWebView.frame.origin.y+_mainWebView.frame.size.height, _mainWebView.frame.size.width, 2)];
+    [img_line2 setImage:[UIImage imageNamed:@"juchi"]];
+    [_mainScrollView addSubview:img_line2];
 }
 
 - (void)back:(id)sender{

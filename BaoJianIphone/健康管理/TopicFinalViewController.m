@@ -23,7 +23,7 @@
     [self initPlat];
     self.navbar.titleLabel.text = @"话题最终";
     
-    [self download];
+   // [self download];
 }
 - (void)download{
     [ELRequestSingle topicDetailRequest:^(BOOL success,id objc) {
@@ -37,7 +37,7 @@
 - (void)initPlat{
     
     self.view.backgroundColor = [UIColor whiteColor];
-//    [_mainwebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+    [_mainwebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
 //    _scrollEndDistance.constant = 0;
 //    _headViewDistance.constant = 0;
     

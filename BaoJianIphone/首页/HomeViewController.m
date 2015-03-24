@@ -16,6 +16,7 @@
 #import "SearchResultViewController.h"
 #import "MemberCenterViewController.h"
 #import "MoreViewController.h"
+#import "HotActivityViewController.h"
 
 #import "LoginViewController.h"
 @interface HomeViewController ()
@@ -43,7 +44,7 @@
     channelArray = [[NSArray alloc]init];
     titles = [[NSMutableArray alloc]initWithObjects:@"走进宝健",@"健康管理",@"事业机会",@"资讯中心",@"宝健商场",@"热门活动", nil];
     icons = [[NSMutableArray alloc]initWithObjects:@"comebj",@"health",@"career",@"infocenter",@"shop",@"activity", nil];
-    colors = [[NSMutableArray alloc]initWithObjects:UIColorFromRGB(0x39b735),UIColorFromRGB(0x2893d6),UIColorFromRGB(0xc300de),UIColorFromRGB(0xbb9b09),UIColorFromRGB(0xff5f7e),UIColorFromRGB(0xe89d3d), nil];
+//    colors = [[NSMutableArray alloc]initWithObjects:UIColorFromRGB(0x39b735),UIColorFromRGB(0x2893d6),UIColorFromRGB(0xc300de),UIColorFromRGB(0xbb9b09),UIColorFromRGB(0xff5f7e),UIColorFromRGB(0xe89d3d), nil];
 //    self.navbar.titleLabel.text = @"首页";
     [self.navbar.backbtn setBackgroundImage:[UIImage imageNamed:@"logo"] forState:UIControlStateNormal];
     [self.navbar.backbtn setImage:nil forState:UIControlStateNormal];
@@ -63,8 +64,9 @@
     {
         HomeChannelView * channel = [[HomeChannelView alloc]initWithFrame:CGRectMake(10+(width+10)*(i%3), 10+(SCREENWIDTH-10*2)*(790.0/1035.0)+(width+10)*(i/3)+10, width, width)];
         channel.titleL.text = [titles objectAtIndex:i];
+        channel.titleL.textColor = UIColorFromRGB(0x514f4e);
         [channel.imgV setImage:[UIImage imageNamed:[icons objectAtIndex:i]]];
-        channel.backgroundColor = [colors objectAtIndex:i];
+        channel.backgroundColor = [UIColor whiteColor];
         channel.tag = 100+i;
         
         channel.call_back = ^(HomeChannelView *view){
@@ -101,18 +103,22 @@
                 case 3:
                 {
                     InfomationCenterViewController * infocenter = [[InfomationCenterViewController alloc]initWithNibName:@"InfomationCenterViewController" bundle:nil];
+                    infocenter.titleName = @"资讯中心";
                     infocenter.optionid = object.auto_id;
                     [self.navigationController pushViewController:infocenter animated:YES];
                 }
                     break;
                 case 4:
                 {
-                    
+                    [self.view makeToast:@"敬请期待"];
                 }
                     break;
                 case 5:
                 {
-                    
+                    HotActivityViewController * infocenter = [[HotActivityViewController alloc]initWithNibName:@"HotActivityViewController" bundle:nil];
+                    infocenter.titleName = @"热门活动";
+                    infocenter.optionid = @"164";
+                    [self.navigationController pushViewController:infocenter animated:YES];
                 }
                     break;
                 default:
@@ -232,10 +238,15 @@
             case 0:
             {
                 //个人中心
-//                MemberCenterViewController * member = [[MemberCenterViewController alloc]initWithNibName:@"MemberCenterViewController" bundle:nil];
-//                [self.navigationController pushViewController:member animated:YES];
-                LoginViewController * login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-                [self.navigationController pushViewController:login animated:YES];
+                if([[UserLoginInfoManager loginmanager] state]){
+                    MemberCenterViewController * member = [[MemberCenterViewController alloc]initWithNibName:@"MemberCenterViewController" bundle:nil];
+                    [self.navigationController pushViewController:member animated:YES];
+
+                }else{
+                    LoginViewController * login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+                    [self.navigationController pushViewController:login animated:YES];
+                }
+                
             }
                 break;
             case 1:

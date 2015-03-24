@@ -5,9 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6751"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfomationCenterViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HotActivityViewController">
             <connections>
-                <outlet property="slideSwitchView" destination="ZQP-Zu-LQB" id="int-eu-oEr"/>
+                <outlet property="slideSwitchView" destination="Rz7-db-AlM" id="IHs-zO-oWd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,23 +16,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQP-Zu-LQB" customClass="QCSlideSwitchView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rz7-db-AlM" customClass="QCSlideSwitchView">
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="slideSwitchViewDelegate" destination="-1" id="9Cp-e1-POp"/>
-                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ZQP-Zu-LQB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="827-di-xm6"/>
-                <constraint firstAttribute="trailing" secondItem="ZQP-Zu-LQB" secondAttribute="trailing" id="e7t-RX-3Q0"/>
-                <constraint firstAttribute="bottom" secondItem="ZQP-Zu-LQB" secondAttribute="bottom" id="ndD-d8-jZQ"/>
-                <constraint firstItem="ZQP-Zu-LQB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xzL-U4-EXn"/>
+                <constraint firstAttribute="bottom" secondItem="Rz7-db-AlM" secondAttribute="bottom" id="6Eb-m6-Lkv"/>
+                <constraint firstAttribute="trailing" secondItem="Rz7-db-AlM" secondAttribute="trailing" id="IXt-3e-QLT"/>
+                <constraint firstItem="Rz7-db-AlM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ek8-xS-lEC"/>
+                <constraint firstItem="Rz7-db-AlM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="nRB-R0-ifJ"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="207" y="123"/>
         </view>
     </objects>
 </document>

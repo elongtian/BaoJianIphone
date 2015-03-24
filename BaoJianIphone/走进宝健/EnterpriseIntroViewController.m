@@ -34,7 +34,7 @@
 
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-    [_mWebView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.background='#EDF0EB'"];
+//    [_mWebView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.background='#EDF0EB'"];
 }
 
 - (void)back:(id)sender{

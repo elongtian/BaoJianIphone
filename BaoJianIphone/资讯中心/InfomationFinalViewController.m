@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    _mWebView.scrollView.showsHorizontalScrollIndicator = NO;
+    _mWebView.scrollView.showsVerticalScrollIndicator = NO;
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navbar.titleLabel.text = @"资讯最终";
     [self download];
 }
 - (void)download{

@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     dataArray = [[NSMutableArray alloc]init];
+    [self download];
 }
 
 - (void)download{
@@ -36,9 +37,10 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if(cell == nil){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     BJObject * object = [dataArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = object.content_name;
+    cell.textLabel.text = object.modules_name;
     return cell;
 }
 

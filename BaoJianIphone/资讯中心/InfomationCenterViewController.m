@@ -46,7 +46,7 @@
     
     self.slideSwitchView.slideSwitchViewDelegate = self;
     
-    self.navbar.titleLabel.text = @"资讯中心";
+    self.navbar.titleLabel.text = self.titleName;
     self.slideSwitchView.tabItemNormalColor = [QCSlideSwitchView colorFromHexRGB:@"868686"];
     self.slideSwitchView.tabItemSelectedColor = [QCSlideSwitchView colorFromHexRGB:@"00a200"];
     self.slideSwitchView.shadowImage = [[UIImage imageNamed:@"red_line_and_shadow.png"]

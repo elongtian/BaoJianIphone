@@ -67,6 +67,7 @@
 
 #import "BJObject.h"
 #import "ELRequestSingle.h"
+#import "UserLoginInfoManager.h"
 
 #define HTTP @"http://192.168.1.170/bj_app/app/index.php?com=com_appService"
 //首页轮播
