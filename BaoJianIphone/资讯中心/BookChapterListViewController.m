@@ -21,7 +21,7 @@
 }
 
 - (void)download{
-    [ELRequestSingle chapterListRequest:^(id objc) {
+    [ELRequestSingle chapterListRequest:^(BOOL success,id objc) {
         
         [dataArray addObjectsFromArray:(NSArray *)objc];
         [_mTableView reloadData];

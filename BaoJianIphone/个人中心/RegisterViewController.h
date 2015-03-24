@@ -24,4 +24,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *protcol;
 @property (weak, nonatomic) IBOutlet UIButton *nextbtn;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *mScrollViewWidth;
+@property (strong, nonatomic) IBOutlet UIButton *getCodeBtn;
 @end

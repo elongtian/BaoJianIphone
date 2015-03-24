@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface RegisterProtocolViewController : BaseViewController
+@interface RegisterProtocolViewController : BaseViewController<UIWebViewDelegate>
 @property (strong, nonatomic) IBOutlet UIWebView *mWebView;
 
 @end

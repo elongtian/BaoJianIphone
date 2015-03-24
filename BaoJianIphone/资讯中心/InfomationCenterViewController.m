@@ -28,7 +28,7 @@
 }
 
 - (void)download{
-    [ELRequestSingle infoCenterPlateRequest:^(id objc) {
+    [ELRequestSingle infoCenterPlateRequest:^(BOOL success,id objc) {
         channelArray = [NSArray arrayWithArray:(NSArray *)objc];
         BJObject * object = [channelArray objectAtIndex:0];
         newsController.optionid = object.auto_id;

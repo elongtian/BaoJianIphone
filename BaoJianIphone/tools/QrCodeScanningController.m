@@ -55,7 +55,7 @@
     
 }
 
--(void)viewWillAppear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated
 {
     [self setupCamera];
 }
@@ -90,7 +90,9 @@
     // Preview
     _preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
     _preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    _preview.frame =_boundsImg.frame;
+    _preview.frame =CGRectMake(_boundsImg.frame.origin.x, _boundsImg.frame.origin.y, _boundsImg.frame.size.width, _boundsImg.frame.size.height);
+    NSLog(@"%@",[NSValue valueWithCGRect:_preview.frame]);
+    _preview.position=CGPointMake(CGRectGetMidX(_boundsImg.frame), CGRectGetMidY(_boundsImg.frame));
     [_back_View.layer insertSublayer:self.preview atIndex:0];
     
     

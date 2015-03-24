@@ -56,7 +56,7 @@
 }
 
 - (void)download{
-    [ELRequestSingle panoramicDetailRequest:^(id objc) {
+    [ELRequestSingle panoramicDetailRequest:^(BOOL sucess,id objc) {
         
         
         [_imageViews addObjectsFromArray:(NSArray *)objc];

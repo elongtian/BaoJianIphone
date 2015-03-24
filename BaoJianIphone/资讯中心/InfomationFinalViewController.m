@@ -17,9 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self download];
 }
 - (void)download{
-    [ELRequestSingle newsDetailRequest:^(id objc) {
+    [ELRequestSingle newsDetailRequest:^(BOOL success,id objc) {
         BJObject * object = (BJObject *)objc;
         _content_name.text = object.content_name;
         _content_time.text = object.create_time;

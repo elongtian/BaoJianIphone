@@ -128,12 +128,12 @@
 
 - (void)ad_request
 {
-    [ELRequestSingle homeBannerRequest:^(id objc) {
+    [ELRequestSingle homeBannerRequest:^(BOOL success,id objc) {
         self.pics = [NSMutableArray arrayWithArray:(NSArray *)objc];
         [self createBanner:self.pics];
     }];
     
-    [ELRequestSingle homePlateRequest:^(id objc) {
+    [ELRequestSingle homePlateRequest:^(BOOL success,id objc) {
         channelArray = [NSArray arrayWithArray:(NSArray *)objc];
     }];
 }

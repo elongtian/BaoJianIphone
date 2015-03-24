@@ -116,7 +116,7 @@
                         </mask>
                     </variation>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hqr-Yf-q3g">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hqr-Yf-q3g">
                     <rect key="frame" x="10" y="209" width="300" height="349"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -136,7 +136,7 @@
                 <constraint firstItem="hqr-Yf-q3g" firstAttribute="top" secondItem="Jq4-JT-aSZ" secondAttribute="bottom" constant="10" id="wGj-0f-cM1"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="217" y="213"/>
+            <point key="canvasLocation" x="243" y="204"/>
         </view>
     </objects>
     <resources>

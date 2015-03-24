@@ -133,12 +133,12 @@
 
 - (void)ad_request
 {
-    [ELRequestSingle comeBaoJianBannerRequest:^(id objc) {
+    [ELRequestSingle comeBaoJianBannerRequest:^(BOOL success,id objc) {
         self.pics = [NSMutableArray arrayWithArray:(NSArray *)objc];
         [self createBanner:self.pics];
     }];
     
-    [ELRequestSingle comeBjPlateRequest:^(id objc) {
+    [ELRequestSingle comeBjPlateRequest:^(BOOL success,id objc) {
         
         channelArray = [NSArray arrayWithArray:(NSArray *)objc];
     } withObject:self.optionid];

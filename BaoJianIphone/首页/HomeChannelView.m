@@ -10,8 +10,8 @@
 #import "Const.h"
 #define TOPDistance 20.0f
 
-#define imgV_Width 30.f
-#define imgV_height 30.f
+#define imgV_Width 40.f
+#define imgV_height 40.f
 
 #define titleL_Width 80.f
 #define titleL_Height 30.f

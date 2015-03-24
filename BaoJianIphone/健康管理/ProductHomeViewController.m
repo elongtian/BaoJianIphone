@@ -31,8 +31,8 @@
 - (void)initParameters
 {
     channelArray = [[NSArray alloc]init];
-    titles = [[NSMutableArray alloc]initWithObjects:@"营养保健食品",@"美容护肤",@"日用护理",@"健康家居",@"组合套装", nil];
-     icons = [[NSMutableArray alloc]initWithObjects:@"yybj",@"mrhf",@"ryhl",@"jkjj",@"zhtz", nil];
+    titles = [[NSMutableArray alloc]initWithObjects:@"组合套装",@"营养保健食品",@"美容护肤",@"日用护理",@"健康家居", nil];
+     icons = [[NSMutableArray alloc]initWithObjects:@"zhtz",@"yybj",@"mrhf",@"ryhl",@"jkjj", nil];
     self.navbar.titleLabel.text = @"产品";
     mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, NAVHEIGHT, SCREENWIDTH, SCREENHEIGHT-NAVHEIGHT)];
     //    mainScrollView.delegate = self;
@@ -109,12 +109,12 @@
 
 - (void)ad_request
 {
-    [ELRequestSingle productListBannerRequest:^(id objc) {
+    [ELRequestSingle productListBannerRequest:^(BOOL success,id objc) {
         self.pics = [NSMutableArray arrayWithArray:(NSArray *)objc];
         [self createBanner:self.pics];
     }];
     
-    [ELRequestSingle productPlateRequest:^(id objc) {
+    [ELRequestSingle productPlateRequest:^(BOOL success,id objc) {
         channelArray = [NSArray arrayWithArray:(NSArray *)objc];
     } withObject:self.optionid];
 }

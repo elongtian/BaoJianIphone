@@ -26,7 +26,7 @@
     [self download];
 }
 - (void)download{
-    [ELRequestSingle topicDetailRequest:^(id objc) {
+    [ELRequestSingle topicDetailRequest:^(BOOL success,id objc) {
         BJObject * object = (BJObject *)objc;
         [_mainwebView loadHTMLString:object.content_body baseURL:nil];
         _content_nameL.text = object.content_name;

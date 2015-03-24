@@ -9,6 +9,7 @@
 #import "RegisterViewController.h"
 #import "UpgradeRegisterViewController.h"
 #import "DaiDodgeKeyboard.h"
+#import "RegisterProtocolViewController.h"
 @interface RegisterViewController ()
 
 @end
@@ -34,7 +35,21 @@
     
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapScrollView)];
     [_mScrollView addGestureRecognizer:tap];
+    [_getCodeBtn addTarget:self action:@selector(sendCode:) forControlEvents:UIControlEventTouchDown];
+    
 }
+#pragma mark - 获取验证码
+- (void)sendCode:(id)sender{
+    [ELRequestSingle registerGetCodeRequest:^(BOOL success,id objc) {
+        if(success){
+        //
+            [self.view makeToast:objc];
+        }else{
+            [self.view makeToast:objc];
+        }
+    } Mobile:_mobile.text];
+}
+
 - (void)tapScrollView{
     [self.view endEditing:YES];
 }
@@ -52,6 +67,8 @@
 
 - (void)protocolAction:(id)sender{
     //跳转到协议
+    RegisterProtocolViewController * protocol = [[RegisterProtocolViewController alloc]initWithNibName:@"RegisterProtocolViewController" bundle:nil];
+    [self.navigationController pushViewController:protocol animated:YES];
 }
 
 - (void)agreeAction:(id)sender{

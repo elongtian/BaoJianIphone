@@ -38,7 +38,7 @@
 }
 
 - (void)requestData{
-    [ELRequestSingle panoramicListRequest:^(id objc) {
+    [ELRequestSingle panoramicListRequest:^(BOOL success,id objc) {
         [self data_load:objc];
     }
     withPage:1 OptionId:self.optionid];
@@ -72,7 +72,7 @@
             cell = [[[NSBundle mainBundle] loadNibNamed:@"PanoramaListCell" owner:self options:nil] lastObject];
         }
         BJObject * object = [photosArray objectAtIndex:indexPath.row/2];
-        [cell.content_img setImageWithURL:[NSURL URLWithString:object.content_img] placeholderImage:[UIImage imageNamed:@"nophote"]];
+        [cell.content_img setImageWithURL:[NSURL URLWithString:object.content_img] placeholderImage:[UIImage imageNamed:@"no_phote"]];
         cell.title.text = object.content_name;
         
         return cell;

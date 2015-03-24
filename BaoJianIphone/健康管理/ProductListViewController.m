@@ -23,15 +23,23 @@
     
     price_bool = NO;
     sale_bool = YES;
-    sortindex = 0;
+    sortindex = @"4";
     page = 1;
+    keyword = nil;
+    _code = nil;
     [self download];
 }
 
 - (void)download{
-    [ELRequestSingle productListRequest:^(id objc) {
-        [self loadData:objc];
-    } withObject:self.optionid Page:page];
+    [self.indicator startAnimatingActivit];
+    [ELRequestSingle productListRequest:^(BOOL sucess, id objc) {
+        if(sucess){
+            [self loadData:objc];
+            [self.indicator LoadSuccess];
+        }else{
+            [self.indicator LoadFailed];
+        }
+    } withObject:self.optionid Page:page Code:_code Keyword:keyword Sort:sortindex];
 }
 - (void)loadData:(id)objc{
     if(page == 1){
@@ -97,6 +105,9 @@
     
     [_cancelBtn addTarget:self action:@selector(cancelAction:) forControlEvents:UIControlEventTouchDown];
     
+    
+    self.indicator = [[ActivityIndicator alloc]initWithFrame:CGRectMake(0, NAVHEIGHT, SCREENWIDTH, SCREENHEIGHT-(_salesView.frame.size.height+_salesView.frame.origin.y)) LabelText:@"正在加载..." withdelegate:nil withType:ActivityIndicatorDefault andAction:nil];
+    [self.view addSubview:self.indicator];
 }
 
 
@@ -132,6 +143,15 @@
     ProductFinalViewController * final = [[ProductFinalViewController alloc]initWithNibName:@"ProductFinalViewController" bundle:nil];
     final.optionid = [(BJObject *)[dataArray objectAtIndex:indexPath.row] auto_id];
     [self.navigationController pushViewController:final animated:YES];
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    keyword = textField.text;
+    _code = nil;
+    [self download];
+    [textField resignFirstResponder];
+    return YES;
 }
 
 #pragma mark - 隐藏浮层
@@ -173,29 +193,30 @@
         [_salesV setImage:[UIImage imageNamed:@"xl_select_up"]];
         _salesL.textColor = UIColorFromRGB(0xff602a);
         sale_bool = NO;
-//        sort = 11;
+        sortindex = @"3";
     }
     else
     {
         [_salesV setImage:[UIImage imageNamed:@"xl_select_down"]];
         _salesL.textColor = UIColorFromRGB(0xff602a);
         sale_bool = YES;
-//        sort = 12;
+        sortindex = @"4";
     }
     
-    if(index == 0)
-    {
-        
-    }
-    else
-    {
-        
+//    if(index == 0)
+//    {
+//        
+//    }
+//    else
+//    {
+    
         [_priceV setImage:[UIImage imageNamed:@"jg_no_select_up"]];
         _priceL.textColor = [UIColor blackColor];
-    }
+  //  }
     
-    sortindex = 0;
+//    sortindex = 0;
     price_bool = NO;
+    [self download];
     
 }
 
@@ -205,28 +226,28 @@
         [_priceV setImage:[UIImage imageNamed:@"jg_select_down"]];
         _priceL.textColor = UIColorFromRGB(0xff602a);
         price_bool = NO;
-//        sort = 5;
+        sortindex = @"2";
     }
     else
     {
         [_priceV setImage:[UIImage imageNamed:@"jg_select_up"]];
         _priceL.textColor = UIColorFromRGB(0xff602a);
         price_bool = YES;
-//        sort = 6;
+        sortindex = @"1";
     }
     
-    if(sortindex == 1)
-    {
-        
-    }
-    else
-    {
+//    if(index == 1)
+//    {
+//        
+//    }
+//    else
+//    {
         [_salesV setImage:[UIImage imageNamed:@"xl_no_select_down"]];
         _salesL.textColor = [UIColor blackColor];
-    }
-    sortindex = 1;
+   // }
     sale_bool = NO;
     
+    [self download];
    }
 #pragma mark - 扫描
 - (void)scannerAction:(UIButton *)sender{
@@ -236,7 +257,9 @@
 }
 #pragma mark - 返回二维码的扫描结果
 - (void)returnQrCode:(NSString *)code{
-
+    keyword = nil;
+    _code = code;
+    [self download];
 }
 
 - (void)back:(id)sender{

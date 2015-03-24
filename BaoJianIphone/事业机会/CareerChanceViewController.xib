@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,6 +23,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CareerChanceViewController">
             <connections>
+                <outlet property="cube1" destination="W3q-O1-RX4" id="Avx-1z-r1T"/>
+                <outlet property="cube2" destination="eVC-tH-JuG" id="C2E-BQ-Duu"/>
+                <outlet property="cube3" destination="deh-2w-LEq" id="EKm-6U-nfD"/>
+                <outlet property="cube4" destination="USU-h7-BYM" id="TnB-5V-uVa"/>
+                <outlet property="cube5" destination="QGv-ol-YlX" id="7yb-9d-GxG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,7 +52,7 @@
                             <color key="textColor" red="0.33725490196078434" green="0.53725490196078429" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3q-O1-RX4">
+                        <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3q-O1-RX4">
                             <rect key="frame" x="10" y="275" width="60" height="180"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqD-lb-5iW">
@@ -99,7 +104,7 @@
                                 <constraint firstItem="Q2P-ji-MgN" firstAttribute="top" secondItem="PqD-lb-5iW" secondAttribute="bottom" constant="17" id="xeZ-Ve-N3t"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVC-tH-JuG">
+                        <view tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVC-tH-JuG">
                             <rect key="frame" x="70" y="235" width="60" height="220"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWf-ax-F4U">
@@ -151,7 +156,7 @@
                                 <constraint firstAttribute="trailing" secondItem="ekl-Zz-meJ" secondAttribute="trailing" constant="8" id="ybZ-vS-pQD"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USU-h7-BYM">
+                        <view tag="103" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USU-h7-BYM">
                             <rect key="frame" x="190" y="155" width="60" height="300"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p55-Uv-elX">
@@ -203,7 +208,7 @@
                                 <constraint firstAttribute="centerX" secondItem="p55-Uv-elX" secondAttribute="centerX" id="xFq-fz-1gY"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-ol-YlX">
+                        <view tag="104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-ol-YlX">
                             <rect key="frame" x="250" y="115" width="60" height="340"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGb-EO-yUb">
@@ -255,7 +260,7 @@
                                 <constraint firstItem="trc-5i-Hfe" firstAttribute="top" secondItem="aau-ea-PU5" secondAttribute="bottom" constant="5" id="yAc-p4-0AX"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deh-2w-LEq">
+                        <view tag="102" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deh-2w-LEq">
                             <rect key="frame" x="130" y="195" width="60" height="260"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50A-tK-p9N">

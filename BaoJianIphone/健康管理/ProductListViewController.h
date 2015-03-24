@@ -14,9 +14,11 @@
 @interface ProductListViewController : BaseViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,QrCodeScanningDelegate>{
     BOOL price_bool;
     BOOL sale_bool;
-    NSInteger sortindex;
+    NSString * sortindex;
     NSMutableArray * dataArray;
     NSInteger page;
+    NSString * keyword;
+    NSString * _code;
 }
 @property (strong, nonatomic) IBOutlet UIButton *scannerBtn;
 @property (strong, nonatomic) IBOutlet ELTextField *searchField;

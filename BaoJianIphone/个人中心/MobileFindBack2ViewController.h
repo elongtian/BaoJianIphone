@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *password2;
 @property (weak, nonatomic) IBOutlet UIButton *sure;
+@property (retain, nonatomic) NSString * mobile;
 
 @end

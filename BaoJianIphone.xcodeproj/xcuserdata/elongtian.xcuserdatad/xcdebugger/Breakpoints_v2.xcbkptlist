@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BaoJianIphone/&#x8d70;&#x8fdb;&#x5b9d;&#x5065;/PanoramaImageView.m"
-            timestampString = "448451990.288021"
+            filePath = "BaoJianIphone/&#x4e2a;&#x4eba;&#x4e2d;&#x5fc3;/LoginViewController.m"
+            timestampString = "448788130.530718"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-loadImage:"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-loginAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BaoJianIphone/&#x8d70;&#x8fdb;&#x5b9d;&#x5065;/PanoramaImageView.m"
-            timestampString = "448452822.070896"
+            filePath = "BaoJianIphone/ELRequestSingle.m"
+            timestampString = "448873624.022919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-loadImage:"
+            startingLineNumber = "690"
+            endingLineNumber = "690"
+            landmarkName = "+modifyPassWordVolliateCodeRequest:Mobile:Code:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BaoJianIphone/&#x5065;&#x5eb7;&#x7ba1;&#x7406;/ProductFinalViewController.m"
+            timestampString = "448875670.390653"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "-webViewProgress:updateProgress:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BaoJianIphone/&#x5065;&#x5eb7;&#x7ba1;&#x7406;/ProductFinalViewController.m"
+            timestampString = "448875811.356705"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "-webViewProgress:updateProgress:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

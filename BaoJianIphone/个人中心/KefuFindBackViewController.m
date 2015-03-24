@@ -28,6 +28,10 @@
     [_kefu_teleL addGestureRecognizer:tap];
     
     [_bjcopyBtn addTarget:self action:@selector(bjcopyAction:) forControlEvents:UIControlEventTouchDown];
+    
+    [ELRequestSingle keFuTelRequest:^(BOOL sucess, id objc) {
+        _kefu_teleL.text = objc;
+    }];
 }
 
 - (void)bjcopyAction:(UIButton *)sender{

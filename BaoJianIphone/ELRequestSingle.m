@@ -22,7 +22,7 @@
         
         NSArray * dataarray = (NSArray *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
         if(block){
-            block(dataarray);
+            block(YES,dataarray);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -45,7 +45,7 @@
             [dataArr addObject:object];
         }
         if(block){
-            block(dataArr);
+            block(YES,dataArr);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -70,7 +70,7 @@
         }
         
         if(block){
-            block(dataArr);
+            block(YES,dataArr);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -90,7 +90,7 @@
         
         NSArray * dataarray = (NSArray *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
         if(block){
-            block(dataarray);
+            block(YES,dataarray);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -113,7 +113,7 @@
         }
         
         if(block){
-            block(dataArr);
+            block(YES,dataArr);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -122,9 +122,9 @@
 
 }
 
-//走进宝健\各频道\详情页
+//走进宝健简介详情页
 + (void)articleDetailRequest:(ELRequestSingleCallBack) block withObject:(NSString *)optionid{
-    NSString * url = [NSString stringWithFormat:@"%@%@&optionid=%@",HTTP,@"&method=appSev&app_com=com_module&task=module_desc",optionid];
+    NSString * url = [NSString stringWithFormat:@"%@%@&optionid=%@",HTTP,@"&method=appSev&app_com=com_article&task=module_article",optionid];
     [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSDictionary * dic = (NSDictionary *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
@@ -134,7 +134,26 @@
         object.content_body = OBJC([dic objectForKey:@"content_body"]);
         object.create_time = OBJC([dic objectForKey:@"create_time"]);
         if(block){
-            block(object);
+            block(YES,object);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+}
+
+//走进宝特色详情页
++ (void)teSeDetailRequest:(ELRequestSingleCallBack) block withObject:(NSString *)optionid{
+    NSString * url = [NSString stringWithFormat:@"%@%@&optionid=%@",HTTP,@"&method=appSev&app_com=com_article&task=module_article",optionid];
+    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSDictionary * dic = (NSDictionary *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
+        BJObject * object = [[BJObject alloc]init];
+        object.modules_name = OBJC([dic objectForKey:@"modules_name"]);
+        object.modules_desc = OBJC([dic objectForKey:@"modules_desc"]);
+        object.content_body = OBJC([dic objectForKey:@"content_body"]);
+        object.create_time = OBJC([dic objectForKey:@"create_time"]);
+        if(block){
+            block(YES,object);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -160,7 +179,7 @@
             [dataArray addObject:object];
         }
         if(block){
-            block(dataArray);
+            block(YES,dataArray);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -187,7 +206,7 @@
             [dataArray addObject:object];
         }
         if(block){
-            block(dataArray);
+            block(YES,dataArray);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -205,7 +224,7 @@
         
         NSArray * dataarray = (NSArray *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
         if(block){
-            block(dataarray);
+            block(YES,dataarray);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -229,7 +248,7 @@
         }
         
         if(block){
-            block(dataArr);
+            block(YES,dataArr);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -237,12 +256,14 @@
     }];
     
 }
-
 /*
  产品列表请求
  */
-+ (void)productListRequest:(ELRequestSingleCallBack)block withObject:(NSString *)optionid Page:(NSInteger)page{
++ (void)productListRequest:(ELRequestSingleCallBack)block withObject:(NSString *)optionid Page:(NSInteger)page Code:(NSString *)code Keyword:(NSString *)keyword Sort:(NSString *)sort{
     NSString * url = [NSString stringWithFormat:@"%@%@&auto_code=%@",HTTP,@"&method=appSev&app_com=com_shopProduct&task=lists",optionid];
+    url = code?[url stringByAppendingFormat:@"&bar_code=%@",code]:url;
+    url = keyword?[url stringByAppendingFormat:@"&keywords=%@",[keyword stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]:url;
+    url = sort?[url stringByAppendingFormat:@"&staus=%@",sort]:url;
     [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray * dataarray = (NSArray *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
         NSMutableArray * dataArr = [[NSMutableArray alloc]init];
@@ -260,7 +281,7 @@
         }
         
         if(block){
-            block(dataArr);
+            block(YES,dataArr);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -279,7 +300,7 @@
         
         NSArray * dataarray = (NSArray *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
         if(block){
-            block(dataarray);
+            block(YES,dataarray);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -298,11 +319,13 @@
             object.content_name = OBJC([datadic objectForKey:@"content_name"]);
             object.content_desc = OBJC([datadic objectForKey:@"content_desc"]);
             object.content_body = OBJC([datadic objectForKey:@"content_body"]);
-            object.create_time = OBJC([datadic objectForKey:@"create_time"]);
-            object.content_img = OBJC([datadic objectForKey:@"content_img"]);
+            object.effect = OBJC([datadic objectForKey:@"effect"]);
+            object.superiority = OBJC([datadic objectForKey:@"superiority"]);
             object.auto_id = OBJC([datadic objectForKey:@"auto_id"]);
+            object.content_price = OBJC([datadic objectForKey:@"content_price"]);
+            object.content_preprice = OBJC([datadic objectForKey:@"content_preprice"]);
         if(block){
-            block(object);
+            block(YES,object);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -332,7 +355,7 @@
         }
         
         if(block){
-            block(dataArr);
+            block(YES,dataArr);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -358,7 +381,7 @@
         object.content_img = OBJC([datadic objectForKey:@"content_img"]);
         object.auto_id = OBJC([datadic objectForKey:@"auto_id"]);
         if(block){
-            block(object);
+            block(YES,object);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -384,7 +407,7 @@
         }
         
         if(block){
-            block(dataArr);
+            block(YES,dataArr);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -406,16 +429,13 @@
             object.content_name = OBJC([dic objectForKey:@"content_name"]);
             object.auto_id = OBJC([dic objectForKey:@"auto_id"]);
             object.content_desc = OBJC([dic objectForKey:@"content_desc"]);
-            object.content_img = OBJC([dic objectForKey:@"content_img"]);
-            object.superiority = OBJC([dic objectForKey:@"superiority"]);
-            object.effect = OBJC([dic objectForKey:@"effect"]);
-            object.content_preprice = OBJC([dic objectForKey:@"content_preprice"]);
-            object.content_price = OBJC([dic objectForKey:@"content_price"]);
+            object.content_body = OBJC([dic objectForKey:@"content_body"]);
+            object.create_time = OBJC([dic objectForKey:@"create_time"]);
             [dataArr addObject:object];
         }
         
         if(block){
-            block(dataArr);
+            block(YES,dataArr);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -437,10 +457,9 @@
         object.content_desc = OBJC([datadic objectForKey:@"content_desc"]);
         object.content_body = OBJC([datadic objectForKey:@"content_body"]);
         object.create_time = OBJC([datadic objectForKey:@"create_time"]);
-        object.content_img = OBJC([datadic objectForKey:@"content_img"]);
         object.auto_id = OBJC([datadic objectForKey:@"auto_id"]);
         if(block){
-            block(object);
+            block(YES,object);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -469,7 +488,7 @@
         }
         
         if(block){
-            block(dataArr);
+            block(YES,dataArr);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -477,6 +496,58 @@
     }];
     
 }
+
+/*事业机会*/
+//---------------------------------------------------
+
+/*
+ 事业机会
+ */
++ (void)careerPlateRequest:(ELRequestSingleCallBack)block withObject:(NSString *)optionid{
+    NSString * url = [NSString stringWithFormat:@"%@%@&optionid=%@",HTTP,@"&method=appSev&app_com=com_module&task=module_more",optionid];
+    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray * dataarray = (NSArray *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
+        NSMutableArray * dataArr = [[NSMutableArray alloc]init];
+        for(NSDictionary * dic in dataarray){
+            BJObject * object = [[BJObject alloc]init];
+            object.modules_name = OBJC([dic objectForKey:@"modules_name"]);
+            object.auto_code = OBJC([dic objectForKey:@"auto_code"]);
+            object.auto_id = OBJC([dic objectForKey:@"auto_id"]);
+            object.modules_desc = OBJC([dic objectForKey:@"modules_desc"]);
+            [dataArr addObject:object];
+        }
+        
+        if(block){
+            block(YES,dataArr);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
+
+//事业机会最终
++ (void)careerDetailRequest:(ELRequestSingleCallBack)block withOptionId:(NSString *)optionid{
+    NSString * url = [NSString stringWithFormat:@"%@%@&optionid=%@",HTTP,@"&method=appSev&app_com=com_article&task=module_article",optionid];
+    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSDictionary * datadic = (NSDictionary *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
+        BJObject * object = [[BJObject alloc]init];
+        object.content_name = OBJC([datadic objectForKey:@"content_name"]);
+        object.content_desc = OBJC([datadic objectForKey:@"content_desc"]);
+        object.content_body = OBJC([datadic objectForKey:@"content_body"]);
+        object.create_time = OBJC([datadic objectForKey:@"create_time"]);
+        object.auto_id = OBJC([datadic objectForKey:@"auto_id"]);
+        if(block){
+            block(YES,object);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
+
 
 /*会员中心*/
 //省份请求--------------------------没有声明-------------------------------------
@@ -494,7 +565,7 @@
         }
         
         if(block){
-            block(dataArr);
+            block(YES,dataArr);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -516,7 +587,7 @@
         }
         
         if(block){
-            block(dataArr);
+            block(YES,dataArr);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -525,4 +596,121 @@
     
 }
 
+
+/*
+ 注册获取短信验证码
+192.168.1.170/bj_app/app/index.php?com=com_appService&tel=15031503140
+ */
++ (void)registerGetCodeRequest:(ELRequestSingleCallBack)block Mobile:(NSString *)mobile{
+    NSString * url = [NSString stringWithFormat:@"%@%@&tel=%@",HTTP,@"&method=save&app_com=com_passport&task=send_tel_vcode",mobile];
+    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary * dic = (NSDictionary *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
+        
+        if(block){
+            block(YES,[dic objectForKey:@"msg"]);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
+//注册协议
++ (void)registerprotocolRequest:(ELRequestSingleCallBack)block{
+    NSString * url = [NSString stringWithFormat:@"%@%@",HTTP,@"&method=appSev&app_com=com_article&task=module_article&optionid=217"];
+    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary * dic = (NSDictionary *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
+        BJObject * object = [[BJObject alloc]init];
+        object.content_body = OBJC([dic objectForKey:@"content_body"]);
+        if(block){
+            block(YES,object);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
++ (void)keFuTelRequest:(ELRequestSingleCallBack)block{
+    NSString * url = [NSString stringWithFormat:@"%@%@",HTTP,@"&method=save&app_com=com_passport&task=get_service_tel"];
+    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary * dic = (NSDictionary *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
+        if(block){
+            block(YES,[dic objectForKey:@"tel"]);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
+
+//登录
++ (void)loginRequest:(ELRequestSingleCallBack)block ID:(NSString *)userid AndPassWord:(NSString *)word{
+    NSString * url = [NSString stringWithFormat:@"%@%@&ID=%@&PWD=%@",HTTP,@"&method=save&app_com=com_passport&task=app_doLogin",userid,word];
+    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary * dic = (NSDictionary *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
+        
+        if(block){
+            block([[dic objectForKey:@"status"] boolValue],[dic objectForKey:@"msg"]);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
+
+/*
+ 手机找回密码获取手机验证码
+ */
++ (void)modifyPassWordGetCodeRequest:(ELRequestSingleCallBack)block Mobile:(NSString *)mobile{
+    NSString * url = [NSString stringWithFormat:@"%@%@&tel=%@",HTTP,@"&method=save&app_com=com_passport&task=send_edit_pwd_telvcode",mobile];
+    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary * dic = (NSDictionary *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
+        
+        if(block){
+            block([[dic objectForKey:@"status"] boolValue],[dic objectForKey:@"msg"]);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
+
+/*
+ 验证手机验证码
+ */
++ (void)modifyPassWordVolliateCodeRequest:(ELRequestSingleCallBack)block Mobile:(NSString *)mobile Code:(NSString *)code{
+    NSString * url = [NSString stringWithFormat:@"%@%@&tel=%@&vcode=%@",HTTP,@"&method=save&app_com=com_passport&task=send_edit_pwd_telvcode",mobile,code];
+    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary * dic = (NSDictionary *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
+        
+        if(block){
+            block([[dic objectForKey:@"status"] boolValue],[dic objectForKey:@"msg"]);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
+/*
+    重设密码&method=save&app_com=com_passport&task=app_pwd_edit
+ */
++ (void)modifyPassWordResetRequest:(ELRequestSingleCallBack)block Mobile:(NSString *)mobile Pwd:(NSString *)pwd{
+    NSString * url = [NSString stringWithFormat:@"%@%@&tel=%@&vcode=%@",HTTP,@"&method=save&app_com=com_passport&task=app_pwd_edit",mobile,pwd];
+    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary * dic = (NSDictionary *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
+        
+        if(block){
+            block([[dic objectForKey:@"status"] boolValue],[dic objectForKey:@"msg"]);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+}
 @end

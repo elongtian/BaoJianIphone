@@ -22,8 +22,17 @@
 }
 
 - (void)sureAction:(UIButton *)sender{
-    MobileFindResultViewController * final = [[MobileFindResultViewController alloc]initWithNibName:@"MobileFindResultViewController" bundle:nil];
-    [self.navigationController pushViewController:final animated:YES];
+    [self.view endEditing:YES];
+    [ELRequestSingle modifyPassWordResetRequest:^(BOOL sucess, id objc) {
+        if(sucess){
+            MobileFindResultViewController * final = [[MobileFindResultViewController alloc]initWithNibName:@"MobileFindResultViewController" bundle:nil];
+            [self.navigationController pushViewController:final animated:YES];
+        }else{
+            [self.view makeToast:objc];
+        }
+    } Mobile:self.mobile Pwd:_password.text];
+    
+    
 }
 
 - (void)back:(id)sender{

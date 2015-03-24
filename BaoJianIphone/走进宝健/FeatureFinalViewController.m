@@ -22,7 +22,7 @@
 }
 
 - (void)download{
-    [ELRequestSingle articleDetailRequest:^(id objc) {
+    [ELRequestSingle teSeDetailRequest:^(BOOL success,id objc) {
         
         BJObject * object = (BJObject *)objc;
         [_mWebView loadHTMLString:object.content_body baseURL:nil];

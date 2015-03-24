@@ -10,6 +10,7 @@
 #import "RegisterViewController.h"
 #import "MemberCenterViewController.h"
 #import "FindBackWordTypeViewController.h"
+#import "FileMangerObject.h"
 @interface LoginViewController ()
 
 @end
@@ -29,8 +30,17 @@
 }
 
 - (void)loginAction:(id)sender{
-    MemberCenterViewController * member = [[MemberCenterViewController alloc]initWithNibName:@"MemberCenterViewController" bundle:nil];
-    [self.navigationController pushViewController:member animated:YES];
+    [self.view endEditing:YES];
+    [ELRequestSingle loginRequest:^(BOOL sucess, id objc) {
+        if(sucess){
+            MemberCenterViewController * member = [[MemberCenterViewController alloc]initWithNibName:@"MemberCenterViewController" bundle:nil];
+            [self.navigationController pushViewController:member animated:YES];
+        }else{
+            
+        }
+        [self.view makeToast:objc];
+    } ID:[_userNameTextField.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] AndPassWord: [FileMangerObject md5:_passWordTextField.text]];
+    
 }
 
 - (void)home:(id)sender{

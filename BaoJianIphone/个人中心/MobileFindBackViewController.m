@@ -19,11 +19,34 @@
     // Do any additional setup after loading the view from its nib.
     self.navbar.titleLabel.text = @"手机找回密码";
     [_sure addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchDown];
+    [_getcode addTarget:self action:@selector(getCodeAction:) forControlEvents:UIControlEventTouchDown];
+}
+
+- (void)getCodeAction:(id)sender{
+    [self.view endEditing:YES];
+    [ELRequestSingle modifyPassWordGetCodeRequest:^(BOOL sucess, id objc) {
+        if(sucess){
+            
+        }else{
+            
+        }
+        [self.view makeToast:objc];
+    } Mobile:_mobile.text];
 }
 
 - (void)sureAction:(UIButton *)sender{
-    MobileFindBack2ViewController * mobile2 = [[MobileFindBack2ViewController alloc]initWithNibName:@"MobileFindBack2ViewController" bundle:nil];
-    [self.navigationController pushViewController:mobile2 animated:YES];
+    [self.view endEditing:YES];
+    [ELRequestSingle modifyPassWordVolliateCodeRequest:^(BOOL sucess, id objc){
+        if(sucess){
+            MobileFindBack2ViewController * mobile2 = [[MobileFindBack2ViewController alloc]initWithNibName:@"MobileFindBack2ViewController" bundle:nil];
+            mobile2.mobile = _mobile.text;
+            [self.navigationController pushViewController:mobile2 animated:YES];
+        }else{
+            [self.view makeToast:objc];
+        }
+    } Mobile:_mobile.text Code:_code.text];
+    
+  
 }
 
 - (void)back:(id)sender{

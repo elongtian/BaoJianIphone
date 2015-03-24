@@ -17,6 +17,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navbar.titleLabel.text = @"宝健个人服务协议";
+    
+    [ELRequestSingle registerprotocolRequest:^(BOOL sucess, id objc) {
+        BJObject * obj = (BJObject *)objc;
+        [_mWebView loadHTMLString:obj.content_body baseURL:nil];
+    }];
+    
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+
 }
 
 - (void)didReceiveMemoryWarning {

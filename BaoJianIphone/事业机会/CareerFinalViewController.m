@@ -1,46 +1,36 @@
 //
-//  EnterpriseIntroViewController.m
+//  CareerFinalViewController.m
 //  BaoJianIphone
 //
-//  Created by elongtian on 15-2-26.
+//  Created by elongtian on 15-3-23.
 //  Copyright (c) 2015年 madongkai. All rights reserved.
 //
 
-#import "EnterpriseIntroViewController.h"
+#import "CareerFinalViewController.h"
 
-@interface EnterpriseIntroViewController ()
+@interface CareerFinalViewController ()
 
 @end
 
-@implementation EnterpriseIntroViewController
+@implementation CareerFinalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navbar.titleLabel.text = @"企业简介";
+    self.navbar.titleLabel.text = self.titleName;
     [self download];
 }
 
 - (void)download{
-    [ELRequestSingle articleDetailRequest:^(BOOL success,id objc) {
-        
+    [ELRequestSingle careerDetailRequest:^(BOOL sucess, id objc) {
         BJObject * object = (BJObject *)objc;
+        _content_name.text = object.content_name;
+        _content_time.text = object.create_time;
         [_mWebView loadHTMLString:object.content_body baseURL:nil];
-    } withObject:self.optionid];
+    } withOptionId:self.optionid];
+    
+   
 }
-
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-
-}
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    [_mWebView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.background='#EDF0EB'"];
-}
-
-- (void)back:(id)sender{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -45,7 +45,7 @@
 }
 
 - (void)download{
-    [ELRequestSingle featurePlateRequest:^(id objc) {
+    [ELRequestSingle featurePlateRequest:^(BOOL success,id objc) {
         channelArray = [NSArray arrayWithArray:(NSArray *)objc];
     } withObject:self.optionid];
 }

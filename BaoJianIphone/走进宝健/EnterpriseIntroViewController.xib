@@ -16,9 +16,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1lR-Sm-nvU">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jianjie_bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="JPb-bE-rU6">
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </imageView>
+                <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1lR-Sm-nvU">
+                    <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="Knb-We-4FP"/>
                     </connections>
@@ -26,12 +29,20 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="JPb-bE-rU6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0QK-yf-ngQ"/>
+                <constraint firstAttribute="trailing" secondItem="JPb-bE-rU6" secondAttribute="trailing" id="AEy-98-gz8"/>
                 <constraint firstItem="1lR-Sm-nvU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GtN-fK-rJN"/>
+                <constraint firstAttribute="bottom" secondItem="JPb-bE-rU6" secondAttribute="bottom" id="H8C-Da-uez"/>
+                <constraint firstItem="JPb-bE-rU6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="fhv-iy-A2N"/>
                 <constraint firstItem="1lR-Sm-nvU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="h4M-2J-ziU"/>
                 <constraint firstAttribute="bottom" secondItem="1lR-Sm-nvU" secondAttribute="bottom" id="qhs-rT-o1u"/>
                 <constraint firstAttribute="trailing" secondItem="1lR-Sm-nvU" secondAttribute="trailing" id="wl3-ZC-acA"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="-4" y="33"/>
         </view>
     </objects>
+    <resources>
+        <image name="jianjie_bg.jpg" width="640" height="1008"/>
+    </resources>
 </document>

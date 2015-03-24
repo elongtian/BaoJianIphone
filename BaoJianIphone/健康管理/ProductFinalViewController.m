@@ -7,8 +7,13 @@
 //
 
 #import "ProductFinalViewController.h"
-
-@interface ProductFinalViewController ()
+#import "NJKWebViewProgress.h"
+#import "NJKWebViewProgressView.h"
+@interface ProductFinalViewController ()<NJKWebViewProgressDelegate>{
+    BOOL isCanLoadWeb;
+    NJKWebViewProgressView * _progressView;
+    NJKWebViewProgress * _progressProxy;
+}
 
 @end
 
@@ -28,39 +33,38 @@
 
 - (void)initPlat{
     
+    _pics = [[NSMutableArray alloc]init];
     _leftOneBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     _leftTwoBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
     _mainWebView.scrollView.bounces = NO;
-    [_mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+    _mainWebView.scrollView.scrollEnabled = NO;
+//    [_mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
+    
+    _progressProxy = [[NJKWebViewProgress alloc] init];
+    _mainWebView.delegate = _progressProxy;
+    _progressProxy.webViewProxyDelegate = self;
+    _progressProxy.progressDelegate = self;
+    
 }
 
 - (void)ad_request
 {
-//    NSString * url = [NSString stringWithFormat:@"%@%@",HTTP,HomeBannerUrl];
-//    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSDictionary * dic = (NSDictionary *)responseObject;
-//        
-//        NSArray * arr = (NSArray *)[dic objectForKey:@"datalist"];
-//        //            rootHeadView.hidden = YES;
-//        self.pics = [NSMutableArray arrayWithArray:arr];
-//        [self createBanner:self.pics];
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        [self.view makeToast:NO_NET];
-//    }];
-    [ELRequestSingle productDetalBannerRequest:^(id objc) {
+    [ELRequestSingle productDetalBannerRequest:^(BOOL success,id objc) {
         [_pics addObjectsFromArray:(NSArray *)objc];
         [self createBanner:self.pics];
     } withObject:self.optionid];
     
-    [ELRequestSingle productDetailRequest:^(id objc) {
+    [ELRequestSingle productDetailRequest:^(BOOL success,id objc) {
         BJObject * object = (BJObject *)objc;
         _content_name.text = object.content_name;
         _content_desc1.text = object.superiority;
         _content_desc2.text = object.effect;
-        _content_price.text = object.content_price;
-        _content_preprice.text = object.content_preprice;
+        _content_price.text = [NSString stringWithFormat:@"¥%@",object.content_price];
+        _content_preprice.text = [NSString stringWithFormat:@"建议零售价:¥%@",object.content_preprice];
         [_mainWebView loadHTMLString:object.content_body baseURL:nil];
+        
+        
+
     } withOptionId:self.optionid];
 }
 
@@ -147,19 +151,64 @@
 }
 
 #pragma mark - WebViewDelegate
+
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    if (!isCanLoadWeb){
+        isCanLoadWeb = !isCanLoadWeb;
+        return isCanLoadWeb;
+    }
+    return NO;
+}
+
+#pragma mark - NJKWebViewProgressDelegate
+
+-(void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress {
+    if (progress == 0.0) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        _progressView.progress = 0;
+        [UIView animateWithDuration:0.27 animations:^{
+            _progressView.alpha = 1.0;
+        }];
+    }
+    
+    if (progress == 1.0) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [UIView animateWithDuration:0.27 delay:progress - _progressView.progress options:0 animations:^{
+            _progressView.alpha = 0.0;
+            
+            NSString *height_str= [_mainWebView stringByEvaluatingJavaScriptFromString: @"document.body.offsetHeight"];
+            int height = [height_str intValue];
+            _webHeghtConstraint.constant = height;
+            [self.view setNeedsLayout]; //更新视图
+            [self.view layoutIfNeeded];
+            
+            [_mainWebView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.background='#EDF0EB'"];
+            
+            
+            
+            _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH, _mainWebView.frame.origin.y+_mainWebView.frame.size.height+15);
+        } completion:^(BOOL finished) {
+            UIImageView * img_line = [[UIImageView alloc]initWithFrame:CGRectMake(_mainWebView.frame.origin.x, _mainWebView.frame.origin.y-1, _mainWebView.frame.size.width, 1)];
+            [img_line setImage:[UIImage imageNamed:@"dashed_line"]];
+            [_mainScrollView addSubview:img_line];
+            
+            UIImageView * img_line2 = [[UIImageView alloc]initWithFrame:CGRectMake(_mainWebView.frame.origin.x, _mainWebView.frame.origin.y+_mainWebView.frame.size.height, _mainWebView.frame.size.width, 2)];
+            [img_line2 setImage:[UIImage imageNamed:@"juchi"]];
+            [_mainScrollView addSubview:img_line2];
+        }];
+    }
+    
+    [_progressView setProgress:progress animated:NO];
+}
+
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
 
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     
-    NSString *height_str= [webView stringByEvaluatingJavaScriptFromString: @"document.body.offsetHeight"];
-    int height = [height_str intValue];
-    _webHeghtConstraint.constant = height;
-    [self.view setNeedsLayout]; //更新视图
-    [self.view layoutIfNeeded];
-    
-    _mainScrollView.contentSize = CGSizeMake(SCREENWIDTH, _mainWebView.frame.origin.y+_mainWebView.frame.size.height+15);
+   
 }
 
 - (void)back:(id)sender{

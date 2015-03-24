@@ -37,7 +37,7 @@
     
 }
 - (void)download{
-    [ELRequestSingle topicListRequest:^(id objc) {
+    [ELRequestSingle topicListRequest:^(BOOL success,id objc) {
         if(page == 1){
             [dataArray removeAllObjects];
         }

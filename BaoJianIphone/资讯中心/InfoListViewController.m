@@ -24,7 +24,7 @@
 }
 
 - (void)download{
-    [ELRequestSingle infoListRequest:^(id objc) {
+    [ELRequestSingle infoListRequest:^(BOOL success,id objc) {
         if(page == 1){
         
             [dataArray removeAllObjects];
