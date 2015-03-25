@@ -69,7 +69,9 @@
 #import "ELRequestSingle.h"
 #import "UserLoginInfoManager.h"
 
-#define HTTP @"http://192.168.1.170/bj_app/app/index.php?com=com_appService"
+//#define HTTP @"http://192.168.1.170/bj_app/app/index.php?com=com_appService"
+#define HTTP @"http://beta.elongtian.com/bj_app/app/index.php?com=com_appService"
+
 //首页轮播
 
 #define HomeBannerUrl @"&method=appSev&app_com=com_ad&task=top"

@@ -21,19 +21,24 @@
     // Do any additional setup after loading the view from its nib.
     dataArray = [[NSMutableArray alloc]init];
     page = 1;
+    refresh = YES;
 }
 
 - (void)download{
-    [ELRequestSingle infoListRequest:^(BOOL success,id objc) {
-        if(page == 1){
-        
-            [dataArray removeAllObjects];
-        }else{
-            
-        }
-        [dataArray addObjectsFromArray:(NSArray *)objc];
-        [_mtableView reloadData];
-    } Page:page Optionid:self.optionid];
+    if(refresh){
+        [ELRequestSingle infoListRequest:^(BOOL success,id objc) {
+            if(page == 1){
+                
+                [dataArray removeAllObjects];
+            }else{
+                
+            }
+            refresh = NO;
+            [dataArray addObjectsFromArray:(NSArray *)objc];
+            [_mtableView reloadData];
+        } Page:page Optionid:self.optionid];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

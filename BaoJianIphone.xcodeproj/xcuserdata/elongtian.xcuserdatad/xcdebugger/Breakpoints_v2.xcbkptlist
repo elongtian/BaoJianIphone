@@ -33,6 +33,50 @@
             endingLineNumber = "690"
             landmarkName = "+modifyPassWordVolliateCodeRequest:Mobile:Code:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__65+[ELRequestSingle modifyPassWordVolliateCodeRequest:Mobile:Code:]_block_invoke"
+                  moduleName = "BaoJianIphone"
+                  urlString = "file:///Users/elongtian/BaoJianIphone/BaoJianIphone/ELRequestSingle.m"
+                  timestampString = "448948027.395466"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "691"
+                  endingLineNumber = "691"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__65+[ELRequestSingle modifyPassWordVolliateCodeRequest:Mobile:Code:]_block_invoke"
+                  moduleName = "BaoJianIphone"
+                  urlString = "file:///Users/elongtian/BaoJianIphone/BaoJianIphone/ELRequestSingle.m"
+                  timestampString = "448948027.395718"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "691"
+                  endingLineNumber = "691"
+                  offsetFromSymbolStart = "424">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__65+[ELRequestSingle modifyPassWordVolliateCodeRequest:Mobile:Code:]_block_invoke332"
+                  moduleName = "BaoJianIphone"
+                  urlString = "file:///Users/elongtian/BaoJianIphone/BaoJianIphone/ELRequestSingle.m"
+                  timestampString = "448948027.396002"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "691"
+                  endingLineNumber = "691"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

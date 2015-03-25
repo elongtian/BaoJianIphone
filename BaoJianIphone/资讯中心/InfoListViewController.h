@@ -15,6 +15,7 @@ typedef void (^InfoListCallBack) (NSIndexPath * indexpath);
 @interface InfoListViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 {
     NSInteger page;
+    BOOL refresh;
    
 }
 - (void)download;
