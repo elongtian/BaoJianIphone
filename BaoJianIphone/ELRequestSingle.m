@@ -710,6 +710,19 @@
     }];
     
 }
++ (void)load:(ELRequestSingleCallBack)block{
+    NSString * url = @"http://218.240.30.6/drzw/index.php?com=com_appService&method=appSev&app_com=com_shop&task=indexNum&level=2";
+    [[ELHttpRequestOperation sharedClient] GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary * dic = (NSDictionary *)([responseObject isEqual:[NSNull null]]?nil:responseObject);
+        
+        if(block){
+            block([[dic objectForKey:@"status"] boolValue],dic);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 
+}
 
 @end

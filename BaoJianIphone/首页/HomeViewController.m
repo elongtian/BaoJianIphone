@@ -41,6 +41,11 @@
 
 - (void)initParameters
 {
+    
+    [ELRequestSingle load:^(BOOL sucess, id objc) {
+        NSLog(@"%@",[[[[[objc objectForKey:@"data"] objectAtIndex:0] objectForKey:@"modules_sub"] objectAtIndex:0] objectForKey:@"modules_name"]);
+    }];
+    
     channelArray = [[NSArray alloc]init];
     titles = [[NSMutableArray alloc]initWithObjects:@"走进宝健",@"健康管理",@"事业机会",@"资讯中心",@"宝健商场",@"热门活动", nil];
     icons = [[NSMutableArray alloc]initWithObjects:@"comebj",@"health",@"career",@"infocenter",@"shop",@"activity", nil];

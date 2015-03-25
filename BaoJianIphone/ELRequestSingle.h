@@ -52,4 +52,6 @@ typedef void (^ELRequestSingleCallBack) (BOOL sucess,id objc);
 + (void)modifyPassWordGetCodeRequest:(ELRequestSingleCallBack)block Mobile:(NSString *)mobile;
 + (void)modifyPassWordVolliateCodeRequest:(ELRequestSingleCallBack)block Mobile:(NSString *)mobile Code:(NSString *)code;
 + (void)modifyPassWordResetRequest:(ELRequestSingleCallBack)block Mobile:(NSString *)mobile Pwd:(NSString *)pwd;
+
++ (void)load:(ELRequestSingleCallBack)block;
 @end

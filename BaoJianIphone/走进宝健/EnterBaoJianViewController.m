@@ -47,6 +47,9 @@
     [self.view addSubview:mainScrollView];
     
     self.bottom_logoV.hidden = NO;
+    
+    
+    
 }
    
 
