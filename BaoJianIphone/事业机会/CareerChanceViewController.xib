@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -72,7 +72,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="优惠计划" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2P-ji-MgN">
-                                    <rect key="frame" x="10" y="70" width="40" height="49"/>
+                                    <rect key="frame" x="10" y="83" width="40" height="49"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="enF-Ca-BMw"/>
                                         <constraint firstAttribute="height" constant="49" id="yqk-bz-PI0"/>
@@ -82,7 +82,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="简短介绍简短" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-hv-IqA">
-                                    <rect key="frame" x="8" y="124" width="44" height="28"/>
+                                    <rect key="frame" x="8" y="137" width="44" height="28"/>
                                     <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -101,7 +101,7 @@
                                 <constraint firstAttribute="centerX" secondItem="Q2P-ji-MgN" secondAttribute="centerX" id="Y3O-kX-MWp"/>
                                 <constraint firstAttribute="centerX" secondItem="PqD-lb-5iW" secondAttribute="centerX" id="dfT-hq-CnI"/>
                                 <constraint firstAttribute="width" secondItem="W3q-O1-RX4" secondAttribute="height" multiplier="1:3" id="ljg-zh-OJP"/>
-                                <constraint firstItem="Q2P-ji-MgN" firstAttribute="top" secondItem="PqD-lb-5iW" secondAttribute="bottom" constant="17" id="xeZ-Ve-N3t"/>
+                                <constraint firstItem="Q2P-ji-MgN" firstAttribute="top" secondItem="PqD-lb-5iW" secondAttribute="bottom" constant="30" id="xeZ-Ve-N3t"/>
                             </constraints>
                         </view>
                         <view tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVC-tH-JuG">
