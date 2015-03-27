@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navbar.titleLabel.text = self.titleName;
+    [self.navbar.homebtn setImage:[UIImage imageNamed:@"share_icon"] forState:UIControlStateNormal];
     [self download];
 }
 

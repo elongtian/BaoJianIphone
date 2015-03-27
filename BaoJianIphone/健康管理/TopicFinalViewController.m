@@ -23,6 +23,8 @@
     [self initPlat];
     self.navbar.titleLabel.text = @"话题最终";
     
+    [self.navbar.homebtn setImage:[UIImage imageNamed:@"share_icon"] forState:UIControlStateNormal];
+    
    // [self download];
 }
 - (void)download{

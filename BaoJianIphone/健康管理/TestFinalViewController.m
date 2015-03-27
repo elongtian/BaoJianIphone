@@ -20,6 +20,9 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navbar.titleLabel.text = @"测试最终";
+    
+    [self.navbar.homebtn setImage:[UIImage imageNamed:@"share_icon"] forState:UIControlStateNormal];
+    
     self.bottom_logoV.hidden = NO;
     
     [self initPlat];

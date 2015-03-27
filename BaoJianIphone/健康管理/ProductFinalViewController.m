@@ -25,6 +25,8 @@
     
     self.navbar.titleLabel.text = @"产品最终";
     
+    [self.navbar.homebtn setImage:[UIImage imageNamed:@"share_icon"] forState:UIControlStateNormal];
+    
     [self initPlat];
     [self ad_request];
     _headViewWidth.constant = SCREENWIDTH-20;

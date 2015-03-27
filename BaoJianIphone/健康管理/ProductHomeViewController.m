@@ -9,6 +9,7 @@
 #import "ProductHomeViewController.h"
 #import "HomeChannelView.h"
 #import "ProductListViewController.h"
+#import "KxMenu.h"
 @interface ProductHomeViewController ()
 
 @end
@@ -34,6 +35,9 @@
     titles = [[NSMutableArray alloc]initWithObjects:@"组合套装",@"营养保健食品",@"美容护肤",@"日用护理",@"健康家居", nil];
      icons = [[NSMutableArray alloc]initWithObjects:@"zhtz",@"yybj",@"mrhf",@"ryhl",@"jkjj", nil];
     self.navbar.titleLabel.text = @"产品";
+    
+    [self.navbar.homebtn setImage:[UIImage imageNamed:@"more_point_btn"] forState:UIControlStateNormal];
+    
     mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, NAVHEIGHT, SCREENWIDTH, SCREENHEIGHT-NAVHEIGHT)];
     //    mainScrollView.delegate = self;
     [self.view addSubview:mainScrollView];
@@ -200,6 +204,29 @@
         [pageView setCurrentPage:jc.contentOffset.x/SCREENWIDTH];
     }
 }
+
+- (void)home:(id)sender{
+    //
+    NSLog(@"点击更多");
+    KxMenuItem * item1 = [KxMenuItem menuItem:@"消息" image:[UIImage imageNamed:@"message_icon"] target:self action:@selector(menuSelected:) index:100];
+    item1.foreColor = UIColorFromRGB(0x585858);
+    KxMenuItem * item2 = [KxMenuItem menuItem:@"首页" image:[UIImage imageNamed:@"home_icon"] target:self action:@selector(menuSelected:) index:101];
+    item2.foreColor = UIColorFromRGB(0x585858);
+    NSArray * arr = [[NSArray alloc]initWithObjects:item1,item2, nil];
+    
+    [KxMenu setTintColor:[UIColor whiteColor]];
+    [KxMenu showMenuInView:self.view fromRect:self.navbar.homebtn.frame menuItems:arr];
+}
+
+- (void)menuSelected:(id)sender{
+    KxMenuItem * item = (KxMenuItem *)sender;
+    if(item.tag == 100){
+        NSLog(@"消息");
+    }else{
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+}
+
 
 - (void)back:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];

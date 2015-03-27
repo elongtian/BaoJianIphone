@@ -53,7 +53,7 @@
 //    self.navbar.titleLabel.text = @"首页";
     [self.navbar.backbtn setBackgroundImage:[UIImage imageNamed:@"logo"] forState:UIControlStateNormal];
     [self.navbar.backbtn setImage:nil forState:UIControlStateNormal];
-    self.navbar.backbtn.frame = CGRectMake(0, 0, 100, 35);
+    self.navbar.backbtn.frame = CGRectMake(0, 0, 103, 40);
     self.navbar.backbtn.center = CGPointMake(SCREENWIDTH/2, 20+44/2);
     mainScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, NAVHEIGHT, SCREENWIDTH, SCREENHEIGHT-NAVHEIGHT-49)];
 //    mainScrollView.delegate = self;
@@ -115,7 +115,8 @@
                     break;
                 case 4:
                 {
-                    [self.view makeToast:@"敬请期待"];
+                    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"敬请期待!" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"知道了", nil];
+                    [alert show];
                 }
                     break;
                 case 5:

@@ -21,6 +21,7 @@
     _mWebView.scrollView.showsVerticalScrollIndicator = NO;
     self.view.backgroundColor = [UIColor whiteColor];
     self.navbar.titleLabel.text = @"资讯最终";
+    [self.navbar.homebtn setImage:[UIImage imageNamed:@"share_icon"] forState:UIControlStateNormal];
     [self download];
 }
 - (void)download{

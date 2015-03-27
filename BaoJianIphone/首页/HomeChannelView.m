@@ -38,7 +38,9 @@
 
 - (void)layoutViews
 {
-    _imgV = [[UIImageView alloc]initWithFrame:CGRectMake(0, TOPDistance, imgV_Width,  imgV_height)];
+    CGFloat height = self.frame.size.height/2;
+    CGFloat width = self.frame.size.width/2;
+    _imgV = [[UIImageView alloc]initWithFrame:CGRectMake(0, TOPDistance, width,  height)];
     _imgV.center = CGPointMake(self.frame.size.width/2,self.frame.size.height/2-titleL_Height/2);
     
     _titleL = [[UILabel alloc]initWithFrame:CGRectMake(0, _imgV.frame.origin.y+_imgV.frame.size.height, self.frame.size.width, titleL_Height)];

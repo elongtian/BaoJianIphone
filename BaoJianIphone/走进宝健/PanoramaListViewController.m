@@ -8,6 +8,7 @@
 
 #import "PanoramaListViewController.h"
 #import "PanoramaFinalViewController.h"
+#import "KxMenu.h"
 @interface PanoramaListViewController ()
 
 @end
@@ -21,6 +22,7 @@
     // Do any additional setup after loading the view from its nib.
     
     self.navbar.titleLabel.text = @"园区全景";
+    [self.navbar.homebtn setImage:[UIImage imageNamed:@"more_point_btn"] forState:UIControlStateNormal];
     self.offscreenCells = [[NSMutableDictionary alloc]init];
     photosArray = [[NSMutableArray alloc]init];
     
@@ -120,6 +122,28 @@
         [self.navigationController pushViewController:final animated:YES];
     }
     
+}
+
+- (void)home:(id)sender{
+    //
+    NSLog(@"点击更多");
+    KxMenuItem * item1 = [KxMenuItem menuItem:@"消息" image:[UIImage imageNamed:@"message_icon"] target:self action:@selector(menuSelected:) index:100];
+    item1.foreColor = UIColorFromRGB(0x585858);
+    KxMenuItem * item2 = [KxMenuItem menuItem:@"首页" image:[UIImage imageNamed:@"home_icon"] target:self action:@selector(menuSelected:) index:101];
+    item2.foreColor = UIColorFromRGB(0x585858);
+    NSArray * arr = [[NSArray alloc]initWithObjects:item1,item2, nil];
+    
+    [KxMenu setTintColor:[UIColor whiteColor]];
+    [KxMenu showMenuInView:self.view fromRect:self.navbar.homebtn.frame menuItems:arr];
+}
+
+- (void)menuSelected:(id)sender{
+    KxMenuItem * item = (KxMenuItem *)sender;
+    if(item.tag == 100){
+        NSLog(@"消息");
+    }else{
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 - (void)back:(id)sender
